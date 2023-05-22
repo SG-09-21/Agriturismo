@@ -1,1 +1,130 @@
-@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+*{
+    font-family: 'poppins' ,sans-serif;
+}
+body{
+    background-image: url("1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+.container{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+    
+}
+span{
+    color: #fff;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+header{
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+
+.input-filed{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #ffffff;
+    padding: 0 0 0 45px;
+    background: #1e3400c2;
+}
+i{
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: #fff;
+}
+::-webkit-input-placeholder{
+    color: #fff;
+}
+.submit{
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    color: black;
+    background: #749017;
+    cursor: pointer;
+    transition: .3s ;
+}
+.submit:hover{
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.712);
+}
+
+.forgot-password-label {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.forgot-password-link {
+    text-decoration: none;
+    color: white;
+}
+  
+.forgot-password-link:hover {
+    text-decoration: none;
+}
+
+
+.two-col {
+    display: flex;
+    justify-content: center;
+}
+  
+.one {
+    display: flex;
+    align-items: center;
+}
+  
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+} 
+
+.left-text {
+    color: white;
+    margin-right: 10px;
+}
+  
+.register-link {
+    text-decoration: none;
+    color: white;
+    margin-left: 140px;
+  }
+
+  .login-link {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+  }
