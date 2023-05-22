@@ -1,10 +1,20 @@
 package it.corso.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.annotations.ManyToAny;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,6 +33,13 @@ public class Prodotto {
 
     @Column(name = "prezzo")
     private double prezzo;
+    
+    @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @JoinTable(
+    		name = "ordini_prodotti",
+    		joinColumns = @JoinColumn(name = "id_prodotto", referencedColumnName = "id"),
+    		inverseJoinColumns = @JoinColumn(name = "id_ordine", referencedColumnName = "id"))
+    private List<Ordine> ordini = new ArrayList<>();
 
     public int getId() {
 	return id;
@@ -55,5 +72,13 @@ public class Prodotto {
     public void setPrezzo(double prezzo) {
 	this.prezzo = prezzo;
     }
+
+	public List<Ordine> getOrdini() {
+		return ordini;
+	}
+
+	public void setOrdini(List<Ordine> ordini) {
+		this.ordini = ordini;
+	}
 
 }
