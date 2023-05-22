@@ -30,12 +30,6 @@ public class Ordine {
     @Column(name = "importo")
     private double importo;
 
-    @Column(name = "id_utente")
-    private int id_utente;
-
-    public int getId() {
-	return id;
-    }
 
     @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "id_utente", referencedColumnName = "id")
@@ -49,6 +43,11 @@ public class Ordine {
     private List<Prodotto> prodotti = new ArrayList<>();
 
     // Qui iniziano i getter/setter
+
+    public int getId() {
+	return id;
+    }
+
     public void setId(int id) {
 	this.id = id;
     }
@@ -67,14 +66,6 @@ public class Ordine {
 
     public void setImporto(double importo) {
 	this.importo = importo;
-    }
-
-    public int getId_utente() {
-	return id_utente;
-    }
-
-    public void setId_utente(int id_utente) {
-	this.id_utente = id_utente;
     }
 
     public Utente getUtente() {
