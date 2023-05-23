@@ -24,8 +24,3 @@ hs_err_pid*
 replay_pid*
 target/classes/META-INF/maven/it.corso/Agriturismo/pom.properties
 *.properties
-*.java
-*.properties
-*.properties
-*.properties
-*.properties
