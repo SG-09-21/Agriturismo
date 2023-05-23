@@ -1,15 +1,14 @@
-// Ottieni i riferimenti agli elementi del DOM
-const registerLink = document.getElementById("registerLink");
-const loginForm = document.getElementById("loginForm");
-const registratiForm = document.getElementById("registratiForm");
+var x = document.getElementById("login");
+var y = document.getElementById("register");
+var z = document.getElementById("btn");
 
-// Aggiungi l'ascoltatore di eventi per il click sul link "Registrati"
-registerLink.addEventListener("click", function (event) {
-    event.preventDefault(); // Evita il comportamento predefinito del link
-
-    // Nascondi il form di login
-    loginForm.style.display = "none";
-
-    // Mostra il form di registrazione
-    registratiForm.style.display = "block";
-});
+function register() {
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "110px";
+}
+function login() {
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0";
+}
