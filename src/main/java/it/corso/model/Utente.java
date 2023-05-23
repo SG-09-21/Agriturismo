@@ -79,4 +79,12 @@ public class Utente {
     public void setPassword(String password) {
 	this.password = password;
     }
+
+	public List<Ordine> getOrdini() {
+		return ordini;
+	}
+
+	public void setOrdini(List<Ordine> ordini) {
+		this.ordini = ordini;
+	}
 }
