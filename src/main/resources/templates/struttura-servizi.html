@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titolo</title>
-    <link rel="stylesheet" href="css/contatti.css">
+    <link rel="stylesheet" th:href="@{css/contatti.css}">
   </head>
 
   <body>
     <header>
       <div class="container_1">
         <h1>StrutturaServizi</h1>
-            <p><a href="contatti.html">Contatti</a></p>
-            <p><a href="catalogo.html">Catalogo</a></p>
-            <p><a href="dettaglio_prodotto.html">Dettagli prodotto</a></p>
+            <p><a th:href="@{contatti}">Contatti</a></p>
+            <p><a th:href="@{catalogo}">Catalogo</a></p>
+            <p><a th:href="@{dettaglio-prodotto}">Dettagli prodotto</a></p>
       </div>
     </header>
     <main>

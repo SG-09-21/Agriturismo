@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/dettagliProdotto")
+@RequestMapping("/dettaglio-prodotto")
 public class ProdottoController {
 
     @GetMapping
     private String getPage() {
 
-	return "/dettagliProdotto";
+	return "/dettaglio-prodotto";
     }
 }

@@ -44,6 +44,7 @@ public class LoginController {
     		@RequestParam(name = "username", required = false) String username,
     		@RequestParam(name = "password", required = false) String password) {
     	if (utenteService.controlloLogin(session, username, password)) {
+
     		return "redirect:/catalogo";
     	}
     	return "redirect:/login?loginError";
