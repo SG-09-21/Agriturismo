@@ -11,19 +11,22 @@ import it.corso.service.UtenteService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/LoginAdmin")
+@RequestMapping("/login-admin")
 public class LoginAdminController {
 	
 	@Autowired
-	UtenteService utenteService;
+	private UtenteService utenteService;
 	
 	@GetMapping
-	public String getPage(@RequestParam(name="le", required= false) String logError, Model model, HttpSession session) 
+	public String getPage(
+		@RequestParam(name="le", required= false) String logError, 
+		Model model, 
+		HttpSession session) 
 		{
 			if(session.getAttribute("utente")!=null)
-				return "redirect:/reserved";
+			    return "redirect:/index";
 			model.addAttribute("logError", logError != null);
-			return "LoginAdmin";
+			return "login-admin";
 		}
 	
 }

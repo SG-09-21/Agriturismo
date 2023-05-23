@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" th:href="@{css/index.css}">
 </head>
 
 <body>
@@ -15,11 +15,10 @@
         <div class="nav-area">
             <div class="logo"><span>A</span>griturismo</div>
             <ul class="menu-area">
-                <li class="active"><a href="#">Home</a></li>
-                <li class="active"><a href="#">Prodotti</a></li>
-                <li class="active"><a href="#">Servizi</a></li>
-                <li class="active"><a href="#">Contatti</a></li>
-                <li class="active"><a href="#">Login</a></li>
+                <li class="active"><a th:href="@{catalogo}">Prodotti</a></li>
+                <li class="active"><a th:href="@{struttura-servizi}">Servizi</a></li>
+                <li class="active"><a th:href="@{contatti}">Contatti</a></li>
+                <li class="active"><a th:href="@{login}">Login</a></li>
             </ul>
         </div>
         <div class="banner-text">
@@ -31,8 +30,8 @@
     <footer class="foot-fix">
         <div class="nav-area">
             <ul class="menu-area">
-                <li class="active"><a href="#">Contatti</a></li>
-                <li class="active"><a href="#">Area Riservata</a></li>
+                <li class="active"><a th:href="@{contatti}">Contatti</a></li>
+                <li class="active"><a th:href="@{login-admin}">Area Riservata</a></li>
             </ul>
         </div>
     </footer>
