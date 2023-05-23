@@ -23,11 +23,11 @@ public class LoginController {
     		Model model,
     		@RequestParam(name = "userError", required = false) String userError,
     		@RequestParam(name = "loginError", required = false) String loginError) {
-    	if (session != null) {
-    		model.addAttribute("userError", userError);
-    		return "redirect:/index/userError";
-    	}
-    	model.addAttribute("loginError", loginError);
+//    	if (session != null) {
+//    		model.addAttribute("userError", userError);
+//    		return "redirect:/index/userError";
+//    	}
+//    	model.addAttribute("loginError", loginError);
     	return "login";
     }
     
