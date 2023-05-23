@@ -20,11 +20,4 @@ public class LoginAdminController {
 			return "LoginAdmin";
 		}
 	
-	@PostMapping
-	public String gestioneLogin() {
-		
-		return null;
-	}
-	
-	
 }
