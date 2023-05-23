@@ -40,7 +40,6 @@ public class Utente {
     		orphanRemoval = true)
     private List<Ordine> ordini = new ArrayList<>();
     
-
     public int getId() {
 	return id;
     }
