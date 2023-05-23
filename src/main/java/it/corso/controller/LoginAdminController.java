@@ -28,15 +28,10 @@ public class LoginAdminController {
 		}
 	
 	@PostMapping
-	public String getioneLogin(
-			@RequestParam("username") String username,
-			@RequestParam("password") String password,
-			HttpSession session) 
-	{
-		if(!utenteService.controlloLogin(session,username,password)) {
-			return "redirect:/login?le";
-		}
+	public String gestioneLogin() {
 		
-		return "redirect:/reserved";
+		return null;
 	}
+	
+	
 }
