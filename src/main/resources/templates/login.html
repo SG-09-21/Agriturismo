@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,19 +15,27 @@
                 <button type="button" class="toggle-btn" onclick="login()">Login</button>
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
             </div>
-            <p>Errore: credenziali errate</p>
-            <form id="login"class="input-group">
-                <input type="text" class="input-field" placeholder="Username" required>
-                <input type="password" class="input-field" placeholder="Password" required>
+            <p th:if="${loginError}">Errore: credenziali errate</p>
+            <p th:if="${reg}">Registrazione completata. Effettua il Login</p>
+            <form method="post" action="/login/accedi" id="login"class="input-group">
+                <input type="text" name="username" class="input-field" placeholder="Username" required>
+                <input type="password" name="password" class="input-field" placeholder="Password" required>
                 <input type="checkbox" class="check-box"> <span>Remember me</span>
                 <button type="submit" class="submit-btn">Login</button>
             </form>
-            <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="Inserisci il nome" required>
-                <input type="text" class="input-field" placeholder="Inserisci il cognome" required>
-                <input type="text" class="input-field" placeholder="Inserisci l'Username" required>
-                <input type="email" class="input-field" placeholder="Inserisci l'Email" required>
-                <input type="password" class="input-field" placeholder="Password" required>
+            <form th:object="${utente}" method="post" id="register" class="input-group">
+                <input type="text" th:field="*{nome}" class="input-field" placeholder="Inserisci il nome" required>
+                <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+                
+                <input type="text" th:field="*{cognome}" class="input-field" placeholder="Inserisci il cognome" required>
+                <p th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></p>
+                
+                <input type="text" th:field="*{username}" class="input-field" placeholder="Inserisci l'Username" required>
+                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+                
+                <input type="password" th:field="*{password}" class="input-field" placeholder="Password" required>
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+                
                 <button type="submit" class="submit-btn">Registrati</button>
             </form>
         </div>

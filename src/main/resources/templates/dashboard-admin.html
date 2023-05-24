@@ -5,26 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="css/dashboard_admin.css">
+    <link rel="stylesheet" th:href="@{css/dashboard_admin.css}">
 </head>
 <body>
     <h1>Admin</h1>
     <div class="utente_card">
         <h5>Utenti</h5>
         <p>amministra utenti</p>
-        <p class="box"><a href="dashboard_utenti.html">Utenti</a></p>
+        <p class="box"><a th:href="@{dashboard-utenti}">Utenti</a></p>
     </div>
 
     <div class="catalogo_card">
         <h5>Catalogo</h5>
         <p>amministra catalogo</p>
-        <p class="box"><a href="dashboard_catalogo.html">Catalogo</a></p>
+        <p class="box"><a th:href="@{dashboard-catalogo}">Catalogo</a></p>
     </div>
 
     <div class="ordini_card">
         <h5>Ordini</h5>
         <p>amministra ordini</p>
-        <p class="box"><a href="dashboard_ordini.html">Ordini</a></p>
+        <p class="box"><a th:href="@{dashboard-ordini}">Ordini</a></p>
     </div>
 </body>
 </html>

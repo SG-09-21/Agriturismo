@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "utenti")
@@ -22,15 +23,19 @@ public class Utente {
     private int id;
 
     @Column(name = "nome")
+    @Pattern(regexp = "[a-zA-Z\s'àèìòù]{2,30}", message = "Caratteri non ammessi")
     private String nome;
 
     @Column(name = "cognome")
+    @Pattern(regexp = "[a-zA-Z\s'àèìòù]{2,30}", message = "Caratteri non ammessi")
     private String cognome;
 
     @Column(name = "username")
+    @Pattern(regexp = "[a-zA-Z0-9\s'.]{1,50}", message = "Caratteri non ammessi")
     private String username;
 
     @Column(name = "password")
+    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,20}", message = "Password troppo debole(Min. 6 caratteri; almeno 1 numero, almeno 1 lettera maiuscola)")
     private String password;
     
     @OneToMany(
