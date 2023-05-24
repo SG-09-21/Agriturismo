@@ -5,21 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titolo</title>
-    <link rel="stylesheet" th:href="@{css/contatti.css}">
+    <link rel="stylesheet" th:href="@{css/catalogo.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <script th:src="contatti.js"></script>
   </head>
 
   <body>
     <header>
-      <div class="container_1">
-        <h1>Catalogo</h1>
-        <h2 th:if="${utente != null}" th:text="'Benvenuto ' + ${utente.username}"></h2>
-        <h2 th:if="${utente == null}" th:text="'Benvenuto Gentile Visitatore'"></h2>
-            <p><a th:href="@{struttura-servizi}"> La struttura (servizi)</a></p>
-            <p><a th:href="@{contatti}">Contatti</a></p>
-       		<p><a th:href="@{index}">Home</a></p>
-      </div>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Agriturismo</a>
+            </div>
+            <ul class="links">
+                <li><a th:href="@{index}">Home</a></li>
+                <li><a th:href="@{catalogo}">Prodotti</a></li>
+                <li><a th:href="@{struttura-servizi}">Servizi</a></li>
+                <li><a th:href="@{contatti}">Contatti</a></li>
+            </ul>
+            <a th:href="@{login}" class="action_btn">Login</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+
+            <div class="dropdown_menu">
+            	<ul>
+                	<li><a th:href="@{index}">Home</a></li>
+                	<li><a th:href="@{catalogo}">Prodotti</a></li>
+                	<li><a th:href="@{struttura-servizi}">Servizi</a></li>
+                	<li><a th:href="@{contatti}">Contatti</a></li>
+                	<li><a th:href="@{login}" class="action_btn">Login</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
+    
+    
+    
     <main>
       <div class="container_2">
         <section>
@@ -34,11 +56,17 @@
         </section>
       </div>
     </main>
-    <footer>
-      <div class="container_3">
-        <p>foto?</p>
-        <div id="map"></div>
-      </div>
+    
+    
+    <footer >
+        <div class="navbar">>
+            <ul class="links">
+                <li><a th:href="@{contatti}">Contatti</a></li>
+                <li><a th:href="@{loginAdmin}">Area Riservata</a></li>
+            </ul>
+        </div>
     </footer>
+    
+    <script src="javaScript/index.js"></script>
   </body>
 </html>
