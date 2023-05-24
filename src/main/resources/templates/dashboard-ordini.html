@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ordini</h1>
-    <p><a href="dashboard_catalogo.html">Catalogo</a></p>
-    <p><a href="dashboard_admin.html">Admin</a></p>
-    <p><a href="dashboard_utenti.html">Utenti</a></p>
+    <h1>Catalogo</h1>
+    <div class="product-grid">
+        <div class="product-item" th:each="product : ${products}">
+            <img th:src="@{${product.image}}" alt="Prodotto" />
+            <h3 th:text="${product.name}">Nome Prodotto</h3>
+            <p th:text="${product.description}">Descrizione del prodotto</p>
+            <p th:text="'Prezzo: $' + ${product.price}">Prezzo</p>
+        </div>
+    </div>
+    <p><a th:href="@{/dashboard-admin}">Admin</a></p>
+    <p><a th:href="@{/dashboard-ordini}">Ordini</a></p>
+    <p><a th:href="@{/dashboard-utenti}">Utenti</a></p>
+    
 </body>
 </html>
