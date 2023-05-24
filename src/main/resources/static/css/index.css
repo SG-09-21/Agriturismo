@@ -1,129 +1,192 @@
-body{
+*{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    box-sizing: border-box;
+    font-family: 'open Sans',sans-serif;
 }
 
-.head-fix{
-    clear: both;
-    overflow: hidden;
-}
-
-.foot-fix{
-    clear: both;
-    overflow: hidden;
-}
-
-header{
-    overflow: hidden;
+body{
     height: 100vh;
+    background-color: #000;
+    background: url('image/campagna.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.vid-bg{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
-
-.nav-area{
-    background: rgba(0,0,0,0.7);
-    height: 60px;
-    position: absolute;
-    width: 100%;
-}
-
-.logo{
-    margin: 0 50px;
-    height: 60px;
-    float: left;
-    color: #fff;
-    font-size: 35px;
-    text-transform: capitalize;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.logo span{
-    color: #38ef7d;
-}
-
-.menu-area{
-    float: right;
+li{
     list-style: none;
-    margin: 20px;
 }
 
-.menu-area li{
-    display: inline;
-    margin: 0 5px;
-}
-
-.menu-area li a{
+a{
     text-decoration: none;
     color: #fff;
-    padding: 5px 10px;
-    letter-spacing: 2px;
+    font-size: 1rem;
 }
 
-.menu-area li.active a{
-    color: #38ef7d;
+a:hover{
+    color: orange;
 }
 
-.menu-area li a:hover{
-    color: #38ef7d;
+
+/*header*/
+
+header{
+    position: relative;
+    padding: 0 2rem;
 }
 
-.banner-text{
+.video-slide{
+    z-index: 000;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
 }
 
-.banner-text h2{
-    color: #fff;
-    font-size: 80px;
-    margin: 0;
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.banner-text h2 span{
-    color: #38ef7d;
-}
-
-.banner-text p{
-    color: #fff;
-    font-size: 18px;
-    margin: 0;
+.navbar .logo a{
+    font-style: 1.5rem;
     font-weight: bold;
 }
 
-.btn{
-   display: inline-block;
-   margin-top: 5%;
-   background: transparent;
-   border: 0;
-   font-size: 20px;
-   text-transform: uppercase;
-   border: 3px solid #fff;
-   padding: 10px 25px;
-   color: #fff;
-   border-radius: 25px;
+.navbar .links{
+    display: flex;
+    gap: 2rem;
 }
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .menu-area {
-      flex-direction: column;
-      align-items: center;
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+.action_btn:active{
+    scale: 0.95;
+}
+
+
+/* dropDown */
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 240px;
+}
+
+.dropdown_menu li{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* hero */
+
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;   
+}
+
+/* Footer*/
+footer {
+    background-color: #000;
+    padding: 2rem;
+}
+
+footer .navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+footer .navbar .links li {
+    padding: 0;
+}
+
+
+/* Resposive */
+@media(max-width:992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
     }
-  
-    .menu-area li {
-      margin: 5px 0;
+
+    .navbar .toggle_btn{
+        display: block;
     }
-  
-    .menu-area li:first-child {
-      margin-top: 20px;
+
+    .dropdown_menu{
+        display: block;
     }
-  }
+}
+
+@media(max-width:576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
