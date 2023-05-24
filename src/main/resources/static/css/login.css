@@ -16,7 +16,7 @@
 
 .form-box{
     width: 380px;
-    height: 730px;
+    height: 530px;
     position: relative;
     margin: 6% auto;
     background: #fff;
@@ -119,7 +119,7 @@ span{
 p{
     color: red;
     text-align: center;
-    margin: 10px;
+    margin: 5px;
 }
 
 .indietro {
