@@ -16,8 +16,9 @@
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
             </div>
             <p th:if="${loginError}">Errore: credenziali errate</p>
-            <!-- <p th:if="${credError}>Errore:credenziali non valide</p> -->
+            <p th:if="${credError}">Registrazione fallita, verificare le credenziali<p>
             <p th:if="${reg}">Registrazione completata. Effettua il Login</p>
+            
             <form method="post" action="/login/accedi" id="login"class="input-group">
                 <input type="text" name="username" class="input-field" placeholder="Username" required>
                 <input type="password" name="password" class="input-field" placeholder="Password" required>

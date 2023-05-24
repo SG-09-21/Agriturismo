@@ -26,12 +26,14 @@ public class LoginController {
     public String getPage(HttpSession session,
     		Model model,
     		@RequestParam(name = "loginError", required = false) String loginError,
-    		@RequestParam(name = "reg", required = false) String reg) {
+    		@RequestParam(name = "reg", required = false) String reg,
+    		@RequestParam(name = "ce", required = false) String credError) {
     	
     	if (session.getAttribute("utente") != null) {
     		
     		return "redirect:/catalogo";
     	}
+
     	model.addAttribute("utente", new Utente());
     	model.addAttribute("loginError", loginError != null);
     	model.addAttribute("reg", reg != null);
@@ -53,9 +55,10 @@ public class LoginController {
     @PostMapping
     public String inserisciUtente(
     		@Valid @ModelAttribute("utente") Utente utente,
-    		BindingResult result) {
+	    BindingResult result, Model model) {
     	if(result.hasErrors()) {
-    		return "login";
+	    model.addAttribute("credError", result.hasErrors());
+	    return "login";
     	}
     	utenteService.registraUtente(utente);
     	System.out.println(utente.getUsername() + " registrato");
