@@ -20,8 +20,9 @@
             <form method="post" action="/login/accedi" id="login"class="input-group">
                 <input type="text" name="username" class="input-field" placeholder="Username" required>
                 <input type="password" name="password" class="input-field" placeholder="Password" required>
-                <input type="checkbox" class="check-box"> <span>Remember me</span>
                 <button type="submit" class="submit-btn">Login</button>
+                
+                <a class="indietro" th:href="@{index}">Torna alla Home</a>
             </form>
             <form th:object="${utente}" method="post" id="register" class="input-group">
                 <input type="text" th:field="*{nome}" class="input-field" placeholder="Inserisci il nome" required>
@@ -37,6 +38,8 @@
                 <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
                 
                 <button type="submit" class="submit-btn">Registrati</button>
+                
+                <a class="indietro" th:href="@{index}">Torna alla Home</a>
             </form>
         </div>
     </div>
