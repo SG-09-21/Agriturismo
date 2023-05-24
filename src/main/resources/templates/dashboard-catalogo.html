@@ -22,7 +22,7 @@
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
-
+			
 
             <div class="dropdown_menu">
             	<ul>
@@ -35,7 +35,11 @@
             </div>
         </div>
     </header>
-	
+	<div>
+		<p><a th:href="@{/dashboard-admin}">Admin</a></p>
+    	<p><a th:href="@{/dashboard-ordini}">Ordini</a></p>
+    	<p><a th:href="@{/dashboard-utenti}">Utenti</a></p>
+	</div>
 
     <h1>Catalogo</h1>
 	<p th:if="${ok}" th:text="'Prodotto registrato con successo'"></p>
@@ -54,9 +58,7 @@
             <p th:text="'Prezzo ' + ${p.prezzo} + ' Euro.'"></p>
         </div>
     </div>
-    <p><a th:href="@{/dashboard-admin}">Admin</a></p>
-    <p><a th:href="@{/dashboard-ordini}">Ordini</a></p>
-    <p><a th:href="@{/dashboard-utenti}">Utenti</a></p>
+    
 </body>
 
 </html>

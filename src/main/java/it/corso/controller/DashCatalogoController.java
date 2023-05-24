@@ -27,7 +27,7 @@ public class DashCatalogoController {
 	    @RequestParam(name = "ok", required = false) String ok) {
 
 	if (session.getAttribute("admin") == null) {
-	    return "redirect:/index";
+	    return "redirect:/login-admin";
 	}
 	
 	model.addAttribute("prodotto", new Prodotto());
