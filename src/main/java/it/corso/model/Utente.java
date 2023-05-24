@@ -35,9 +35,9 @@ public class Utente {
     private String username;
 
     @Column(name = "password")
-    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,20}", message = "Password troppo debole(Min. 6 caratteri; almeno 1 numero, almeno 1 lettera maiuscola)")
+    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,20}", message = "Password non valida.")
     private String password;
-    
+
     @OneToMany(
     		mappedBy = "utente",
     		cascade = CascadeType.ALL,

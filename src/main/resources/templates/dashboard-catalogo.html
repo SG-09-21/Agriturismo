@@ -40,8 +40,8 @@
     <h1>Catalogo</h1>
 
     <form action="/aggiungi-prodotto" method="post">
-        <input type="text" name="nome" placeholder="Nome prodotto" required>
         <input type="text" name="descrizione" placeholder="Descrizione prodotto" required>
+        <input type="text" name="categoria" placeholder="Categoria prodotto" required>
         <input type="number" name="prezzo" placeholder="Prezzo prodotto" required>
         <button type="submit">Aggiungi prodotto</button>
     </form>
@@ -52,12 +52,6 @@
             <h3>Prodotto 1</h3>
             <p>Descrizione del prodotto 1</p>
             <p>Prezzo: $10.00</p>
-        </div>
-        <div class="product-item">
-            <img src="" alt="Prodotto 2">
-            <h3>Prodotto 2</h3>
-            <p>Descrizione del prodotto 2</p>
-            <p>Prezzo: $20.00</p>
         </div>
     </div>
     <p><a th:href="@{/dashboard-admin}">Admin</a></p>
