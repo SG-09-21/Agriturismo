@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titolo</title>
+    <title>Catalogo</title>
     <link rel="stylesheet" th:href="@{css/catalogo.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <script th:src="contatti.js"></script>
@@ -43,18 +43,16 @@
     
     
     <main>
-      <div class="container_2">
-        <section>
-          <h2>Catalogo</h2>
-          <div th:each="p : ${prodotti}">
-          	<p th:text="${p.descrizione}"></p>
-          	<p th:text="${p.categoria}"></p>
-          	<p th:text="${p.prezzo}"></p>
-          	<a th:href="@{dettaglio-prodotto(prodotto=${p.id})}" th:text="'Scopri ' + ${p.descrizione}" th:value="@{p.id}"></a>
-          	<br>
-          </div>
-        </section>
-      </div>
+          <section>
+            <div th:each="p : ${prodotti}" class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" th:text="${p.descrizione}"></h5>
+                <p class="card-text" th:text="${p.prezzo}"></p>
+                <a th:href="@{dettaglio-prodotto(id=${p.id})}" class="btn btn-primary">Dettaglio</a>
+              </div>
+            </div>
+          </section>
     </main>
     
     
