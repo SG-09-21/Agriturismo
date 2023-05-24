@@ -17,7 +17,7 @@
         <h2 th:if="${utente == null}" th:text="'Benvenuto Gentile Visitatore'"></h2>
             <p><a th:href="@{struttura-servizi}"> La struttura (servizi)</a></p>
             <p><a th:href="@{contatti}">Contatti</a></p>
-            <p><a th:href="@{dettaglio-prodotto}">Dettagli Prodotti</a></p>
+       		<p><a th:href="@{index}">Home</a></p>
       </div>
     </header>
     <main>
@@ -28,6 +28,7 @@
           	<p th:text="${p.descrizione}"></p>
           	<p th:text="${p.categoria}"></p>
           	<p th:text="${p.prezzo}"></p>
+          	<a th:href="@{dettaglio-prodotto(prodotto=${p.id})}" th:text="'Scopri ' + ${p.descrizione}" th:value="@{p.id}"></a>
           	<br>
           </div>
         </section>
