@@ -24,16 +24,26 @@ public class DashCatalogoController {
     public String getPage(
 	    Model model,
 	    HttpSession session, 
-	    @RequestParam(name = "ok", required = false) String ok) {
+	    @RequestParam(name = "ok", required = false) String ok,
+	    @RequestParam(name = "id", required = false) Integer id) {
 
 	if (session.getAttribute("admin") == null) {
 	    return "redirect:/login-admin";
 	}
 	
-	model.addAttribute("prodotto", new Prodotto());
+	Prodotto prodotto = id == null ? new Prodotto() : prodottoService.getProdottoById(id);
+
+	model.addAttribute("edit", id != null);
+	model.addAttribute("prodotto", prodotto);
 	model.addAttribute("ok", ok != null);
 	model.addAttribute("prodotti", prodottoService.getProdotti());
 	return "dashboard-catalogo";
+    }
+
+    @GetMapping("/elimina")
+    public String eliminaProdotto() {
+
+	return "";
     }
 
     @PostMapping
