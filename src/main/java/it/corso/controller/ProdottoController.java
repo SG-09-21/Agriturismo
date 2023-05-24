@@ -20,7 +20,7 @@ public class ProdottoController {
     
     @GetMapping
     private String getPage(
-	    @RequestParam("prodotto") int id,
+	    @RequestParam("id") int id,
 	    HttpSession session, 
 	    Model model) {
 
