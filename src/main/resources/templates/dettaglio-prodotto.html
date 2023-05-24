@@ -11,14 +11,35 @@
 
   <body>
     <header>
-      <div class="container_1">
-        <h1>Dettaglio Prodotto</h1>
-         <p><a th:href="@{struttura-servizi}"> La struttura (servizi)</a></p>
-            <p><a th:href="@{catalogo}">Catologo</a></p>
-            <p><a th:href="@{contatti}">Contatti</a></p>
-        <h3 th:text="'Dettaglio ' + ${p.descrizione}"></h3>
-      </div>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Agriturismo</a>
+            </div>
+            <ul class="links">
+                <li><a th:href="@{index}">Home</a></li>
+                <li><a th:href="@{catalogo}">Prodotti</a></li>
+                <li><a th:href="@{struttura-servizi}">Servizi</a></li>
+                <li><a th:href="@{contatti}">Contatti</a></li>
+            </ul>
+            <a th:href="@{login}" class="action_btn">Login</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+
+            <div class="dropdown_menu">
+            	<ul>
+                	<li><a th:href="@{index}">Home</a></li>
+                	<li><a th:href="@{catalogo}">Prodotti</a></li>
+                	<li><a th:href="@{struttura-servizi}">Servizi</a></li>
+                	<li><a th:href="@{contatti}">Contatti</a></li>
+                	<li><a th:href="@{login}" class="action_btn">Login</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
+    
+    
     <main>
       <div class="container_2">
         <section>
