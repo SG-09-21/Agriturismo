@@ -17,6 +17,8 @@
                 <div class="top">
                     <header>Login</header>
                 </div>
+                <p th:if="${logError}" th:text="'Errore: Credenziali Errate'" style="color:red;">
+                </p>
                 <div class="input-field">
                     <input type="text" name="username" class="input" placeholder="Username" id="">
                     <i class='bx bx-user'></i>
