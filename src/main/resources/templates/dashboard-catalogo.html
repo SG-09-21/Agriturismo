@@ -56,6 +56,12 @@
             <h3 th:text="${p.descrizione}"></h3>
             <p th:text="${p.categoria}"></p>
             <p th:text="'Prezzo ' + ${p.prezzo} + ' Euro.'"></p>
+            <a th:href="@{modifica(id=${p.id})}">
+            	<button th:text="'Modifica ' + ${p.descrizione}" ></button>
+            </a>
+            <a th:href="@{elimina(id=${p.id})}">
+            	<button th:text="'Elimina ' + ${p.descrizione}" ></button>
+            </a>
         </div>
     </div>
     

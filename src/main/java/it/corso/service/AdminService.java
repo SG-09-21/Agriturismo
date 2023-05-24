@@ -8,5 +8,5 @@ import jakarta.servlet.http.HttpSession;
 public interface AdminService {
     
 	boolean controlloLoginAdmin(HttpSession session, String... credenziali);
-	// void getAdminById();
+
 }

@@ -28,6 +28,4 @@ public class AdminServiceImpl implements AdminService {
 		}		
 		return false;
 	}
-
-    
 }

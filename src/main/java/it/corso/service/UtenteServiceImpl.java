@@ -23,8 +23,8 @@ public class UtenteServiceImpl implements UtenteService {
 
 	@Override
 	public Utente getUtenteById(int id) {
-		utenteDao.findById(id);
-		return null;
+
+	    return utenteDao.findById(id).get();
 	}
 
 	@Override

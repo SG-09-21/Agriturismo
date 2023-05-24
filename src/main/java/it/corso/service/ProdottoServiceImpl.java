@@ -21,7 +21,7 @@ public class ProdottoServiceImpl implements ProdottoService {
 
 	@Override
 	public Prodotto getProdottoById(int id) {
-	    return prodottoDao.findById(id).orElse(null);
+	    return prodottoDao.findById(id).get();
 	}
 
 	@Override
@@ -33,5 +33,4 @@ public class ProdottoServiceImpl implements ProdottoService {
 	public void cancellaProdotto(Prodotto prodotto) {
 	    prodottoDao.delete(prodotto);
 	}
-	
 }
