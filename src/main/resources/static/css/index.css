@@ -8,7 +8,7 @@
 body{
     height: 100vh;
     background-color: #000;
-    background: url('image/campagna.jpg') no-repeat;
+    background: url(/image/campagna.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -93,7 +93,6 @@ header{
 .action_btn:active{
     scale: 0.95;
 }
-
 
 /* dropDown */
 .dropdown_menu{

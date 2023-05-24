@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import it.corso.service.UtenteService;
+import it.corso.model.Admin;
+import it.corso.service.AdminService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -15,7 +17,7 @@ import jakarta.servlet.http.HttpSession;
 public class LoginAdminController {
 	
 	@Autowired
-	private UtenteService utenteService;
+	private AdminService adminService;
 	
 	@GetMapping
 	public String getPage(
@@ -23,10 +25,22 @@ public class LoginAdminController {
 		Model model, 
 		HttpSession session) 
 		{
-			if(session.getAttribute("utente")!=null)
-			    return "redirect:/index";
+			if(session.getAttribute("admin")!=null)
+			    return "redirect:/dashboard-admin";
+			model.addAttribute("admin", new Admin());
 			model.addAttribute("logError", logError != null);
 			return "login-admin";
 		}
 	
+	@PostMapping
+    public String gestioneLogin(
+    		HttpSession session,
+    		@RequestParam(name = "username", required = false) String username,
+    		@RequestParam(name = "password", required = false) String password) {
+    	if (adminService.controlloLoginAdmin(session, username, password)) {
+
+    		return "redirect:/dashboard-admin";
+    	}
+    	return "redirect:/login-admin?le";
+    }
 }
