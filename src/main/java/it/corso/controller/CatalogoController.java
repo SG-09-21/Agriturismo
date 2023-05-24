@@ -24,15 +24,13 @@ public class CatalogoController {
     public String getPage(HttpSession session, Model model) {
 
 	List<Prodotto> prodotti = prodottoService.getProdotti();
+
 	model.addAttribute("prodotti", prodotti);
 	if (session.getAttribute("utente") == null) {
 	    // qui è dove impediamo all'utente di comprare cose se non è loggato
 	    return "catalogo";
 	}
 	Utente utente = (Utente) session.getAttribute("utente");
-	
-	
-	
 	
 	model.addAttribute("utente", utente);
 	return "catalogo";
