@@ -18,9 +18,9 @@ li{
 }
 
 a{
-    text-decoration: none !important ;
-    color: #fff !important;
-    font-size: 1rem !important;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
 }
 
 a:hover{
@@ -172,34 +172,16 @@ footer .navbar .links li {
 
 /* Set height for main content */
 main {
-    margin-bottom: 4rem; /* Add margin to create space for the footer */
-}
-
-main .card-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-main .card {
-  width: 300px;
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
+.container_2 {
+  width: 600px;
+  margin: 0 auto;
 }
 
-main .card img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media only screen and (max-width: 768px) {
-  main .card {
-    width: 100%;
-  }
-}
 
 
 
@@ -225,3 +207,6 @@ main .card img {
         width: unset;
     }
 }
+
+
+
