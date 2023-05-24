@@ -35,7 +35,7 @@
                 	<li><a th:href="@{catalogo}">Prodotti</a></li>
                 	<li><a th:href="@{struttura-servizi}">Servizi</a></li>
                 	<li><a th:href="@{contatti}">Contatti</a></li>
-                	<li><a th:href="@{login}" class="action_btn">Login</a></li>
+                	<li><a th:href="@{login}">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -46,14 +46,14 @@
     <main>
    		<div class="container-fluid">
     		<div class="row justify-content-center mt-4">
-        		<div th:each="art: ${catalogo}" class="col-md-6 col-lg-4">
+        		<div th:each="art: ${prodotti}" class="col-md-6 col-lg-4">
             		<div class="foto position-relative">
                 		<div class="card" style="width: 18rem;">
                     		<img th:src="@{'articolo_' + ${art.id} + '.png'}" class="card-img-top" alt="...">
                     			<div class="card-body">
                         			<h5 class="card-title" th:text="${art.descrizione}"></h5>
                         			<p class="card-text" th:text="${art.prezzo}"></p>
-                        			<a th:href="@{dettaglio(id=${art.id})}" class="btn btn-primary">Dettagli</a>
+                        			<a th:href="@{dettaglio-prodotto(id=${art.id})}" th:text="'Scopri ' + ${art.descrizione}" class="btn btn-primary"></a>
                     			</div>
                 			</div>
             			</div>
