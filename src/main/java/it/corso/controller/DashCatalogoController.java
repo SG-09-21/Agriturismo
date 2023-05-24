@@ -25,7 +25,8 @@ public class DashCatalogoController {
 	    Model model,
 	    HttpSession session, 
 	    @RequestParam(name = "ok", required = false) String ok,
-	    @RequestParam(name = "id", required = false) Integer id) {
+	    @RequestParam(name = "id", required = false) Integer id,
+	    @RequestParam(name = "del", required = false) String del) {
 
 	if (session.getAttribute("admin") == null) {
 	    return "redirect:/login-admin";
@@ -33,6 +34,7 @@ public class DashCatalogoController {
 	
 	Prodotto prodotto = id == null ? new Prodotto() : prodottoService.getProdottoById(id);
 
+	model.addAttribute("del", del != null);
 	model.addAttribute("edit", id != null);
 	model.addAttribute("prodotto", prodotto);
 	model.addAttribute("ok", ok != null);
@@ -41,9 +43,10 @@ public class DashCatalogoController {
     }
 
     @GetMapping("/elimina")
-    public String eliminaProdotto() {
-
-	return "";
+    public String eliminaProdotto(
+	    @RequestParam("id") int id) {
+	prodottoService.cancellaProdotto(prodottoService.getProdottoById(id));
+	return "redirect:/dashboard-catalogo?del";
     }
 
     @PostMapping
