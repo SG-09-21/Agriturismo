@@ -31,7 +31,7 @@ public class Utente {
     private String cognome;
 
     @Column(name = "username")
-    @Pattern(regexp = "[a-zA-Z0-9\s'.]{1,50}", message = "Caratteri non ammessi")
+    @Pattern(regexp = "[a-zA-Z0-9'.]{1,16}", message = "Caratteri non ammessi")
     private String username;
 
     @Column(name = "password")
