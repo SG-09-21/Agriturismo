@@ -128,3 +128,14 @@ i{
     color: white;
     padding: 5px;
   }
+
+  .indietro {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px; /* Sposta il testo verso il basso di 20px */
+}
