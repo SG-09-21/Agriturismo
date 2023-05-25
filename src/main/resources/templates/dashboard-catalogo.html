@@ -54,7 +54,8 @@
     <br>
     <div class="product-grid">
         <div th:each="p : ${prodotti}" class="product-item">
-            <img src="" alt="Prodotto">
+            <img th:if="${p.immagine==null}" th:src="@{image/PRODOTTO-ESAURITO.jpg}" class="card-img-top" alt="Prodotto Esaurito" style="width:160px;max-width:160px;height:160px;max-height:160px;">
+            <img th:if="${p.immagine!=null}" th:src="@{${p.immagine}}" class="card-img-top" th:alt="${p.descrizione}" style="width:160px;max-width:160px;height:160px;max-height:160px;">
             <h3 th:text="${p.descrizione}"></h3>
             <p th:text="${p.categoria}"></p>
             <p th:text="'Prezzo ' + ${p.prezzo} + ' Euro.'"></p>

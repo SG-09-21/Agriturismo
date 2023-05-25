@@ -19,6 +19,7 @@ public class DashCatalogoController {
 
     @Autowired
     private ProdottoService prodottoService;
+
     Prodotto prodotto;
     
     @GetMapping
@@ -35,7 +36,7 @@ public class DashCatalogoController {
 	
 	prodotto = id == null ? new Prodotto() : prodottoService.getProdottoById(id);
 
-	model.addAttribute("id", id);
+
 	model.addAttribute("del", del != null);
 	model.addAttribute("edit", id != null);
 	model.addAttribute("prodotto", prodotto);
