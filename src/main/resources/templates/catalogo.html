@@ -27,7 +27,7 @@
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
-
+			
 
             <div class="dropdown_menu">
             	<ul>
@@ -49,15 +49,16 @@
     <main>
    		<div class="container-fluid">
     		<div class="row justify-content-center mt-4">
-        		<div th:each="art: ${prodotti}" class="col-md-6 col-lg-4">
+    		<p th:if="${added}">Prodotto inserito nel carrello</p>
+        		<div th:each="art: ${prodotti}" class="col-md-6 col-lg-3">
             		<div class="foto position-relative">
                 		<div class="card" style="width: 18rem;">
-                    		<img th:if="${art.immagine==null}" th:src="@{image/PRODOTTO-ESAURITO.jpg}" class="card-img-top" alt="Prodotto Esaurito">
-                    		<img th:if="${art.immagine!=null}" th:src="@{${art.immagine}}" class="card-img-top" th:alt="${art.descrizione}">
+                    		<img th:if="${art.immagine==null}" th:src="@{image/PRODOTTO-ESAURITO.jpg}" class="card-img-top img-size" alt="Prodotto Esaurito">
+                    		<img th:if="${art.immagine!=null}" th:src="@{${art.immagine}}" class="card-img-top img-size" th:alt="${art.descrizione}">
                     			<div class="card-body">
                         			<h5 class="card-title" th:text="${art.descrizione}"></h5>
                         			<p class="card-text" th:text="'Prezzo: ' + ${art.prezzo} + '€'"></p>
-                        			<a th:href="@{dettaglio-prodotto(id=${art.id})}" th:text="'Scopri ' + ${art.descrizione}" class="btn btn-primary"></a>
+                        			<a th:href="@{dettaglio-prodotto(id=${art.id})}" th:text="'Scopri ' + ${art.descrizione}" class="btn btn-primary btn-custom"></a>
                     			</div>
                 			</div>
             			</div>
