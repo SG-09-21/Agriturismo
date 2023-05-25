@@ -23,7 +23,7 @@ public class ProdottoServiceImpl implements ProdottoService {
 		prodotto.setDescrizione((String) dati[0]);
 		prodotto.setCategoria((String) dati[1]);
 		prodotto.setPrezzo((double) dati[2]);
-
+		prodotto.setDettagli((String) dati[4]);
 		MultipartFile file = (MultipartFile) dati[3];
 
 		if (file != null && !file.isEmpty()) {
