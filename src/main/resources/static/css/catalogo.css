@@ -8,7 +8,7 @@
 body{
     height: 100vh !important;
     background-color: #000 !important;
-    background: url('/image/legno.jpg') no-repeat !important;
+    background: url('/image/campagna.jpg') no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
 }
