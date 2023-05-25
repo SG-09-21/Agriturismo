@@ -8,7 +8,7 @@
 body{
     height: 100vh !important;
     background-color: #000 !important;
-    background: url('/image/campagna.jpg') no-repeat !important;
+    background: url('/image/legno.jpg') no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
 }
@@ -225,4 +225,5 @@ main .card {
   border: 1px solid #ccc !important;
   border-radius: 5px !important;
   text-align: center !important;
+  background: rgba(255,255,255,0.9);
 }
