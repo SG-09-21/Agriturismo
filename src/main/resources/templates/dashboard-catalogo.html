@@ -44,16 +44,18 @@
     <h1>Catalogo</h1>
 	<p th:if="${ok}" th:text="'Prodotto inserito con successo'"></p>
 	<p th:if="${del}" th:text="'Prodotto eliminato con successo'"></p>
-    <form method="post" th:object="${prodotto}">
-        <input type="text" th:field="*{descrizione}" placeholder="Descrizione prodotto" required>
-        <input type="text" th:field="*{categoria}" placeholder="Categoria prodotto" required>
-        <input type="number" step= "any" th:field="*{prezzo}" placeholder="Prezzo prodotto" required>
+    <form method="post" action="dashboard-catalogo/registra" enctype="multipart/form-data">
+        <input type="text" th:value="${prodotto.descrizione}" name="descrizione" placeholder="Descrizione prodotto" required>
+        <input type="text" th:value="${prodotto.categoria}" name="categoria" placeholder="Categoria prodotto" required>
+        <input type="number" step= "any" th:value="${prodotto.prezzo}" name="prezzo" placeholder="Prezzo prodotto" required>
+        <input type="file" name="immagine" placeholder="Immagine">
         <button type="submit" th:text="${edit ? 'Modifica Prodotto' : 'Registra Prodotto'}"></button>
     </form>
     <br>
     <div class="product-grid">
         <div th:each="p : ${prodotti}" class="product-item">
-            <img src="" alt="Prodotto">
+            <img th:if="${p.immagine==null}" th:src="@{image/PRODOTTO-ESAURITO.jpg}" class="card-img-top" alt="Prodotto Esaurito" style="width:160px;max-width:160px;height:160px;max-height:160px;">
+            <img th:if="${p.immagine!=null}" th:src="@{${p.immagine}}" class="card-img-top" th:alt="${p.descrizione}" style="width:160px;max-width:160px;height:160px;max-height:160px;">
             <h3 th:text="${p.descrizione}"></h3>
             <p th:text="${p.categoria}"></p>
             <p th:text="'Prezzo ' + ${p.prezzo} + ' Euro.'"></p>

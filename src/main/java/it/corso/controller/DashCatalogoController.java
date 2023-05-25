@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import it.corso.model.Prodotto;
 import it.corso.service.ProdottoService;
@@ -19,6 +19,8 @@ public class DashCatalogoController {
 
     @Autowired
     private ProdottoService prodottoService;
+
+    Prodotto prodotto;
     
     @GetMapping
     public String getPage(
@@ -32,7 +34,8 @@ public class DashCatalogoController {
 	    return "redirect:/login-admin";
 	}
 	
-	Prodotto prodotto = id == null ? new Prodotto() : prodottoService.getProdottoById(id);
+	prodotto = id == null ? new Prodotto() : prodottoService.getProdottoById(id);
+
 
 	model.addAttribute("del", del != null);
 	model.addAttribute("edit", id != null);
@@ -49,12 +52,14 @@ public class DashCatalogoController {
 	return "redirect:/dashboard-catalogo?del";
     }
 
-    @PostMapping
+    @PostMapping("/registra")
     public String inserisciProdotto(
-	    Model model,
-	    @ModelAttribute("prodotto") Prodotto prodotto) {
+	    @RequestParam("descrizione") String descrizione,
+	    @RequestParam("categoria") String categoria, 
+	    @RequestParam("prezzo") Double prezzo,
+	    @RequestParam(name = "immagine", required = false) MultipartFile file) {
 	
-	prodottoService.registraProdotto(prodotto);
+	prodottoService.registraProdotto(prodotto, descrizione, categoria, prezzo, file);
 	return "redirect:/dashboard-catalogo?ok";
     }
 }

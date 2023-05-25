@@ -32,6 +32,9 @@ public class Prodotto {
     @Column(name = "prezzo")
     private double prezzo;
     
+    @Column(name = "immagine")
+    private String immagine;
+
     @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinTable(
     		name = "ordini_prodotti",
@@ -77,6 +80,14 @@ public class Prodotto {
 
 	public void setOrdini(List<Ordine> ordini) {
 		this.ordini = ordini;
+	}
+
+	public String getImmagine() {
+	    return immagine;
+	}
+
+	public void setImmagine(String immagine) {
+	    this.immagine = immagine;
 	}
 
 }

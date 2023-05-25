@@ -6,7 +6,7 @@ import it.corso.model.Prodotto;
 
 public interface ProdottoService {
 
-	void registraProdotto(Prodotto prodotto);
+    void registraProdotto(Prodotto prodotto, Object... dati);
 	
 	Prodotto getProdottoById(int id);
 	
