@@ -44,10 +44,11 @@
     <h1>Catalogo</h1>
 	<p th:if="${ok}" th:text="'Prodotto inserito con successo'"></p>
 	<p th:if="${del}" th:text="'Prodotto eliminato con successo'"></p>
-    <form method="post" th:object="${prodotto}">
-        <input type="text" th:field="*{descrizione}" placeholder="Descrizione prodotto" required>
-        <input type="text" th:field="*{categoria}" placeholder="Categoria prodotto" required>
-        <input type="number" step= "any" th:field="*{prezzo}" placeholder="Prezzo prodotto" required>
+    <form method="post" action="dashboard-catalogo/registra" enctype="multipart/form-data">
+        <input type="text" th:value="${prodotto.descrizione}" name="descrizione" placeholder="Descrizione prodotto" required>
+        <input type="text" th:value="${prodotto.categoria}" name="categoria" placeholder="Categoria prodotto" required>
+        <input type="number" step= "any" th:value="${prodotto.prezzo}" name="prezzo" placeholder="Prezzo prodotto" required>
+        <input type="file" name="immagine" placeholder="Immagine">
         <button type="submit" th:text="${edit ? 'Modifica Prodotto' : 'Registra Prodotto'}"></button>
     </form>
     <br>
