@@ -27,7 +27,7 @@ public class CatalogoController {
 
 	model.addAttribute("prodotti", prodotti);
 	if (session.getAttribute("utente") == null) {
-	    // qui è dove impediamo all'utente di comprare cose se non è loggato..
+	    // qui è dove impediamo all'utente di comprare cose se non è loggato
 	    return "catalogo";
 	}
 	Utente utente = (Utente) session.getAttribute("utente");
