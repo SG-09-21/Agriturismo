@@ -177,7 +177,11 @@ footer .navbar .links li {
 
 main .card img {
     max-width: 100% !important;
-    height: auto !important;
+    max-height: 100% !important;
+    aspect-ratio: 1/1 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    
 }
 
 main {
@@ -188,6 +192,7 @@ main .card-container {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
+    
 }
 
 main .card {
@@ -197,9 +202,10 @@ main .card {
     border: 1px solid #ccc !important;
     border-radius: 5px !important;
     text-align: center !important;
+    padding: 5px !important;
 }
 .container-fluid {
-    margin: 60px 2rem !important; /* Stessi margin della navbar */
+    margin: 20px 2rem !important; /* Stessi margin della navbar */
 }
 
 .card {
