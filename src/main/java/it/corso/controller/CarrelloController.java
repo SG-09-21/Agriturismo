@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.corso.dao.OrdineDao;
 import it.corso.model.Ordine;
 import it.corso.model.Prodotto;
 import it.corso.model.Utente;
@@ -23,18 +24,30 @@ public class CarrelloController {
 	@Autowired
 	private OrdineService ordineService;
 	
+	@Autowired
+	private OrdineDao ordineDao;
+	
     @GetMapping
     public String getPage(
     		HttpSession session,
     		Model model, 
     		@RequestParam(name = "del", required = false) String del,
-    		@RequestParam(name = "ordineOk", required = false) String ordineOk) {
+    		@RequestParam(name = "ordineOk", required = false) String ordineOk,
+    		@RequestParam(name = "void", required = false) String ordineVuoto) {
 	
 	if (session.getAttribute("carrello") != null) {
 	    @SuppressWarnings("unchecked")
 	    List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
 	    model.addAttribute("carrello", carrello);
+	    model.addAttribute("carrelloPieno", !carrello.isEmpty());
 	}
+	Utente utente = (Utente) session.getAttribute("utente");
+	
+	List<Ordine> ordini = ordineDao.findByUtente(utente);
+	model.addAttribute("utente", utente);
+	model.addAttribute("ordini", ordini);
+	model.addAttribute("loggato", utente != null);
+	model.addAttribute("ordineVuoto", ordineVuoto != null);
 	model.addAttribute("del", del != null);
 	model.addAttribute("ordineOk", ordineOk != null);
         return "carrello";
@@ -65,11 +78,17 @@ public class CarrelloController {
 		LocalDate data = LocalDate.now();
 		List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
 		Utente utente = (Utente) session.getAttribute("utente");
+		if (utente == null)
+			return "redirect:/login";
+		int idUtente = utente.getId();
+//		if (carrello.size() > 0) {
+			ordineService.registraOrdine(new Ordine(), data, idUtente, carrello);
+			carrello.clear();
+			return "redirect:/carrello?ordineOk";
+//		}	
 		
-		ordineService.registraOrdine(new Ordine(), data, utente, carrello);
-		carrello.clear();
+//		return "redirect:/carrello?void";
 		
-		return "redirect:/carrello?ordineOk";
 		
 	}
 }
