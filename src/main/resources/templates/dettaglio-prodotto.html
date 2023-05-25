@@ -48,7 +48,8 @@
           <img th:if="${p.immagine!=null}" th:src="@{${p.immagine}}" class="card-img-top" th:alt="${p.descrizione}">
           <p th:text="${p.categoria}"></p>
           <p th:text="'Prezzo ' + ${p.prezzo} + ' €'"></p>
-          <a th:text="'Aggiungi ' + ${p.descrizione} + ' al carello'" th:href="@{carello(id=${p.id})}" class="btn btn-primary"></a>
+          <a th:text="'Aggiungi ' + ${p.descrizione} + ' al carrello'" th:href="@{dettaglio-prodotto/aggiungi(id=${p.id})}" class="btn btn-primary"></a>
+          <a th:text="'Visualizza carrello'" th:href="@{carrello}" class="btn btn-primary"></a>
           <a th:text="'Torna al catalogo'" th:href="@{catalogo}" class="btn btn-primary"></a>
         </section>
       </div>
