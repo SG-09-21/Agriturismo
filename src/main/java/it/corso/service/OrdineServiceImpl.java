@@ -24,19 +24,14 @@ public class OrdineServiceImpl implements OrdineService {
 	@Override
 	public void registraOrdine(Ordine ordine, Object... dati) {
 		
-		String data = (String)dati[0];
-		int idUtente = (int)dati[1];
+		LocalDate data = (LocalDate) dati[0];
+		Utente utente = (Utente)dati[1];
 		int[] idProdotti = (int[])dati[2];
 		
 		// imposto data dell'ordine
-		try {
-			ordine.setData(LocalDate.parse(data));
-		} catch (Exception e) {
-			ordine.setData(LocalDate.now());
-		}
+		ordine.setData(data);
 		
 		// imposto utente dell'ordine
-		Utente utente = utenteService.getUtenteById(idUtente);
 		ordine.setUtente(utente);
 		
 		// svuoto per sicurezza la lista di prodotti di un ordine

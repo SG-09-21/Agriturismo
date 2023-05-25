@@ -42,8 +42,10 @@
 	
 	<main>
 	    <div class="container">
+	    	<a th:href="@{carrello/aggiungi-ordine}" class="btn btn-primary">Procedi</a>
 	        <h1>Carrello</h1>
 	        <p th:if="${del}">Prodotto eliminato con successo</p>
+	        <p th:if="${ordineOk}">Ordine completato con successo</p>
 	        <table class="table">
 	            <thead>
 	            <tr>
