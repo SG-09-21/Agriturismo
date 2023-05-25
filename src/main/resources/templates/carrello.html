@@ -46,7 +46,7 @@
 	    		<a th:href="@{carrello/aggiungi-ordine}" class="btn btn-primary">Procedi</a>
 	    	</div>
 	    	<h3 th:if="${loggato == false}">Ciao user</h3>
-	    	<h3 th:if="${loggato}" th:text="'Ciao ' + ${utente.username}"></h3>
+	    	<h3 th:if="${loggato}" th:text="'Ciao ' + ${utente.nome}"></h3>
 	        <h1>Carrello</h1>
 	        <p th:if="${del}">Prodotto eliminato con successo</p>
 	        <p th:if="${ordineOk}">Ordine completato con successo</p>

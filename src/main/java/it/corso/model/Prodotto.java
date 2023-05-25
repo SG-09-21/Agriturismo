@@ -14,6 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "prodotti")
@@ -41,6 +42,17 @@ public class Prodotto {
 	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	@JoinTable(name = "ordini_prodotti", joinColumns = @JoinColumn(name = "id_prodotto", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "id_ordine", referencedColumnName = "id"))
 	private List<Ordine> ordini = new ArrayList<>();
+
+	@Transient
+	private boolean incluso;
+
+	public boolean isIncluso() {
+	    return incluso;
+	}
+
+	public void setIncluso(boolean incluso) {
+	    this.incluso = incluso;
+	}
 
 	public int getId() {
 		return id;
