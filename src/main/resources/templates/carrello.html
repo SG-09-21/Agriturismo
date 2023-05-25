@@ -43,6 +43,7 @@
 	<main>
 	    <div class="container">
 	        <h1>Carrello</h1>
+	        <p th:if="${del}">Prodotto eliminato con successo</p>
 	        <table class="table">
 	            <thead>
 	            <tr>
@@ -53,11 +54,11 @@
 	            </tr>
 	            </thead>
 	            <tbody>
-	            <tr th:each="prodotto : ${carrello}">
-	                <td th:text="${prodotto.descrizione}"></td>
-	                <td th:text="${prodotto.categoria}"></td>
-	                <td th:text="${prodotto.prezzo}"></td>
-	                <td><a th:href="@{/rimuovi-prodotto?id=${prodotto.id}}" class="btn btn-danger">Rimuovi</a></td>
+	            <tr th:each="p: ${carrello}">
+	                <td th:text="${p.descrizione}"></td>
+	                <td th:text="${p.categoria}"></td>
+	                <td th:text="${p.prezzo}"></td>
+	                <td><a th:href="@{carrello/rimuovi-prodotto(id=${p.id})}" class="btn btn-danger">Rimuovi</a></td>
 	            </tr>
 	            </tbody>
 	        </table>

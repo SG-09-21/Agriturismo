@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Prodotto;
 import it.corso.model.Utente;
@@ -21,13 +22,15 @@ public class CatalogoController {
     private ProdottoService prodottoService;
 
     @GetMapping
-    public String getPage(HttpSession session, Model model) {
+    public String getPage(
+	    HttpSession session, 
+	    Model model, @RequestParam(name = "added", required = false) String added) {
 
 	List<Prodotto> prodotti = prodottoService.getProdotti();
-
+	model.addAttribute("added", added);
 	model.addAttribute("prodotti", prodotti);
 	if (session.getAttribute("utente") == null) {
-	    // qui è dove impediamo all'utente di comprare cose se non è loggato
+
 	    return "catalogo";
 	}
 	Utente utente = (Utente) session.getAttribute("utente");
