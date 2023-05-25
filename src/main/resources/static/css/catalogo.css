@@ -198,6 +198,9 @@ main .card {
     border-radius: 5px !important;
     text-align: center !important;
 }
+.container-fluid {
+    margin: 60px 2rem !important; /* Stessi margin della navbar */
+}
 
 .card {
     width: 300px !important; /* Larghezza desiderata della card */
