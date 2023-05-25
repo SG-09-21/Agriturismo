@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/dashboard-catalogo.css}">
     <title>Document</title>
 </head>
 <body>
@@ -18,24 +19,9 @@
                 <li><a th:href="@{struttura-servizi}">Servizi</a></li>
                 <li><a th:href="@{contatti}">Contatti</a></li>
             </ul>
-            <a th:href="@{login}" class="action_btn">Login</a>
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-			
-
-            <div class="dropdown_menu">
-            	<ul>
-                	<li><a th:href="@{index}">Home</a></li>
-                	<li><a th:href="@{catalogo}">Prodotti</a></li>
-                	<li><a th:href="@{struttura-servizi}">Servizi</a></li>
-                	<li><a th:href="@{contatti}">Contatti</a></li>
-                	<li><a th:href="@{login}" class="action_btn">Login</a></li>
-                </ul>
-            </div>
         </div>
     </header>
-	<div>
+	<div class="controllo-admin">
 		<p><a th:href="@{/dashboard-admin}">Admin</a></p>
     	<p><a th:href="@{/dashboard-ordini}">Ordini</a></p>
     	<p><a th:href="@{/dashboard-utenti}">Utenti</a></p>
@@ -67,6 +53,8 @@
             </a>
         </div>
     </div>
+    
+    <script src="javaScript/index.js"></script>
 </body>
 
 </html>
