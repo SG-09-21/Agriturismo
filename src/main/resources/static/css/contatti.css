@@ -1,11 +1,11 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
-body {
+body{
     height: 100vh;
     background-color: #000;
     background: url('/image/campagna.jpg') no-repeat;
@@ -13,27 +13,29 @@ body {
     background-position: center;
 }
 
-li {
+li{
     list-style: none;
 }
 
-a {
+a{
     text-decoration: none;
     color: #fff;
     font-size: 1rem;
 }
 
-a:hover {
+a:hover{
     color: orange;
 }
 
-/* header */
-header {
+
+/*header*/
+
+header{
     position: relative;
     padding: 0 2rem;
 }
 
-.video-slide {
+.video-slide{
     z-index: 000;
     position: absolute;
     top: 0;
@@ -43,7 +45,7 @@ header {
     object-fit: cover;
 }
 
-.navbar {
+.navbar{
     width: 100%;
     height: 60px;
     max-width: 1200px;
@@ -53,24 +55,24 @@ header {
     justify-content: space-between;
 }
 
-.navbar .logo a {
+.navbar .logo a{
     font-style: 1.5rem;
     font-weight: bold;
 }
 
-.navbar .links {
+.navbar .links{
     display: flex;
     gap: 2rem;
 }
 
-.navbar .toggle_btn {
+.navbar .toggle_btn{
     color: #fff;
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
 }
 
-.action_btn {
+.action_btn{
     background-color: orange;
     color: #fff;
     padding: 0.5rem 1rem;
@@ -80,53 +82,53 @@ header {
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    transition: scale 0.2s ease;
+    transition: scale 0.2 ease;
 }
 
-.action_btn:hover {
-    transform: scale(1.05);
+.action_btn:hover{
+    scale: 1.05;
     color: #fff;
 }
-
-.action_btn:active {
-    transform: scale(0.95);
+.action_btn:active{
+    scale: 0.95;
 }
 
+
 /* dropDown */
-.dropdown_menu {
+.dropdown_menu{
     display: none;
     position: absolute;
     right: 2rem;
     top: 60px;
     height: 0;
     width: 300px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-align: center;
 }
 
-.dropdown_menu.open {
+.dropdown_menu.open{
     height: 240px;
 }
 
-.dropdown_menu li {
+.dropdown_menu li{
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.dropdown_menu .action_btn {
+.dropdown_menu .action_btn{
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 /* hero */
-section#hero {
+
+section#hero{
     height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
@@ -136,9 +138,9 @@ section#hero {
     color: #fff;
 }
 
-#hero h1 {
+#hero h1{
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;   
 }
 
 /* Footer */
@@ -151,13 +153,17 @@ footer {
 }
 
 footer .navbar {
-    width: 100%;
-    height: 60px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+footer .navbar .logo a {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 footer .navbar .links {
@@ -169,50 +175,164 @@ footer .navbar .links li {
     padding: 0;
 }
 
-main .card img {
-    max-width: 100%;
-    height: auto;
-}
-
 /* Set height for main content */
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
-    width: 600px;
-    margin-bottom: 20px;
+  width: 600px;
+  margin-bottom: 20px;
 }
 
 .container-container {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .container-container .container {
-    margin-right: 20px;
+  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
+  min-height: 46vh;
 }
 
-/* Resposive */
-@media (max-width: 992px) {
+.container-container .container-2 {
+  width: 60%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.sfondo {
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.testo-bianco{
+  color: white;
+}
+
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  border: 0;
+  outline: none;
+  border: 30px;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  outline: none;
+ 
+  border: none;
+  border-bottom: 1px solid #999; 
+  outline: none;
+}
+
+form input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+form .submit-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #11998e;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form .submit-btn:hover {
+  background-color: #38ef7d;
+}
+
+
+#map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; /* Imposta l'altezza in base al rapporto larghezza/altezza desiderato */
+}
+
+.map-responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-responsive iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  border: 0;
+  outline: none;
+  border: 30px;
+}
+
+
+
+/* Responsive */
+@media(max-width:992px){
     .navbar .links,
-    .navbar .action_btn {
+    .navbar .action_btn{
         display: none;
     }
 
-    .navbar .toggle_btn {
+    .navbar .toggle_btn{
         display: block;
     }
 
-    .dropdown_menu {
+    .dropdown_menu{
         display: block;
-    }
-}
-
-@media (max-width: 576px) {
-    .dropdown_menu {
-        left: 2rem;
-        width: unset;
     }
 }
