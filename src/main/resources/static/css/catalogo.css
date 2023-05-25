@@ -192,11 +192,14 @@ main .card-container {
 
 main .card {
     width: 300px !important;
-    margin: 10px !important;
+    margin-bottom: 10px !important;
     padding: 20px !important;
     border: 1px solid #ccc !important;
     border-radius: 5px !important;
     text-align: center !important;
+}
+.container-fluid {
+    margin: 60px 2rem !important; /* Stessi margin della navbar */
 }
 
 .card {

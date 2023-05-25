@@ -50,7 +50,7 @@
    		<div class="container-fluid">
     		<div class="row justify-content-center mt-4">
     		<p th:if="${added}">Prodotto inserito nel carrello</p>
-        		<div th:each="art: ${prodotti}" class="col-md-6 col-lg-4">
+        		<div th:each="art: ${prodotti}" class="col-md-6 col-lg-3">
             		<div class="foto position-relative">
                 		<div class="card" style="width: 18rem;">
                     		<img th:if="${art.immagine==null}" th:src="@{image/PRODOTTO-ESAURITO.jpg}" class="card-img-top img-size" alt="Prodotto Esaurito">
