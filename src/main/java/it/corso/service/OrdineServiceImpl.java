@@ -4,12 +4,14 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import it.corso.dao.OrdineDao;
 import it.corso.model.Ordine;
 import it.corso.model.Prodotto;
 import it.corso.model.Utente;
 
+@Service
 public class OrdineServiceImpl implements OrdineService {
 
 	@Autowired
@@ -18,22 +20,17 @@ public class OrdineServiceImpl implements OrdineService {
 	@Autowired
 	private UtenteService utenteService;
 	
-	@Autowired
-	private ProdottoService prodottoService;
-	
 	@Override
 	public void registraOrdine(Ordine ordine, Object... dati) {
 		
-		String data = (String)dati[0];
+		LocalDate data = (LocalDate) dati[0];
 		int idUtente = (int)dati[1];
-		int[] idProdotti = (int[])dati[2];
+		@SuppressWarnings("unchecked")
+		List<Prodotto> carrello = (List<Prodotto>) dati[2];
+//		int[] idProdotti = (int[])dati[2];
 		
 		// imposto data dell'ordine
-		try {
-			ordine.setData(LocalDate.parse(data));
-		} catch (Exception e) {
-			ordine.setData(LocalDate.now());
-		}
+		ordine.setData(data);
 		
 		// imposto utente dell'ordine
 		Utente utente = utenteService.getUtenteById(idUtente);
@@ -42,9 +39,8 @@ public class OrdineServiceImpl implements OrdineService {
 		// svuoto per sicurezza la lista di prodotti di un ordine
 		ordine.getProdotti().clear();
 		// popolo lista prodotti dell'ordine con un ciclo
-		for (int idProdotto : idProdotti) {
-			Prodotto prodotto = prodottoService.getProdottoById(idProdotto);
-			ordine.getProdotti().add(prodotto);
+		for (Prodotto p : carrello) {
+			ordine.getProdotti().add(p);
 		}
 		
 		// calcolo l'importo totale dell'ordine
@@ -53,7 +49,6 @@ public class OrdineServiceImpl implements OrdineService {
 			importo += p.getPrezzo();
 		}
 		ordine.setImporto(importo);
-		
 		// una volta settati tutti i campi dell'ordine, lo registro in DB
 		ordineDao.save(ordine);
 
@@ -67,7 +62,6 @@ public class OrdineServiceImpl implements OrdineService {
 
 	@Override
 	public List<Ordine> getOrdini() {
-		
 		return (List<Ordine>)ordineDao.findAll();
 	}
 

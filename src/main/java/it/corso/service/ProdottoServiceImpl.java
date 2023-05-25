@@ -17,43 +17,40 @@ public class ProdottoServiceImpl implements ProdottoService {
 	@Autowired
 	private ProdottoDao prodottoDao;
 
-
 	@Override
 	public void registraProdotto(Prodotto prodotto, Object... dati) {
 
+		prodotto.setDescrizione((String) dati[0]);
+		prodotto.setCategoria((String) dati[1]);
+		prodotto.setPrezzo((double) dati[2]);
 
-	    prodotto.setDescrizione((String) dati[0]);
-	    prodotto.setCategoria((String) dati[1]);
-	    prodotto.setPrezzo((double) dati[2]);
+		MultipartFile file = (MultipartFile) dati[3];
 
-	    MultipartFile file = (MultipartFile) dati[3];
-
-	    if (file != null && !file.isEmpty()) {
-		try {
-		    String contentType = file.getContentType();
-		    prodotto.setImmagine(
-			    "data:" + contentType + ";base64," + Base64.getEncoder().encodeToString(file.getBytes()));
-		} catch (IOException e) {
-		    // TODO Auto-generated catch block
-		    e.printStackTrace();
+		if (file != null && !file.isEmpty()) {
+			try {
+				String contentType = file.getContentType();
+				prodotto.setImmagine(
+						"data:" + contentType + ";base64," + Base64.getEncoder().encodeToString(file.getBytes()));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	    }
 
-	    prodottoDao.save(prodotto);
+		prodottoDao.save(prodotto);
 	}
 
 	@Override
 	public Prodotto getProdottoById(int id) {
-	    return prodottoDao.findById(id).get();
+		return prodottoDao.findById(id).get();
 	}
 
 	@Override
 	public List<Prodotto> getProdotti() {
-	    return (List<Prodotto>) prodottoDao.findAll();
+		return (List<Prodotto>) prodottoDao.findAll();
 	}
 
 	@Override
 	public void cancellaProdotto(Prodotto prodotto) {
-	    prodottoDao.delete(prodotto);
+		prodottoDao.delete(prodotto);
 	}
 }

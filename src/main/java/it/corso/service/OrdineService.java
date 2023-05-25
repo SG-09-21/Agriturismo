@@ -14,4 +14,5 @@ public interface OrdineService {
 	
 	void cancellaOrdine(Ordine ordine);
 	
+	
 }
