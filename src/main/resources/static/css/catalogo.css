@@ -64,6 +64,12 @@ header {
     gap: 2rem !important;
 }
 
+ol,
+ul {
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 .navbar .toggle_btn {
     color: #fff !important;
     font-size: 1.5rem !important;
