@@ -98,7 +98,7 @@ header {
     overflow: hidden !important;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; 
     text-align: center !important;
-    color: lightgray !important;
+    color: rgb(226,135,67) !important;
 }
 
 .dropdown_menu.open {
@@ -197,12 +197,14 @@ main .card {
 }
 
 .card {
-    width: 300px !important; /* Desired card width */
+    width: 300px !important; /* Larghezza desiderata per le card */
     height: auto !important;
+    max-width: 100% !important; /* Massima larghezza consentita per adattarsi al contenitore */
     border: 1px solid #ccc !important;
     border-radius: 4px !important;
     overflow: hidden !important;
 }
+
 
 .btn-primary {
     --bs-btn-color: #fff !important;
@@ -246,9 +248,8 @@ footer .navbar .linksul {
         display: block !important;
     }
 
-    footer .navbar .links {
-        display: flex !important;
-        justify-content: center !important;
+    footer .navbar .links li {
+        padding: 10px;
     }
 }
 
@@ -266,8 +267,7 @@ footer .navbar .linksul {
         margin: 0 !important;
     }
 
-    footer .navbar .links {
-        display: flex !important;
-        justify-content: center !important;
+    footer .navbar .links li {
+        padding: 10px;
     }
 }
