@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" th:href="@{css/dashboard_admin.css}">
 </head>
 <body>
 	<div class="card">
 	    <h1>Admin</h1>
+	    <a th:href="@{logout}" class="btn action_btn">Logout</a>
 	    <div class="utente-card">
 	        <h5>Utenti</h5>
 	        <p>amministra utenti</p>

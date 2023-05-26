@@ -24,7 +24,8 @@ public class CatalogoController {
     @GetMapping
     public String getPage(
 	    HttpSession session, 
-	    Model model, @RequestParam(name = "added", required = false) String added) {
+	    Model model, 
+	    @RequestParam(name = "added", required = false) String added) {
 
 	List<Prodotto> prodotti = prodottoService.getProdotti();
 	model.addAttribute("added", added);
@@ -33,8 +34,9 @@ public class CatalogoController {
 
 	    return "catalogo";
 	}
+
 	Utente utente = (Utente) session.getAttribute("utente");
-	
+	model.addAttribute("loggato", utente != null);
 	model.addAttribute("utente", utente);
 	return "catalogo";
     }
