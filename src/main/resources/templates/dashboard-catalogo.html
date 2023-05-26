@@ -31,10 +31,11 @@
 	<p th:if="${ok}" th:text="'Prodotto inserito con successo'"></p>
 	<p th:if="${del}" th:text="'Prodotto eliminato con successo'"></p>
     <form method="post" action="dashboard-catalogo/registra" enctype="multipart/form-data">
-        <input type="text" th:value="${prodotto.descrizione}" name="descrizione" placeholder="Descrizione prodotto" required>
+        <input type="text" th:value="${prodotto.descrizione}" name="descrizione" placeholder="Nome prodotto" required>
         <input type="text" th:value="${prodotto.categoria}" name="categoria" placeholder="Categoria prodotto" required>
         <input type="number" step= "any" th:value="${prodotto.prezzo}" name="prezzo" placeholder="Prezzo prodotto" required>
         <input type="file" name="immagine" placeholder="Immagine">
+        <input type="text" th:value="${prodotto.dettagli}" name="dettagli" placeholder="Descrizione Prodotto" required></input>
         <button type="submit" th:text="${edit ? 'Modifica Prodotto' : 'Registra Prodotto'}"></button>
     </form>
     <br>
@@ -46,10 +47,10 @@
             <p th:text="${p.categoria}"></p>
             <p th:text="'Prezzo ' + ${p.prezzo} + ' Euro.'"></p>
             <a th:href="@{dashboard-catalogo(id=${p.id})}">
-            	<button th:text="'Modifica ' + ${p.descrizione}" ></button>
+            	<button th:text="'Modifica'" ></button>
             </a>
             <a th:href="@{dashboard-catalogo/elimina(id=${p.id})}">
-            	<button th:text="'Elimina ' + ${p.descrizione}" ></button>
+            	<button th:text="'Elimina '" ></button>
             </a>
         </div>
     </div>
