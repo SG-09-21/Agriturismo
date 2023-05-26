@@ -61,7 +61,7 @@ public class LoginController {
 	    return "login";
     	}
     	utenteService.registraUtente(utente);
-    	System.out.println(utente.getUsername() + " registrato");
+
     	return "redirect:/login?reg";
     }
     	
