@@ -44,14 +44,14 @@ public class Prodotto {
 	private List<Ordine> ordini = new ArrayList<>();
 
 	@Transient
-	private boolean incluso;
+	private int quantita;
 
-	public boolean isIncluso() {
-	    return incluso;
+	public int isQuantita() {
+	    return quantita;
 	}
 
-	public void setIncluso(boolean incluso) {
-	    this.incluso = incluso;
+	public void setQuantita(int quantita) {
+	    this.quantita = quantita;
 	}
 
 	public int getId() {
@@ -108,6 +108,29 @@ public class Prodotto {
 
 	public void setImmagine(String immagine) {
 		this.immagine = immagine;
+	}
+
+	@Override
+	public int hashCode() {
+
+	    return this.id;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+
+	    if (obj instanceof Prodotto) {
+		Prodotto p = (Prodotto) obj;
+		return this.id == p.id;
+	    }
+
+	    return false;
+	}
+
+	@Override
+	public String toString() {
+	    // TODO Auto-generated method stub
+	    return descrizione;
 	}
 
 }

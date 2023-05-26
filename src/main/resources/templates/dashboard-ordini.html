@@ -21,8 +21,8 @@
     <a th:href="@{/dashboard-admin}">Admin</a>
     <a th:href="@{/dashboard-ordini}">Ordini</a>
     <a th:href="@{/dashboard-utenti}">Utenti</a>
-    <div class="row mt-4">
-				<div class="col-7">
+    <div class="row mt-4 ">
+				<div class="col-10 mx-auto">
 					<table class="table table-striped table-responsive">
 						<thead>
 							<tr>
@@ -41,46 +41,20 @@
 								<td th:text="${o.utente.cognome}"></td>
 								<td class="text-end">
 									<a th:href="@{/dashboard-ordini(id=${o.id})}" 
-										class="btn btn-primary btn-sm" th:text="'Modifica'"></a>
-									<a th:href="@{/dashboard-ordini/cancellaordine(id=${o.id})}" 
-										class="btn btn-danger btn-sm" th:text="'Cancella'"></a>
+										class="btn btn-primary btn-sm" th:text="'Selezione'"></a>
+								</td>
+								<td class="text-end">
 								</td>
 							</tr>
 						</tbody>
 					</table>
+					<div>
+						<p th:each="p : ${prodotti.keySet()}" th:text="${p.descrizione} + ' Quantità ' + ${prodotti.get(p)} + ' Importo ' + ${p.prezzo * prodotti.get(p)}"></p>
+											
+					</div>
 				</div>
 				<div class="col-1"></div>
 				<div class="col-4">
-					<form action="dashboard-ordini/registraordine" method="POST">
-						<div class="row">
-							<div class="col-6">
-								<label for="data" th:text="'Data Ordine:'"></label>
-								<input type="date" id="data" name="data" class="form-control" required="required"
-								th:value="${ordine.data}">
-							</div>
-							<div class="col-6">
-								<label for="cliente" th:text="'Seleziona Cliente:'"></label>
-								<select id="cliente" name="cliente" class="form-select">
-									<option th:each="c : ${clienti}" th:value="${c.id}" th:text="${c.cognome}" th:selected="${ordine.utente != null AND c.id == ordine.utente.id}"></option>
-								</select>
-							</div>
-						</div>
-						<div class="row mt-2">
-							<div class="col-12">
-								<label th:text="'Prodotti Inclusi:'"></label>
-								<div class="form-check" th:each="p : ${prodotti}">
-									<input type="checkbox" name="prodotti" th:value="${p.id}" class="form-check-input" 
-									th:checked="${p.incluso}">
-									<label class="form-check-label" th:text="${p.descrizione}"></label>
-								</div>
-							</div>
-						</div>
-						<div class="row mt-4">
-							<div class="col-12 text-center">
-								<input type="submit" th:value="'Registra Ordine'" class="btn btn-primary">
-							</div>
-						</div>
-					</form>
 				</div>
 			</div>
     
