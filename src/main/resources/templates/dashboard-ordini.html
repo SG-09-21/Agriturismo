@@ -48,25 +48,30 @@
 							</tr>
 						</tbody>
 					</table>
-					<div>
-					<table th:if="${selezionato}">
+					<div th:if="${selezionato}">
+					<h4 th:text="'Ordine del ' + ${ordine.data} + ' del cliente ' + ${ordine.utente.nome} + ' ' 
+						+ ${ordine.utente.cognome} + '.'"></h4>
+					<br>
+					<table >
 						<thead>
 							<tr>
 								<th th:text="'Nome Prodotto'"></th>
 								<th th:text="'Quantità'"></th>
 								<th th:text="'Importo'"></th>
-								<th></th>
+								
 							</tr>
 						</thead>
 						<tbody>
+							
 							<tr th:each="p : ${prodotti.keySet()}">
 								<td th:text="${p.descrizione}"></td>
 								<td th:text="${prodotti.get(p)}"></td>
-								<td th:text="'Importo ' + ${#numbers.formatDecimal((p.prezzo * prodotti.get(p)),0,'POINT',2,'COMMA')} + ' Euro.'"></td>
-							
+								<td th:text="${#numbers.formatDecimal((p.prezzo * prodotti.get(p)),0,'POINT',2,'COMMA')} + ' Euro.'"></td>						
 							</tr>
 						</tbody>
-					</table>					
+					</table>
+					<br>
+					<h5 th:text="'Importo complessivo: ' + ${#numbers.formatDecimal(ordine.importo,0,'POINT',2,'COMMA')} + ' Euro.'"></h5>					
 					</div>
 				</div>
 				<div class="col-1"></div>

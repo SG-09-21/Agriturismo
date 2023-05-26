@@ -47,6 +47,7 @@ public class DashOrdiniController {
 		}
 
 	    }
+	    model.addAttribute("ordine", ordine);
 	    model.addAttribute("prodotti", mappaProdotti);
 	    model.addAttribute("selezionato", id != null);
 	}
