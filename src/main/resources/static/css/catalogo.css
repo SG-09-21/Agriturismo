@@ -1,11 +1,13 @@
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    font-family: 'Open Sans', sans-serif !important;
 }
 
-body{
+/* Global Styles */
+body {
     height: 100vh !important;
     background-color: #000 !important;
     background: url('/image/campagna.jpg') no-repeat !important;
@@ -14,11 +16,11 @@ body{
 }
 
 li {
-    list-style: none;
+    list-style: none !important;
 }
 
 a {
-    text-decoration: none !important ;
+    text-decoration: none !important;
     color: #fff !important;
     font-size: 1rem !important;
 }
@@ -27,21 +29,10 @@ a:hover {
     color: orange !important;
 }
 
-/* header */
-
+/* Header */
 header {
-    position: relative;
-    padding: 0 2rem;
-}
-
-.video-slide {
-    z-index: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: relative !important;
+    padding: 0 2rem !important;
 }
 
 .navbar {
@@ -62,12 +53,6 @@ header {
 .navbar .links {
     display: flex !important;
     gap: 2rem !important;
-}
-
-ol,
-ul {
-  padding-left: 0 !important;
-  margin-bottom: 0 !important;
 }
 
 .navbar .toggle_btn {
@@ -99,25 +84,26 @@ ul {
     transform: scale(0.95) !important;
 }
 
-/* dropDown */
-
+/* Dropdown */
 .dropdown_menu {
     display: none !important;
     position: absolute !important;
     right: 2rem !important;
     top: 60px !important;
     height: 0 !important;
-    width: 300px !important;
-    background: rgba(255, 255, 255, 0.1) !important;
+    width: 400px !important;
+    background: rgba(255, 255, 255, 0.5) !important;
     backdrop-filter: blur(15px) !important;
     border-radius: 10px !important;
     overflow: hidden !important;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; 
     text-align: center !important;
+    color: lightgray !important;
 }
 
 .dropdown_menu.open {
-    height: 240px !important;
+    height: 340px !important;
+    z-index: 1 !important;
 }
 
 .dropdown_menu li {
@@ -133,8 +119,7 @@ ul {
     justify-content: center !important;
 }
 
-/* hero */
-
+/* Hero */
 section#hero {
     height: calc(100vh - 60px) !important;
     display: flex !important;
@@ -151,7 +136,6 @@ section#hero {
 }
 
 /* Footer */
-
 footer {
     position: fixed !important;
     bottom: 0 !important;
@@ -179,15 +163,13 @@ footer .navbar .links li {
     padding: 0 !important;
 }
 
-
-
+/* Main */
 main .card img {
     max-width: 100% !important;
     max-height: 100% !important;
     aspect-ratio: 1/1 !important;
     object-fit: cover !important;
     object-position: center !important;
-    
 }
 
 main {
@@ -198,7 +180,6 @@ main .card-container {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    
 }
 
 main .card {
@@ -210,44 +191,46 @@ main .card {
     text-align: center !important;
     padding: 5px !important;
 }
+
 .container-fluid {
-    margin: 20px 2rem !important; /* Stessi margin della navbar */
+    margin: 20px 2rem !important; /* Same margin as the navbar */
 }
 
 .card {
-    width: 300px !important; /* Larghezza desiderata della card */
-    height: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    overflow: hidden;
+    width: 300px !important; /* Desired card width */
+    height: auto !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
 }
 
 .btn-primary {
-    --bs-btn-color: #fff;
+    --bs-btn-color: #fff !important;
     --bs-btn-bg: orange !important;
     --bs-btn-border-color: orange !important;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #0b5ed7;
-    --bs-btn-hover-border-color: orange;
-    --bs-btn-focus-shadow-rgb: 49,132,253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #0b5ed7;
-    --bs-btn-active-border-color: orange;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: orange;
-    --bs-btn-disabled-border-color: orange;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #orange !important;
+    --bs-btn-hover-border-color: orange !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #0b5ed7 !important;
+    --bs-btn-active-border-color: orange !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff !important;
+    --bs-btn-disabled-bg: orange !important;
+    --bs-btn-disabled-border-color: orange !important;
 }
 
+footer .navbar .linksul {
+    padding: 10px !important;
+}
 
-
+/* Responsive */
 @media only screen and (max-width: 768px) {
     main .card {
         width: 100% !important;
     }
 }
-
-/* Resposive */
 
 @media (max-width: 992px) {
     .navbar .links,
@@ -262,6 +245,11 @@ main .card {
     .dropdown_menu {
         display: block !important;
     }
+
+    footer .navbar .links {
+        display: flex !important;
+        justify-content: center !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -269,8 +257,17 @@ main .card {
         left: 2rem !important;
         width: unset !important;
     }
-    
+
     main .card-container {
+        justify-content: center !important;
+    }
+
+    .container-fluid {
+        margin: 0 !important;
+    }
+
+    footer .navbar .links {
+        display: flex !important;
         justify-content: center !important;
     }
 }
