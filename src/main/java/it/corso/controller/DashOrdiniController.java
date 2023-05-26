@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Ordine;
 import it.corso.model.Prodotto;
+import it.corso.model.Utente;
 import it.corso.service.OrdineService;
+import it.corso.service.UtenteService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -22,6 +24,9 @@ public class DashOrdiniController {
 
     @Autowired
     private OrdineService ordineService;
+
+    @Autowired
+    private UtenteService utenteService;
 
     private Ordine ordine;
 
@@ -52,11 +57,15 @@ public class DashOrdiniController {
 	    model.addAttribute("selezionato", id != null);
 	}
 	
-	
+	List<Utente> utenti = utenteService.getUtenti();
 	List<Ordine> ordini = ordineService.getOrdini();
 	model.addAttribute("ordini", ordini);
-
+	model.addAttribute("utenti", utenti);
 	return "dashboard-ordini";
     }
+    
+    
+    // @PostMapping("filtra")
+    
 
 }
