@@ -1,1 +1,62 @@
-@charset "ISO-8859-1";
+* {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    padding: 3px;
+}
+
+.card {
+    width: 70vw;
+    margin: 0 auto;
+}
+
+.card h1 {
+    text-align: center;
+}
+
+.utente-card,
+.catalogo-card,
+.ordini-card {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.utente-card h5,
+.catalogo-card h5,
+.ordini-card h5 {
+    margin-bottom: 5px;
+}
+
+.utente-card p,
+.catalogo-card p,
+.ordini-card p {
+    margin-bottom: 10px;
+}
+
+.box a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+    background-color: orange;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.backhome {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.backhome:hover {
+    text-decoration: none;
+}
+
+.backhome {
+    text-decoration: none;
+    color: #000;
+}

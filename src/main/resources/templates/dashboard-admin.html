@@ -8,24 +8,26 @@
     <link rel="stylesheet" th:href="@{css/dashboard_admin.css}">
 </head>
 <body>
-    <h1>Admin</h1>
-    <div class="utente-card">
-        <h5>Utenti</h5>
-        <p>amministra utenti</p>
-        <p class="box"><a th:href="@{dashboard-utenti}">Utenti</a></p>
+	<div class="card">
+	    <h1>Admin</h1>
+	    <div class="utente-card">
+	        <h5>Utenti</h5>
+	        <p>amministra utenti</p>
+	        <p class="box"><a th:href="@{dashboard-utenti}">Utenti</a></p>
+	    </div>
+	
+	    <div class="catalogo-card">
+	        <h5>Catalogo</h5>
+	        <p>amministra catalogo</p>
+	        <p class="box"><a th:href="@{dashboard-catalogo}">Catalogo</a></p>
+	    </div>
+	
+	    <div class="ordini-card">
+	        <h5>Ordini</h5>
+	        <p>amministra ordini</p>
+	        <p class="box"><a th:href="@{dashboard-ordini}">Ordini</a></p>
+	    </div>
+	    <a class="backhome" th:href="@{index}">Torna alla Home</a>
     </div>
-
-    <div class="catalogo-card">
-        <h5>Catalogo</h5>
-        <p>amministra catalogo</p>
-        <p class="box"><a th:href="@{dashboard-catalogo}">Catalogo</a></p>
-    </div>
-
-    <div class="ordini-card">
-        <h5>Ordini</h5>
-        <p>amministra ordini</p>
-        <p class="box"><a th:href="@{dashboard-ordini}">Ordini</a></p>
-    </div>
-    <a th:href="@{index}">Torna alla Home</a>
 </body>
 </html>
