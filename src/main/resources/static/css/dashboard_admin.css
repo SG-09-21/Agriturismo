@@ -1,58 +1,62 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    padding: 3px;
 }
 
 .card {
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 70vw;
+    margin: 0 auto;
 }
 
-h1 {
-    text-align: center;
-    margin-top: 0;
-}
-
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card-item {
-    width: 200px;
-    margin: 10px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.card h1 {
     text-align: center;
 }
 
-h5 {
-    margin-top: 0;
+.utente-card,
+.catalogo-card,
+.ordini-card {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 20px;
 }
 
-p {
+.utente-card h5,
+.catalogo-card h5,
+.ordini-card h5 {
+    margin-bottom: 5px;
+}
+
+.utente-card p,
+.catalogo-card p,
+.ordini-card p {
     margin-bottom: 10px;
 }
 
-.box {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
+.box a {
     text-decoration: none;
-    border-radius: 5px;
+    color: #333;
+    padding: 5px;
+    background-color: orange;
+    color: #fff;
+    border-radius: 4px;
 }
 
-.box:hover {
-    background-color: #45a049;
+.backhome {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.backhome:hover {
+    text-decoration: none;
+}
+
+.backhome {
+    text-decoration: none;
+    color: #000;
 }
