@@ -44,14 +44,29 @@
 									<a th:href="@{/dashboard-ordini(id=${o.id})}" 
 										class="btn btn-primary btn-sm" th:text="'Selezione'"></a>
 								</td>
-								<td class="text-end">
-								</td>
+								
 							</tr>
 						</tbody>
 					</table>
 					<div>
-						<p th:each="p : ${prodotti.keySet()}" th:text="${p.descrizione} + ' Quantità ' + ${prodotti.get(p)} + ' Importo ' + ${p.prezzo * prodotti.get(p)}"></p>
-											
+					<table th:if="${selezionato}">
+						<thead>
+							<tr>
+								<th th:text="'Nome Prodotto'"></th>
+								<th th:text="'Quantità'"></th>
+								<th th:text="'Importo'"></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="p : ${prodotti.keySet()}">
+								<td th:text="${p.descrizione}"></td>
+								<td th:text="${prodotti.get(p)}"></td>
+								<td th:text="'Importo ' + ${#numbers.formatDecimal((p.prezzo * prodotti.get(p)),0,'POINT',2,'COMMA')} + ' Euro.'"></td>
+							
+							</tr>
+						</tbody>
+					</table>					
 					</div>
 				</div>
 				<div class="col-1"></div>
