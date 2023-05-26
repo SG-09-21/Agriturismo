@@ -1,6 +1,5 @@
 package it.corso.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,9 +30,10 @@ public class DashOrdiniController {
 	    HttpSession session,
 	    Model model, @RequestParam(name = "id", required = false) Integer id) {
 
-	ordine = id == null ? new Ordine() : ordineService.getOrdineById(id);
 	
+
 	if (id != null) {
+	    ordine = ordineService.getOrdineById(id);
 	    List<Prodotto> prodotti = ordine.getProdotti();
 	    Map<Prodotto, Integer> mappaProdotti = new HashMap<>();
 
@@ -47,17 +47,16 @@ public class DashOrdiniController {
 		}
 
 	    }
+	    model.addAttribute("ordine", ordine);
 	    model.addAttribute("prodotti", mappaProdotti);
+	    model.addAttribute("selezionato", id != null);
 	}
 	
 	
-	
 	List<Ordine> ordini = ordineService.getOrdini();
-	List<Prodotto> pInOrdine = new ArrayList<>();
-
-
 	model.addAttribute("ordini", ordini);
 
 	return "dashboard-ordini";
     }
+
 }
