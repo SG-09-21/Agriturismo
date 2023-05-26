@@ -42,8 +42,16 @@
 	
 	<main>
 	    <div class="container">
+	    	<div th:if="${carrelloPieno}">
+	    		<a th:href="@{carrello/aggiungi-ordine}" class="btn btn-primary">Procedi</a>
+	    	</div>
+	    	<h3 th:if="${loggato == false}">Ciao user</h3>
+	    	<h3 th:if="${loggato}" th:text="'Ciao ' + ${utente.nome}"></h3>
 	        <h1>Carrello</h1>
 	        <p th:if="${del}">Prodotto eliminato con successo</p>
+	        <p th:if="${ordineOk}">Ordine completato con successo</p>
+<!-- 	        il link procedi non è visibile se il carrello è vuoto -->
+<!-- 	        <p th:if="${ordineVuoto}">Ordine fallito (Carrello vuoto)</p> -->
 	        <table class="table">
 	            <thead>
 	            <tr>
@@ -59,6 +67,25 @@
 	                <td th:text="${p.categoria}"></td>
 	                <td th:text="${p.prezzo}"></td>
 	                <td><a th:href="@{carrello/rimuovi-prodotto(id=${p.id})}" class="btn btn-danger">Rimuovi</a></td>
+	            </tr>
+	            </tbody>
+	        </table>
+	    </div>
+	    <div th:if="${loggato}">
+	    	<h1>Ordini</h1>
+	    	<table class="table">
+	            <thead>
+	            <tr>
+	                <th>Data Ordine</th>
+	                <th>Importo</th>
+	            </tr>
+	            </thead>
+	            <tbody>
+	            <tr th:each="o: ${ordini}">
+	                <td th:text="${o.data}"></td>
+	                <td th:text="${o.importo}"></td>
+	                
+	               	<td><a th:href="@{carrello/annulla-ordine(id=${o.id})}" class="btn btn-danger">Annulla Ordine</a></td>
 	            </tr>
 	            </tbody>
 	        </table>

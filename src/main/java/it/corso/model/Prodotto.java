@@ -14,65 +14,85 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "prodotti")
 public class Prodotto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 
-    @Column(name = "descrizione")
-    private String descrizione;
+	@Column(name = "descrizione")
+	private String descrizione;
 
-    @Column(name = "categoria")
-    private String categoria;
+	@Column(name = "dettagli")
+	private String dettagli;
 
-    @Column(name = "prezzo")
-    private double prezzo;
-    
-    @Column(name = "immagine")
-    private String immagine;
+	@Column(name = "categoria")
+	private String categoria;
 
-    @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    @JoinTable(
-    		name = "ordini_prodotti",
-    		joinColumns = @JoinColumn(name = "id_prodotto", referencedColumnName = "id"),
-    		inverseJoinColumns = @JoinColumn(name = "id_ordine", referencedColumnName = "id"))
-    private List<Ordine> ordini = new ArrayList<>();
+	@Column(name = "prezzo")
+	private double prezzo;
 
-    public int getId() {
-	return id;
-    }
+	@Column(name = "immagine")
+	private String immagine;
 
-    public void setId(int id) {
-	this.id = id;
-    }
+	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@JoinTable(name = "ordini_prodotti", joinColumns = @JoinColumn(name = "id_prodotto", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "id_ordine", referencedColumnName = "id"))
+	private List<Ordine> ordini = new ArrayList<>();
 
-    public String getDescrizione() {
-	return descrizione;
-    }
+	@Transient
+	private boolean incluso;
 
-    public void setDescrizione(String descrizione) {
-	this.descrizione = descrizione;
-    }
+	public boolean isIncluso() {
+	    return incluso;
+	}
 
-    public String getCategoria() {
-	return categoria;
-    }
+	public void setIncluso(boolean incluso) {
+	    this.incluso = incluso;
+	}
 
-    public void setCategoria(String categoria) {
-	this.categoria = categoria;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public double getPrezzo() {
-	return prezzo;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setPrezzo(double prezzo) {
-	this.prezzo = prezzo;
-    }
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+
+	public String getDettagli() {
+		return dettagli;
+	}
+
+	public void setDettagli(String dettagli) {
+		this.dettagli = dettagli;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public double getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(double prezzo) {
+		this.prezzo = prezzo;
+	}
 
 	public List<Ordine> getOrdini() {
 		return ordini;
@@ -83,11 +103,11 @@ public class Prodotto {
 	}
 
 	public String getImmagine() {
-	    return immagine;
+		return immagine;
 	}
 
 	public void setImmagine(String immagine) {
-	    this.immagine = immagine;
+		this.immagine = immagine;
 	}
 
 }

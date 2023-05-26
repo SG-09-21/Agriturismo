@@ -57,9 +57,10 @@ public class DashCatalogoController {
 	    @RequestParam("descrizione") String descrizione,
 	    @RequestParam("categoria") String categoria, 
 	    @RequestParam("prezzo") Double prezzo,
+	    @RequestParam("dettagli") String dettagli,
 	    @RequestParam(name = "immagine", required = false) MultipartFile file) {
 	
-	prodottoService.registraProdotto(prodotto, descrizione, categoria, prezzo, file);
+	prodottoService.registraProdotto(prodotto, descrizione, categoria, prezzo, file, dettagli);
 	return "redirect:/dashboard-catalogo?ok";
     }
 }
