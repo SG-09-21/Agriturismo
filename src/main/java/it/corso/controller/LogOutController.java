@@ -10,18 +10,24 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/logout")
 public class LogOutController {
 
-    @GetMapping
-    public String logout(HttpSession session) {
+	@GetMapping
+	public String logoutUtente(HttpSession session) {
 
-	if (session.getAttribute("utente") != null) {
-	    session.removeAttribute("utente");
+		if (session.getAttribute("utente") != null) {
+			session.removeAttribute("utente");
+		}
+
+		return "redirect:/index";
 	}
+	
+	@GetMapping("/admin")
+	public String logoutAdmin(HttpSession session) {
 
-	if (session.getAttribute("admin") != null) {
-	    session.removeAttribute("admin");
+		if (session.getAttribute("admin") != null) {
+			session.removeAttribute("admin");
 
+		}
+
+		return "redirect:/index";
 	}
-
-	return "redirect:/index";
-    }
 }
