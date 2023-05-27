@@ -1,3 +1,4 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: 'open Sans', sans-serif;
 }
 
+/* Global Styles */
 body {
     height: 100vh;
     background-color: #000;
@@ -27,7 +29,7 @@ a:hover {
     color: orange;
 }
 
-/*header*/
+/* Header */
 header {
     position: relative;
     padding: 0 2rem;
@@ -92,7 +94,7 @@ header {
     scale: 0.95;
 }
 
-/* dropDown */
+/* Dropdown */
 .dropdown_menu {
     display: none;
     position: absolute;
@@ -109,7 +111,8 @@ header {
 }
 
 .dropdown_menu.open {
-    height: 240px;
+    height: 340px;
+    z-index: 1;
 }
 
 .dropdown_menu li {
@@ -125,7 +128,7 @@ header {
     justify-content: center;
 }
 
-/* hero */
+/* Hero */
 section#hero {
     height: calc(100vh - 60px);
     display: flex;
