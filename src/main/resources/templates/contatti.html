@@ -23,7 +23,8 @@
                 <li><a th:href="@{contatti}">Contatti</a></li>
                 <li><a th:href="@{carrello}">Carrello</a></li>
             </ul>
-            <a th:href="@{login}" class="action_btn">Login</a>
+            <a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
+	        <a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -84,11 +85,10 @@
     <div class="container">
       <!-- Secondo container affiancato sotto -->
       <p></p>
-        <div id="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6925.467430221135!2d11.7310553635347!3d43.12971974806948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13295e697153c49f%3A0xdc51f740decea65c!2sparco%20Il%20Tondo!5e0!3m2!1sit!2sit!4v1685009528166!5m2!1sit!2sit" width="600" height="450" style="border:0;"></iframe></div>
+        <div class="map-wrapper " id="map">
+          <iframe class="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6925.467430221135!2d11.7310553635347!3d43.12971974806948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13295e697153c49f%3A0xdc51f740decea65c!2sparco%20Il%20Tondo!5e0!3m2!1sit!2sit!4v1685009528166!5m2!1sit!2sit" width="600" height="450" style="border:0;"></iframe></div>
         </div>
     </div>
-  </div>
 </main>
 
  

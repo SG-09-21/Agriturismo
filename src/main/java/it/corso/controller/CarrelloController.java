@@ -81,14 +81,11 @@ public class CarrelloController {
 		if (utente == null)
 			return "redirect:/login";
 		int idUtente = utente.getId();
-//		if (carrello.size() > 0) {
+
 			ordineService.registraOrdine(new Ordine(), data, idUtente, carrello);
 			carrello.clear();
 			return "redirect:/carrello?ordineOk";
-//		}	
-		
-//		return "redirect:/carrello?void";
-		
-		
+
 	}
+
 }

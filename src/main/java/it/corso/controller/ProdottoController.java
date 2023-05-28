@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Prodotto;
+import it.corso.model.Utente;
 import it.corso.service.ProdottoService;
 import jakarta.servlet.http.HttpSession;
 
@@ -28,6 +29,8 @@ public class ProdottoController {
 	    HttpSession session, 
 	    Model model) {
 
+	Utente utente = (Utente) session.getAttribute("utente");
+	model.addAttribute("loggato", utente != null);
 	Prodotto prodotto = prodottoService.getProdottoById(id);
 	model.addAttribute("p", prodotto);
 	return "/dettaglio-prodotto";

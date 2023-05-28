@@ -21,7 +21,8 @@
                 <li><a th:href="@{struttura-servizi}">Servizi</a></li>
                 <li><a th:href="@{contatti}">Contatti</a></li>
             </ul>
-            <a th:href="@{login}" class="action_btn">Login</a>
+            <a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
+	        <a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
