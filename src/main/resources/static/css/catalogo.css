@@ -8,11 +8,16 @@
 
 /* Global Styles */
 body {
+    /*
     height: 100vh !important;
-    background-color: #000 !important;
+    background-color: grey !important;
     background: url('/image/campagna.jpg') no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
+    */
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #ff8d0055, #ff8d00 );
 }
 
 li {
@@ -142,6 +147,7 @@ footer {
     left: 0 !important;
     width: 100% !important;
     background-color: #000 !important;
+    height: auto;
 }
 
 footer .navbar {
