@@ -19,9 +19,6 @@ body {
     
     background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #ff8d0055, #ff8d00 );
 }
-.hero {
-	background-image: url(image/sfondo.jpg)
-    }
 
 li {
     list-style: none !important;
