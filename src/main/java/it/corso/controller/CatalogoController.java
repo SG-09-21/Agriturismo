@@ -30,11 +30,7 @@ public class CatalogoController {
 	List<Prodotto> prodotti = prodottoService.getProdotti();
 	model.addAttribute("added", added);
 	model.addAttribute("prodotti", prodotti);
-	if (session.getAttribute("utente") == null) {
-
-	    return "catalogo";
-	}
-
+	
 	Utente utente = (Utente) session.getAttribute("utente");
 	model.addAttribute("loggato", utente != null);
 	model.addAttribute("utente", utente);
