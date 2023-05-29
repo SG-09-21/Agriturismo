@@ -1,22 +1,19 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'open Sans', sans-serif;
-}
+
 
 /* Global Styles */
 body {
     height: 100vh;
-    background-color: #000;
-    background: url('/image/campagna.jpg') no-repeat;
+    background-color: gainsboro;
     background-size: cover;
     background-position: center;
 }
 
 li {
     list-style: none;
+}
+
+ul {
+	    padding-inline-start: 0;
 }
 
 a {
@@ -29,10 +26,31 @@ a:hover {
     color: orange;
 }
 
+/* Hero */
+
+
+.sfondo-hero {
+	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
+	height:40vh;
+	background-position:center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+@media only screen and (max-width: 600px) {
+  .sfondo-hero {
+    height: 50vh;
+  }
+}
+.tondo {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
+	border-radius:4px;
+}
 /* Header */
 header {
     position: relative;
-    padding: 0 2rem;
+    
 }
 
 .video-slide {
@@ -46,9 +64,10 @@ header {
 }
 
 .navbar {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
     width: 100%;
     height: 60px;
-    max-width: 1200px;
+    padding: 0 3rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -111,7 +130,7 @@ header {
 }
 
 .dropdown_menu.open {
-    height: 310px;
+    height: 340px;
     z-index: 1;
 }
 
@@ -237,4 +256,21 @@ footer .info-agriturismo img {
         width: unset;
     }
 }
+
+.login {
+	color: #FFA500;
+}
+
+.selezionato {
+	color: #FFA500;
+}
+
+#headerPopup{
+  width:75%;
+  margin:0 auto;
+}
+
+#headerPopup iframe{
+  width:100%;
+  margin:0 auto;
 }
