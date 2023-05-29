@@ -278,20 +278,24 @@ ul {
 }
 
 /* Banner */
-/* .banner {
+ .banner {
     background-image: url('/image/sfondo.jpg');
     background-size: cover;
     background-position: center;
-    padding: 20px; 
+    padding: 100px; 
 }
-*/
-.banner {
+
+.banner h1 {
+	color: #fff;
+}
+
+/*.banner {
     background-color: red; 
     padding: 20px; 
     border: solid 2px;
 }
 
-
+*/
 
 /* Responsive */
 @media (max-width: 992px) {
