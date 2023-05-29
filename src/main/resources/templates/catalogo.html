@@ -15,7 +15,7 @@
     <header>
         <div class="navbar">
             <div class="logo">
-                <a th:href="@{index}">Agriturismo</a>
+                <a th:href="@{index}">Casale Orcia Verde</a>
             </div>
             <ul class="links">
                 <li><a th:href="@{index}">Home</a></li>
@@ -29,7 +29,7 @@
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
-			
+
 
             <div class="dropdown_menu">
             	<ul>
@@ -38,15 +38,11 @@
                 	<li><a th:href="@{struttura-servizi}">Servizi</a></li>
                 	<li><a th:href="@{contatti}">Contatti</a></li>
                 	<li><a th:href="@{carrello}">Carrello</a></li>
-                	<li>
-                		<a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
-	        			<a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
-                	</li>
+                	<li><a th:href="@{login}">Login</a></li>
                 </ul>
             </div>
         </div>
     </header>
-
 
 	<div class="container-fluid py-5 mb-4 d-flex justify-content-center" style="  background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1124&amp;q=100');
     background-position: center; background-size:cover; background-repeat:no-repeat">
