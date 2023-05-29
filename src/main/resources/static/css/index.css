@@ -32,7 +32,7 @@ a:hover {
 .sfondo-hero {
 	
 	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
-	height:50vh;
+	height:45vh;
 	background-position:center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -47,7 +47,7 @@ a:hover {
 .tondo {
 	/* background: linear-gradient(180deg, rgba(0, 0, 0, 0.43) 5%, rgba(0, 0, 0, 0.1) 50%); */
 	background: rgb(124,124,124);
-    background: radial-gradient(circle, rgba(0,0,0,0.6463963963963963) 0%, rgba(0,0,0,0.020270270270270285) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,0.6463963963963963) 0%, rgba(0,0,0,0.0) 100%);
 	border-radius:4px;
 }
 /* Header */
@@ -95,21 +95,24 @@ header {
 }
 
 .action_btn {
-    background-color: green; /* Cambiato colore a verde */
+    background-color: #49111c; 
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    transition: scale 0.2s ease;
+    border: 2px solid #49111c;
+    transition:0.3s;
 }
 
 .action_btn:hover {
-    transform: scale(1.05);
-    color: brown;
+    scale: 1.05;
+    color: white;
+    background-color: rgb(0,0,0,0.0);
+    border: 2px solid white;
 }
 
 .action_btn:active {
@@ -175,7 +178,7 @@ main .card img {
 
 /* Footer */
 .footer{
-	background-color: orange;
+	background-color: #92817a;;
     padding: 70px 0;
 }
 
@@ -198,7 +201,7 @@ main .card img {
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: rgb(25, 95, 45);
+	background-color: #49111c;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -251,7 +254,7 @@ ul{
 
 .footer-col button[type="submit"] {
   padding: 10px 20px;
-  background-color: orange;
+  background-color: #F0CF90;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -261,7 +264,7 @@ ul{
 }
 
 .footer-col button[type="submit"]:hover {
-  background-color: rgb(25, 95, 45);
+  background-color: #49111c;
 }
 
 
@@ -320,17 +323,27 @@ ul{
   margin:0 auto;
 }
 
-.immagine {
-	display: flex;
-	justify-content: center;
-}
-
-.carousel-item {
-	float:none;
-	margin: 2px auto;
-	width: 60%;
-}
-
 .carousel-control-prev, .carousel-control-next{
-	width:50%;
+	width:40%;
+} 
+
+.beige {
+	color: #ead7c3;
+}
+
+.siena {
+	color:#49111c;
+	border:2px solid #49111c;
+	transition: 0.3s
+}
+
+.siena:hover {
+	color: white;
+	scale: 1.02;
+	background-color: #49111c;
+	border:2px solid #49111c;
+}
+
+.bordeaux {
+	color:#49111c;
 }
