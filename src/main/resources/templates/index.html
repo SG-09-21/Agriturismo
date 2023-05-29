@@ -12,6 +12,10 @@
 <link rel="stylesheet" id="picostrap-styles-css"
 	href="https://cdn.livecanvas.com/media/css/library/bundle.css"
 	media="all">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
 <link rel="stylesheet" th:href="@{css/index.css}">
 </head>
 
@@ -71,11 +75,11 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<h1 class="text-center display-4 mt-5">Dove la poesia incontra
-						la Terra</h1>
-					<p class="text-center mt-5">
-						<a href="#headerPopup" id="headerVideoLink" target="_blank"
-							class="btn btn-outline-danger popup-modal">Scopri la
-							Struttura</a>
+						la Natura</h1>
+					<p class="text-center mt-4">
+						<a th:href="@{struttura-servizi}" id="headerVideoLink"
+							target="_blank" class="btn btn-outline-danger siena">Scopri
+							la Struttura</a>
 					</p>
 					<div id="headerPopup"
 						class="mfp-hide embed-responsive embed-responsive-21by9">
@@ -109,8 +113,8 @@
 						</div>
 					</div>
 					<div class="lc-block d-grid d-lg-block gap-2">
-						<a class="btn btn-light" href="#" role="button">Vivi la nostra
-							passione</a> <a class="btn btn-outline-light" href="#" role="button">Info
+						<a class="btn btn-light bordeaux" href="#" role="button">Vivi la nostra
+							passione</a> <a class="btn siena" href="#" role="button">Info
 							e prenotazioni</a>
 					</div>
 					<!-- /lc-block -->
@@ -119,41 +123,75 @@
 			</div>
 
 			<div class="row mb-4 ">
-				<div class="col-lg-10 mx-auto text-center">
-
-
-					<div class="lc-block position-relative">
-						<div id="carouselExampleInterval" class="carousel slide"
-							data-bs-ride="carousel">
-							<div class="carousel-inner mx-auto text-center">
-								<div class="carousel-item active" data-bs-interval="400000000">
-									<img th:src="@{image/50-50-Avignonesi.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
-								</div>
-								<div class="carousel-item" data-bs-interval="4000">
-									<img th:src="@{image/1698-pietranova.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
-								</div>
-								<div class="carousel-item" data-bs-interval="4000">
-									<img th:src="@{image/finocchiona.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
-								</div>
-								<div class="carousel-item" data-bs-interval="4000">
-									<img th:src="@{image/stracchino-di-bufala.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
-								</div>
-								<div class="carousel-item" data-bs-interval="4000">
-									<img th:src="@{image/fiore-di-capalbio.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
+				<div class="col-xl-10 mx-auto text-center">
+					<div id="carouselExampleInterval" class="carousel slide"
+						data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active " data-bs-interval="5000">
+								<img th:src="@{image/50-50-Avignonesi.jpg}"
+									class="img-fluid mx-auto rounded-3" alt="...">
+								<div class="carousel-caption d-none d-md-block tondo">
+									<h5>50&50 Avignonesi</h5>
+									<p>Profumato taglio San Giovese e Merlot della zona di
+										Montepulciano.</p>
+									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
+									role="button">Scopri 50&50</a>
 								</div>
 							</div>
-							<button class="carousel-control-prev" type="button"
-								data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Previous</span>
-							</button>
-							<button class="carousel-control-next" type="button"
-								data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Next</span>
-							</button>
+							<div class="carousel-item" data-bs-interval="5000">
+								<img th:src="@{image/burrata-di-bufala.jpg}"
+									class="img-fluid mx-auto rounded-3" alt="...">
+								<div class="carousel-caption d-none d-md-block tondo">
+									<h5>Burrata di Bufala La Maremmana</h5>
+									<p>Ottimo latticino per accompagnare i vostri piatti
+										preferiti, con 100% latte di bufala</p>
+									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
+									role="button">Scopri Burrata di Bufala</a>
+								</div>
+							</div>
+							<div class="carousel-item" data-bs-interval="5000">
+								<img th:src="@{image/1698-pietranova.jpg}"
+									class="img-fluid mx-auto rounded-3" alt="...">
+								<div class="carousel-caption d-none d-md-block tondo">
+									<h5>1698 Bolgheri DOC Pietranova</h5>
+									<p>Annata 2018, Perfetto da bere subito, migliora con il tempo fino a 15 anni.</p>
+									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
+									role="button">Scopri 1698 Bolgheri</a>
+								</div>
+							</div>
+							<div class="carousel-item" data-bs-interval="5000">
+								<img th:src="@{image/finocchiona.jpg}"
+									class="img-fluid mx-auto rounded-3" alt="...">
+								<div class="carousel-caption d-none d-md-block tondo">
+									<h5>Finocchiona IGP Falorni</h5>
+									<p>I profumi inconfondibili delle colline e dei borghi toscani, l’aroma di finocchio e il gusto vellutato rendono unica la Finocchiona IGP.</p>
+									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
+									role="button">Scopri finocchiona IGP</a>
+								</div>
+							</div>
+							<div class="carousel-item" data-bs-interval="5000">
+								<img th:src="@{image/pancetta-stagionata.jpg}"
+									class="d-block w-90 mx-auto rounded-3" alt="...">
+								<div class="carousel-caption d-none d-md-block tondo">
+									<h5>Pancetta Stagionata di Colonnata</h5>
+									<p>La Pancetta Colonnata Mafalda è ideale da gustare a fette al naturale, a cubetti o come prezioso ingrediente in cucina.</p>
+									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
+									role="button">Scopri Pancetta di Colonnata</a>
+								</div>
+							</div>
 						</div>
+						<button class="carousel-control-prev" type="button"
+							data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button"
+							data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
 					</div>
+
 
 				</div>
 				<!-- /col -->
@@ -179,26 +217,30 @@
 					<ul>
 						<li><img th:src="@{image/querciavalle.png}"
 							alt="Logo agriturismo"></li>
-						<li>P.IVA: 1234567890</li>
-						<li>&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
+						<li style="color:white">P.IVA: 1234567890</li>
+						<li style="color:white">Mail: info@orgiaverde.it</li>
+						<li style="color:white">Via Palio 69, Castiglion Fiorentino (AR) - 52043</li>
+						<li style="color:white">&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
 					</ul>
 				</div>
 
 				<div class="footer-col">
 					<h4>Newsletter</h4>
 					<ul>
-						<li><p>Inserisci la tua mail per iscriverti alla
+						<li style="color:white"><p>Inserisci la tua mail per iscriverti alla
 								Newsletter</p></li>
 						<li><input type="text" name="EmailAdress"
 							placeholder="Enter your email">
-							<button type="submit">Iscriviti</button></li>
+							<button class="btn mt-2" type="submit">Iscriviti</button></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</footer>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
 	<script src="javaScript/index.js"></script>
+	<script src="javaScript/videoPopup.js"></script>
 </body>
 </html>
 
