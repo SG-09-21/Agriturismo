@@ -111,7 +111,7 @@ header {
 }
 
 .dropdown_menu.open {
-    height: 340px;
+    height: 310px;
     z-index: 1;
 }
 
@@ -209,6 +209,7 @@ footer .info-agriturismo p:first-child {
 footer .info-agriturismo img {
     max-width: 100px;
     height: auto;
+}
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -223,10 +224,6 @@ footer .info-agriturismo img {
 
     .dropdown_menu {
         display: block;
-    }
-    
-    .navbar {
-        flex-direction: column;
     }
     
     .info-agriturismo {

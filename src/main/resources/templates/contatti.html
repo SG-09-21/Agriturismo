@@ -53,34 +53,40 @@
     <div class="container">
       <!-- Primo container affiancato sotto -->
       <section>
-          <div class="box">
-            <form action="process-form.php" method="post">
-               <h2>RICHIEDI INFORMAZIONI</h2>
-               <p></p>
-               <p>Numero: 0575 xxx xxx </p>
-               <p>Email: info@agriturismo.it</p>
-              <label for="name"></label>
-              <input type="text" placeholder="Nome" id="name" name="name" required>
-              <br>
-              <label for="email"></label>
-              <input type="text" placeholder="Cognome" id="email" name="email" required>
-              <br>
-              <label for="name"></label>
-              <input type="text" placeholder="Telefono" id="telefono" name="telefono" required>
-              <br>
-              <label for="email"></label>
-              <input type="email" placeholder="Email" id="email" name="email" required>
-              <br>
-              <label for="message"></label>
-              <textarea placeholder="Messaggio " id="message" name="message" required></textarea>
-              <br>
-              <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
-              <label for="privacy-policy">Accetto la privacy policy</label>
-              <br>
-              <input class="submit-btn" type="submit" value="Invia">
-            </form>
-          </div>
-        </section>
+  		<div class="box">
+   			<form action="process-form.php" method="post">
+      			<h2>RICHIEDI INFORMAZIONI</h2>
+      			<p>Numero: 0575 xxx xxx </p>
+      			<p>Email: info@agriturismo.it</p>
+
+     			<label for="name">Nome</label>
+      			<input type="text" id="name" name="name" required>
+      			<br>
+
+      			<label for="surname">Cognome</label>
+      			<input type="text" id="surname" name="surname" required>
+      			<br>
+
+      			<label for="phone">Telefono</label>
+      			<input type="tel" id="phone" name="phone" required>
+      			<br>
+
+      			<label for="email">Email</label>
+      			<input type="email" id="email" name="email" required>
+      			<br>
+
+      			<label for="message">Messaggio</label>
+      			<textarea id="message" name="message" required></textarea>
+     			<br>
+
+      			<input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+      			<label for="privacy-policy">Accetto la privacy policy</label>
+     			 <br>
+
+      			<input class="submit-btn" type="submit" value="Invia">
+    		</form>
+  		</div>
+	</section>
     </div>
     <div class="container">
       <!-- Secondo container affiancato sotto -->
@@ -100,5 +106,6 @@
             </ul>
         </div>
     </footer>
+    <script src="javaScript/index.js"></script>
   </body>
 </html>
