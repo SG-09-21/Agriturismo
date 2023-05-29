@@ -1,22 +1,18 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-}
 
 /* Global Styles */
 body {
-  height: 100vh;
-  background-color: #000;
-  background: url('/image/campagna.jpg') no-repeat;
-  background-size: cover;
-  background-position: center;
+    height: 100vh;
+    background-color: gainsboro;
+    background-size: cover;
+    background-position: center;
 }
 
 li {
     list-style: none;
+}
+
+ul {
+	    padding-inline-start: 0;
 }
 
 a {
@@ -26,13 +22,34 @@ a {
 }
 
 a:hover {
-    color: orange;
+    color: brown;;
 }
 
+/* Hero */
+
+
+.sfondo-hero {
+	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
+	height:40vh;
+	background-position:center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+@media only screen and (max-width: 600px) {
+  .sfondo-hero {
+    height: 50vh;
+  }
+}
+.tondo {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
+	border-radius:4px;
+}
 /* Header */
 header {
     position: relative;
-    padding: 0 2rem;
+    
 }
 
 .video-slide {
@@ -46,9 +63,10 @@ header {
 }
 
 .navbar {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
     width: 100%;
     height: 60px;
-    max-width: 1200px;
+    padding: 0 3rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -73,7 +91,7 @@ header {
 }
 
 .action_btn {
-    background-color: orange;
+    background-color: green; /* Cambiato colore a verde */
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
@@ -86,12 +104,12 @@ header {
 }
 
 .action_btn:hover {
-    scale: 1.05;
-    color: #fff;
+    transform: scale(1.05);
+    color: brown;
 }
 
 .action_btn:active {
-    scale: 0.95;
+    transform: scale(0.95);
 }
 
 /* Dropdown */
@@ -111,7 +129,7 @@ header {
 }
 
 .dropdown_menu.open {
-    height: 310px;
+    height: 340px;
     z-index: 1;
 }
 
@@ -128,229 +146,149 @@ header {
     justify-content: center;
 }
 
-/* Footer */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #000;
+/* Hero */
+section#hero {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
 }
 
-footer .navbar {
-  width: 100%;
-  height: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-footer .navbar .links {
-  display: flex;
-  gap: 2rem;
-}
-
-footer .navbar .links li {
-  padding: 0;
-}
-
-/* Main Content */
+/* Main */
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
+    padding-top: 60px;
 }
 
-.container {
-  width: 600px;
-  margin-bottom: 20px;
-}
-
-.container-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.container-container .container {
-  margin-right: 20px;
-  justify-content: center;
-  align-items: center;
-  min-height: 46vh;
-}
-
-.container-container .container-2 {
-  width: 60%;
-  max-width: 800px;
-  margin-top: 20px;
-}
-
-.sfondo {
-  background-color: #f8f8f8;
-  padding: 20px;
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.testo-bianco {
-  color: white;
-}
-
-.submit-btn {
-  width: 85%;
-  padding: 10px 30px;
-  cursor: pointer;
-  display: block;
-  margin: auto;
-  background: linear-gradient(to right, #11998e, #38ef7d);
-  border: 0;
-  outline: none;
-  border-radius: 30px;
-}
-
-/* Form Styling */
-form {
-  width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  outline: none;
-}
-
-form input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-form .submit-btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #11998e;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-form .submit-btn:hover {
-  background-color: #38ef7d;
-}
-
-/* Map Styling */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.container p {
-  flex-basis: 100%;
-}
-
-.map-wrapper {
-  flex-basis: 100%;
-  max-width: 500px;
-}
-
-.googlemap {
-  width: 100%;
-  height: 450px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .map-wrapper {
+main .card img {
     max-width: 100%;
-  }
+    height: auto;
 }
 
-.box {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+/* Footer */
+.footer{
+	background-color: orange;
+    padding: 70px 0;
+    margin-top: 2%;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
 }
 
-input,
-textarea {
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: rgb(25, 95, 45);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #fff;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul{
+	list-style: none;
+}
+
+
+/* News Letter*/
+
+.footer-col input[type="text"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.submit-btn {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 600px) {
-  .box {
-    padding: 10px;
-  }
+.footer-col button[type="submit"] {
+  padding: 10px 20px;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.footer-col button[type="submit"]:hover {
+  background-color: rgb(25, 95, 45);
+}
+
 
 /* Responsive */
 @media (max-width: 992px) {
-  .navbar .links,
-  .navbar .action_btn {
-    display: none;
-  }
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
 
-  .navbar .toggle_btn {
-    display: block;
-  }
+    .navbar .toggle_btn {
+        display: block;
+    }
 
-  .dropdown_menu {
-    display: block;
-  }
-
-  .map-wrapper {
-    max-width: 250px;
-  }
+    .dropdown_menu {
+        display: block;
+        display: none;
+    }
+    
+    .dropdown_menu.open {
+        display: block;
+    }
+    
+    .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -358,5 +296,52 @@ textarea {
         left: 2rem;
         width: unset;
     }
+    
+    .footer-col{
+    width: 100%;
+	}
 }
+
+.login {
+	color: #FFA500;
+}
+
+.selezionato {
+	color: #FFA500;
+}
+
+#headerPopup{
+  width:75%;
+  margin:0 auto;
+}
+
+#headerPopup iframe{
+  width:100%;
+  margin:0 auto;
+}
+
+.map-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Imposta l'aspect ratio del frame (altezza/larghezza) */
+  height: 0;
+  overflow: hidden;
+}
+
+.map-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Media query per adattare la mappa su schermi più piccoli */
+@media (max-width: 600px) {
+  .map-wrapper {
+    padding-bottom: 75%; /* Puoi regolare l'aspect ratio per schermi più piccoli */
+  }
+}
+
+
+
 
