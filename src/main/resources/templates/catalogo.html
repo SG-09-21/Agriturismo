@@ -38,7 +38,10 @@
                 	<li><a th:href="@{struttura-servizi}">Servizi</a></li>
                 	<li><a th:href="@{contatti}">Contatti</a></li>
                 	<li><a th:href="@{carrello}">Carrello</a></li>
-                	<li><a th:href="@{login}">Login</a></li>
+                	<li>
+                		<a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
+	        			<a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
+                	</li>
                 </ul>
             </div>
         </div>
