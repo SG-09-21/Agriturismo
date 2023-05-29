@@ -15,7 +15,7 @@
     <header>
         <div class="navbar">
             <div class="logo">
-                <a th:href="@{index}">Agriturismo</a>
+                <a th:href="@{index}">Casale Orcia Verde</a>
             </div>
             <ul class="links">
                 <li><a th:href="@{index}">Home</a></li>
@@ -52,19 +52,42 @@
     </main>
     
     
-    <footer >
-        <div class="navbar">
-            <ul class="links">
-                <li><a th:href="@{contatti}">Contatti</a></li>
-                <li><a th:href="@{login-admin}">Area Riservata</a></li>
-            </ul>
-            <div class="info-agriturismo">
-            <img th:src="@{image/querciavalle.png}" alt="Logo agriturismo">
-            <p>P.IVA: 1234567890</p>
-            <p>&copy; 2023 Querciavalle. Tutti i diritti riservati.</p>
-        </div>
-        </div>
-    </footer>
+    <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Link Utili</h4>
+  	 			<ul>
+					<li><a href="@{contatti}">Contatti</a></li>
+					<li><a href="@{login-admin}">Area Riservata</a></li>
+  	 			</ul>
+  	 		</div>
+
+
+  	 		<div class="footer-col">
+  	 			<h4>Info</h4>
+  	 			<ul>
+  	 				<li><img th:src="@{image/querciavalle.png}" alt="Logo agriturismo"></li>
+  	 				<li>P.IVA: 1234567890</li>
+  	 				<li>&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
+  	 			</ul>
+  	 		</div>
+  	 		
+  	 		<div class="footer-col">
+  	 			<h4>Newsletter</h4>
+  	 			<ul>
+  	 				<li><p>Inserisci la tua mail per iscriverti alla Newsletter</p></li>
+  	 				<li><input type="text" name="EmailAdress" placeholder="Enter your email"> 
+  	 				<button type="submit">Iscriviti</button></li>
+  	 			</ul>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+
+
+
+
     <script src="javaScript/index.js"></script>
 </body>
 </html>
