@@ -1,6 +1,7 @@
 package it.corso.controller;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,13 @@ public class CarrelloController {
 	    List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
 	    model.addAttribute("carrello", carrello);
 	    model.addAttribute("carrelloPieno", !carrello.isEmpty());
+	} else {
+
+	    List<Prodotto> carrello = new ArrayList<>();
+	    model.addAttribute("carrello", carrello);
+	    model.addAttribute("carrelloPieno", !carrello.isEmpty());
 	}
+
 	Utente utente = (Utente) session.getAttribute("utente");
 	
 	List<Ordine> ordini = ordineDao.findByUtente(utente);
