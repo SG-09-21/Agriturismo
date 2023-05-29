@@ -5,47 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titolo</title>
-    <link rel="stylesheet" th:href="@{css/contatti.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" th:href="@{css/contatti.css}">
     <script src="contatti.js"></script>
   </head>
 
   <body>
     <header>
-        <div class="navbar">
-            <div class="logo">
-                <a th:href="@{index}">Agriturismo</a>
-            </div>
-            <ul class="links">
-                <li><a th:href="@{index}">Home</a></li>
-                <li><a th:href="@{catalogo}">Prodotti</a></li>
-                <li><a th:href="@{struttura-servizi}">Servizi</a></li>
-                <li><a th:href="@{contatti}" class="selezionato">Contatti</a></li>
-                <li><a th:href="@{carrello}">Carrello</a></li>
-            </ul>
-            <a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
-	        <a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
+		<div class="navbar">
+			<div class="logo">
+				<a th:href="@{index}">Agriturismo</a>
+			</div>
+			<ul class="links">
+				<li><a th:href="@{index}" class="selezionato">Home</a></li>
+				<li><a th:href="@{catalogo}">Prodotti</a></li>
+				<li><a th:href="@{struttura-servizi}">Servizi</a></li>
+				<li><a th:href="@{contatti}">Contatti</a></li>
+				<li><a th:href="@{carrello}">Carrello</a></li>
+			</ul>
+			<a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
+			<a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
+			<div class="toggle_btn">
+				<i class="fa-solid fa-bars"></i>
+			</div>
 
 
-            <div class="dropdown_menu">
-            	<ul>
-                	<li><a th:href="@{index}">Home</a></li>
-                	<li><a th:href="@{catalogo}">Prodotti</a></li>
-                	<li><a th:href="@{struttura-servizi}">Servizi</a></li>
-                	<li><a th:href="@{contatti}">Contatti</a></li>
-                	<li><a th:href="@{carrello}">Carrello</a></li>
-                	<li><a th:href="@{login}" th:if="${loggato == false}" class="login">Login</a>
-                		<a th:href="@{logout}" th:if="${loggato}" class="login">Logout</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+			<div class="dropdown_menu">
+				<ul>
+					<li><a th:href="@{index}">Home</a></li>
+					<li><a th:href="@{catalogo}">Prodotti</a></li>
+					<li><a th:href="@{struttura-servizi}">Servizi</a></li>
+					<li><a th:href="@{contatti}">Contatti</a></li>
+					<li><a th:href="@{carrello}">Carrello</a></li>
+					<li><a th:href="@{login}" th:if="${loggato == false}"
+						class="login">Login</a> <a th:href="@{logout}" th:if="${loggato}"
+						class="login">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
     
     
     <main>
+    
+    
+    
+    
   <div class="container">
     <!-- Container superiore -->
  
@@ -99,14 +104,38 @@
 </main>
 
  
-      <footer >
-        <div class="navbar">>
-            <ul class="links">
-                <li><a th:href="@{contatti}">Contatti</a></li>
-                <li><a th:href="@{login-admin}">Area Riservata</a></li>
-            </ul>
-        </div>
-    </footer>
+      <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Link Utili</h4>
+  	 			<ul>
+					<li><a th:href="@{contatti}">Contatti</a></li>
+					<li><a th:href="@{login-admin}">Area Riservata</a></li>
+  	 			</ul>
+  	 		</div>
+
+
+  	 		<div class="footer-col">
+  	 			<h4>Info</h4>
+  	 			<ul>
+  	 				<li><img th:src="@{image/querciavalle.png}" alt="Logo agriturismo"></li>
+  	 				<li>P.IVA: 1234567890</li>
+  	 				<li>&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
+  	 			</ul>
+  	 		</div>
+  	 		
+  	 		<div class="footer-col">
+  	 			<h4>Newsletter</h4>
+  	 			<ul>
+  	 				<li><p>Inserisci la tua mail per iscriverti alla Newsletter</p></li>
+  	 				<li><input type="text" name="EmailAdress" placeholder="Enter your email"> 
+  	 				<button type="submit">Iscriviti</button></li>
+  	 			</ul>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
     <script src="javaScript/index.js"></script>
     <script src="javaScript/videoPopup.js"></script>
   </body>
