@@ -71,7 +71,7 @@ header {
 }
 
 .action_btn {
-    background-color: green; /* Cambiato colore a verde */
+    background-color: green;
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
@@ -228,6 +228,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
     margin-bottom: 50px; 
 }
 
@@ -288,14 +289,6 @@ ul {
 .banner h1 {
 	color: #fff;
 }
-
-/*.banner {
-    background-color: red; 
-    padding: 20px; 
-    border: solid 2px;
-}
-
-*/
 
 /* Responsive */
 @media (max-width: 992px) {
