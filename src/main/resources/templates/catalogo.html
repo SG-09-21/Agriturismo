@@ -53,9 +53,9 @@
     <main>
         <div class="container-card">
             <div class="card-grid">
-                <div class="card" th:each="art: ${prodotti}">
+                <div class="card prodotto border-0" th:each="art: ${prodotti}">
                     <div class="foto position-relative">
-                        <div class="card">
+                        
                             <img th:if="${art.immagine==null}" th:src="@{image/prodotto-esaurito.jpg}"
                                 class="card-img-top img-size" alt="Prodotto Esaurito">
                             <img th:if="${art.immagine!=null}" th:src="@{${art.immagine}}" class="card-img-top img-size"
@@ -66,7 +66,7 @@
                                 <a th:href="@{dettaglio-prodotto(id=${art.id})}"
                                     th:text="'Scopri ' + ${art.descrizione}" class="btn btn-primary btn-custom"></a>
                             </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

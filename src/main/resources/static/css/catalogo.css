@@ -26,6 +26,24 @@ a:hover {
     color: brown;
 }
 
+.prodotto {
+	border-color: 22px solid #ead7c3;
+	
+}
+
+.btn-primary {
+	color: black;
+	border: 1px solid #ead7c3;
+	background-color: #ead7c3;
+	transition: 0.2s;
+}
+
+.btn-primary:hover {
+	border: 1px solid #ead7c3;
+	scale:1.1;
+	background-color: #ead7c3;
+}
+
 /* Header */
 header {
     position: relative;

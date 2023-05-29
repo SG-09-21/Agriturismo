@@ -16,64 +16,84 @@
 </head>
 
 <body>
-
-	<header>
-		<div class="navbar">
-			<div class="logo">
-				<a th:href="@{index}">Agriturismo</a>
-			</div>
-			<ul class="links">
-				<li><a th:href="@{index}" class="selezionato">Home</a></li>
-				<li><a th:href="@{catalogo}">Prodotti</a></li>
-				<li><a th:href="@{struttura-servizi}">Servizi</a></li>
-				<li><a th:href="@{contatti}">Contatti</a></li>
-				<li><a th:href="@{carrello}">Carrello</a></li>
-			</ul>
-			<a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
-			<a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
-			<div class="toggle_btn">
-				<i class="fa-solid fa-bars"></i>
-			</div>
-
-
-			<div class="dropdown_menu">
-				<ul>
-					<li><a th:href="@{index}">Home</a></li>
+	<main>
+		<div class="sfondo-hero">
+			<div class="navbar">
+				<div class="logo">
+					<a th:href="@{index}">Antico Casale Orgiaverde</a>
+				</div>
+				<ul class="links">
+					<li><a th:href="@{index}" class="selezionato">Home</a></li>
 					<li><a th:href="@{catalogo}">Prodotti</a></li>
 					<li><a th:href="@{struttura-servizi}">Servizi</a></li>
 					<li><a th:href="@{contatti}">Contatti</a></li>
 					<li><a th:href="@{carrello}">Carrello</a></li>
-					<li><a th:href="@{login}" th:if="${loggato == false}"
-						class="login">Login</a> <a th:href="@{logout}" th:if="${loggato}"
-						class="login">Logout</a></li>
 				</ul>
-			</div>
-		</div>
-	</header>
+				<a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
+				<a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
+				<div class="toggle_btn">
+					<i class="fa-solid fa-bars"></i>
+				</div>
 
-	<main>
-		<!-- Hero -->
-		<div class="container-fluid p-5 text-center bg-image sfondo-hero">
-		<div class="row">
-			<div class="mask">
-				<div class="tondo d-flex justify-content-center align-items-center h-100 p-5">
-					<div class="text-white">
-						<h1 class="mb-3">Agriturismo Casale Orciaverde</h1>
-						<h4 class="mb-3">Prodotti veri e autentici</h4>
-						<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}" role="button">Scopri i nostri prodotti</a>
+
+				<div class="dropdown_menu">
+					<ul>
+						<li><a th:href="@{index}">Home</a></li>
+						<li><a th:href="@{catalogo}">Prodotti</a></li>
+						<li><a th:href="@{struttura-servizi}">Servizi</a></li>
+						<li><a th:href="@{contatti}">Contatti</a></li>
+						<li><a th:href="@{carrello}">Carrello</a></li>
+						<li><a th:href="@{login}" th:if="${loggato == false}"
+							class="login">Login</a> <a th:href="@{logout}" th:if="${loggato}"
+							class="login">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Hero -->
+			<div class="container-fluid p-5 text-center bg-image ">
+				<div class="row">
+					<div class="mask">
+						<div
+							class="tondo d-flex justify-content-center align-items-center h-100 p-5">
+							<div class="text-white">
+								<h1 class="mb-3">Agriturismo Casale Orciaverde</h1>
+								<h4 class="mb-3">Prodotti veri e autentici</h4>
+								<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
+									role="button">Scopri i nostri prodotti</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- Video -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="text-center display-4 mt-5">Dove la poesia incontra
+						la Terra</h1>
+					<p class="text-center mt-5">
+						<a href="#headerPopup" id="headerVideoLink" target="_blank"
+							class="btn btn-outline-danger popup-modal">Scopri la
+							Struttura</a>
+					</p>
+					<div id="headerPopup"
+						class="mfp-hide embed-responsive embed-responsive-21by9">
+						<iframe class="embed-responsive-item" width="800" height="480"
+							src="https://www.youtube.com/embed/g17fEbDki70" frameborder="0"
+							allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- Hero -->
+		<!-- Carousel -->
 
 		<div class="container py-5">
 			<div class="row mb-4 mb-lg-5">
 				<div class="col-lg-9 mx-auto text-center">
 					<div class="lc-block mb-4">
 						<div editable="rich">
-							<h1 class="display-2 fw-bold">I prodotti della nostra Terra</h1>
+							<h1 class="display-2 fw-bold">Il frutto della nostra Terra</h1>
 						</div>
 					</div>
 					<!-- /lc-block -->
@@ -89,9 +109,9 @@
 						</div>
 					</div>
 					<div class="lc-block d-grid d-lg-block gap-2">
-						<a class="btn btn-light" href="#" role="button">Scopri i
-							nostri prodotti</a> <a class="btn btn-outline-light" href="#"
-							role="button">Info e prenotazioni</a>
+						<a class="btn btn-light" href="#" role="button">Vivi la nostra
+							passione</a> <a class="btn btn-outline-light" href="#" role="button">Info
+							e prenotazioni</a>
 					</div>
 					<!-- /lc-block -->
 				</div>
@@ -103,83 +123,81 @@
 
 
 					<div class="lc-block position-relative">
-						<img class="img-fluid rounded shadow"
-							src="image/anteprimaVideo.jpg"
-							sizes="(max-width: 3695px) 100vw, 3695px" width="3695" height=""
-							alt="Photo by Clark Van Der Beken"> <a
-							class="position-absolute top-50 start-50 translate-middle glightbox d-flex justify-content-center align-items-center"
-							target="_blank" href="https://youtu.be/g17fEbDki70"> <svg
-								xmlns="http://www.w3.org/2000/svg" width="5em" height="5em"
-								fill="currentColor" class="text-white" viewBox="0 0 16 16"
-								lc-helper="svg-icon">
-                            <path
-									d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"></path>
-                        </svg>
-						</a>
+						<div id="carouselExampleInterval" class="carousel slide"
+							data-bs-ride="carousel">
+							<div class="carousel-inner mx-auto text-center">
+								<div class="carousel-item active" data-bs-interval="400000000">
+									<img th:src="@{image/50-50-Avignonesi.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
+								</div>
+								<div class="carousel-item" data-bs-interval="4000">
+									<img th:src="@{image/1698-pietranova.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
+								</div>
+								<div class="carousel-item" data-bs-interval="4000">
+									<img th:src="@{image/finocchiona.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
+								</div>
+								<div class="carousel-item" data-bs-interval="4000">
+									<img th:src="@{image/stracchino-di-bufala.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
+								</div>
+								<div class="carousel-item" data-bs-interval="4000">
+									<img th:src="@{image/fiore-di-capalbio.jpg}" class="d-block w-100 rounded-3 immagine" alt="...">
+								</div>
+							</div>
+							<button class="carousel-control-prev" type="button"
+								data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button"
+								data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
 					</div>
 
 				</div>
 				<!-- /col -->
 			</div>
 		</div>
-		<section id="hero">
-			<h1>We are Nature</h1>
-			<p>Prodotti di Campagna Veri e Autentici</p>
-		</section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<h1 class="text-center display-4 mt-5">Dove la poesia incontra
-						la Terra</h1>
-					<p class="text-center mt-5">
-						<a href="#headerPopup" id="headerVideoLink" target="_blank"
-							class="btn btn-outline-danger popup-modal">Scopri la
-							Struttura</a>
-					</p>
-					<div id="headerPopup"
-						class="mfp-hide embed-responsive embed-responsive-21by9">
-						<iframe class="embed-responsive-item" width="854" height="480"
-							src="https://www.youtube.com/embed/g17fEbDki70" frameborder="0"
-							allow="autoplay; encrypted-media" allowfullscreen></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
 	</main>
 
 
-	<footer class="footer">
-  	 <div class="container">
-  	 	<div class="row">
-  	 		<div class="footer-col">
-  	 			<h4>Link Utili</h4>
-  	 			<ul>
-					<li><a th:href="@{contatti}">Contatti</a></li>
-					<li><a th:href="@{login-admin}">Area Riservata</a></li>
-  	 			</ul>
-  	 		</div>
+	<footer class="footer mt-4">
+		<div class="container">
+			<div class="row">
+				<div class="footer-col">
+					<h4>Link Utili</h4>
+					<ul>
+						<li><a th:href="@{contatti}">Contatti</a></li>
+						<li><a th:href="@{login-admin}">Area Riservata</a></li>
+					</ul>
+				</div>
 
 
-  	 		<div class="footer-col">
-  	 			<h4>Info</h4>
-  	 			<ul>
-  	 				<li><img th:src="@{image/querciavalle.png}" alt="Logo agriturismo"></li>
-  	 				<li>P.IVA: 1234567890</li>
-  	 				<li>&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
-  	 			</ul>
-  	 		</div>
-  	 		
-  	 		<div class="footer-col">
-  	 			<h4>Newsletter</h4>
-  	 			<ul>
-  	 				<li><p>Inserisci la tua mail per iscriverti alla Newsletter</p></li>
-  	 				<li><input type="text" name="EmailAdress" placeholder="Enter your email"> 
-  	 				<button type="submit">Iscriviti</button></li>
-  	 			</ul>
-  	 		</div>
-  	 	</div>
-  	 </div>
-  </footer>
+				<div class="footer-col">
+					<h4>Info</h4>
+					<ul>
+						<li><img th:src="@{image/querciavalle.png}"
+							alt="Logo agriturismo"></li>
+						<li>P.IVA: 1234567890</li>
+						<li>&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h4>Newsletter</h4>
+					<ul>
+						<li><p>Inserisci la tua mail per iscriverti alla
+								Newsletter</p></li>
+						<li><input type="text" name="EmailAdress"
+							placeholder="Enter your email">
+							<button type="submit">Iscriviti</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="javaScript/index.js"></script>
 </body>
 </html>

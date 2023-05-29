@@ -7,6 +7,7 @@ body {
     background-position: center;
 }
 
+
 li {
     list-style: none;
 }
@@ -29,8 +30,9 @@ a:hover {
 
 
 .sfondo-hero {
+	
 	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
-	height:40vh;
+	height:50vh;
 	background-position:center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -39,11 +41,13 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .sfondo-hero {
-    height: 50vh;
+    height: 55vh;
   }
 }
 .tondo {
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
+	/* background: linear-gradient(180deg, rgba(0, 0, 0, 0.43) 5%, rgba(0, 0, 0, 0.1) 50%); */
+	background: rgb(124,124,124);
+    background: radial-gradient(circle, rgba(0,0,0,0.6463963963963963) 0%, rgba(0,0,0,0.020270270270270285) 100%);
 	border-radius:4px;
 }
 /* Header */
@@ -163,9 +167,6 @@ section#hero {
 }
 
 /* Main */
-main {
-    padding-top: 60px;
-}
 
 main .card img {
     max-width: 100%;
@@ -317,4 +318,19 @@ ul{
 #headerPopup iframe{
   width:100%;
   margin:0 auto;
+}
+
+.immagine {
+	display: flex;
+	justify-content: center;
+}
+
+.carousel-item {
+	float:none;
+	margin: 2px auto;
+	width: 60%;
+}
+
+.carousel-control-prev, .carousel-control-next{
+	width:50%;
 }
