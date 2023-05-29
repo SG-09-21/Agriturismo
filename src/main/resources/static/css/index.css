@@ -111,7 +111,7 @@ header {
 }
 
 .dropdown_menu.open {
-    height: 340px;
+    height: 310px;
     z-index: 1;
 }
 
@@ -172,6 +172,7 @@ footer .navbar .links {
 
 footer .navbar .links li {
     padding: 0 10px;
+    margin-top: 6px;
 }
 
 footer .navbar .links a {
@@ -209,6 +210,7 @@ footer .info-agriturismo p:first-child {
 footer .info-agriturismo img {
     max-width: 100px;
     height: auto;
+    margin-bottom: 10px;
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -223,10 +225,11 @@ footer .info-agriturismo img {
 
     .dropdown_menu {
         display: block;
+        display: none;
     }
     
-    .navbar {
-        flex-direction: column;
+    .dropdown_menu.open {
+        display: block;
     }
     
     .info-agriturismo {
@@ -239,4 +242,10 @@ footer .info-agriturismo img {
         left: 2rem;
         width: unset;
     }
+    
+    .info-agriturismo {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 }
