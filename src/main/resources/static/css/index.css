@@ -111,7 +111,7 @@ header {
 }
 
 .dropdown_menu.open {
-    height: 340px;
+    height: 310px;
     z-index: 1;
 }
 
@@ -232,10 +232,6 @@ footer .info-agriturismo img {
         display: block;
     }
     
-    .navbar {
-        flex-direction: column;
-    }
-    
     .info-agriturismo {
         margin-top: 20px;
     }
@@ -251,4 +247,5 @@ footer .info-agriturismo img {
         flex-direction: column;
         align-items: center;
     }
+}
 }
