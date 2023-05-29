@@ -80,21 +80,22 @@
 				</tbody>
 			</table>
 		</div>
-		<div th:if="${loggato}">
-			<h1>Ordini</h1>
-			<table class="table">
+		<div th:if="${loggato}" class="table-responsive">
+			<table class="table caption-top">
+				<caption>Ordini</caption>
 				<thead>
 					<tr>
-						<th>Data Ordine</th>
-						<th>Importo</th>
+						
+						<th scope="col">Data Ordine</th>
+						<th scope="col">Importo</th>
+						<th scope="col"></th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="o: ${ordini}">
+					<tr>
 						<td th:text="${o.data}"></td>
 						<td th:text="${o.importo}"></td>
-
-						<td><a th:href="@{carrello/annulla-ordine(id=${o.id})}"
+						<td class="d-flex justify-content-end"><a th:href="@{carrello/annulla-ordine(id=${o.id})}"
 							class="btn btn-danger">Annulla Ordine</a></td>
 					</tr>
 				</tbody>

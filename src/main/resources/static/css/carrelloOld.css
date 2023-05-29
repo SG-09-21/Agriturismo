@@ -1,12 +1,10 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'open Sans', sans-serif;
+    font-family: 'open Sans', sans-serif !important;
 }
 
-/* Global Styles */
 body {
     height: 100vh;
     background-color: #000;
@@ -16,20 +14,20 @@ body {
 }
 
 li {
-    list-style: none;
+    list-style: none !important;
 }
 
 a {
-    text-decoration: none;
-    color: #fff;
+    text-decoration: none !important;
+    color: #fff !important;
     font-size: 1rem;
 }
 
 a:hover {
-    color: orange;
+    color: orange !important;
 }
 
-/* Header */
+/*header*/
 header {
     position: relative;
     padding: 0 2rem;
@@ -128,7 +126,7 @@ header {
     justify-content: center;
 }
 
-/* Hero */
+/* hero */
 section#hero {
     height: calc(100vh - 60px);
     display: flex;
@@ -146,13 +144,11 @@ section#hero {
 
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: orange;
-    padding: 20px 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #000 !important;
 }
 
 footer .navbar {
@@ -166,49 +162,18 @@ footer .navbar {
 }
 
 footer .navbar .links {
-    display: flex;
-    gap: 2rem;
+    display: flex !important;
+    gap: 2rem !important;
 }
 
 footer .navbar .links li {
-    padding: 0 10px;
-}
-
-footer .navbar .links a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer .navbar .links a:hover {
-    color: brown;
+    padding: 0 ;
 }
 
 main .card img {
     max-width: 100%;
     height: auto;
 }
-
-footer .info-agriturismo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 10px;
-}
-
-footer .info-agriturismo p {
-    font-size: 0.9rem;
-    color: #fff;
-    margin: 0;
-}
-
-footer .info-agriturismo p:first-child {
-    font-weight: bold;
-}
-
-footer .info-agriturismo img {
-    max-width: 100px;
-    height: auto;
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -224,14 +189,6 @@ footer .info-agriturismo img {
     .dropdown_menu {
         display: block;
     }
-    
-    .navbar {
-        flex-direction: column;
-    }
-    
-    .info-agriturismo {
-        margin-top: 20px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -239,5 +196,4 @@ footer .info-agriturismo img {
         left: 2rem;
         width: unset;
     }
-}
 }
