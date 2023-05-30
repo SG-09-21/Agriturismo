@@ -417,3 +417,36 @@ header {
 .content .btn:hover {
 	background: #61b959;
 }
+
+/* Colors */
+.beige {
+	background-color: #92817A;
+	border: 2px solid #92817A;
+	color: white;
+	
+}
+
+.siena {
+	color:#49111c;
+	border:2px solid #49111c;
+	transition: 0.3s
+}
+
+.siena:hover {
+	color: white;
+	scale: 1.02;
+	background-color: #49111c;
+	border:2px solid #49111c;
+}
+
+
+/* footer */
+
+.grandi {
+	scale: 2.5;
+	padding: 1rem;
+}
+
+.loghetto {
+	width: 100px;
+}
