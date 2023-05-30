@@ -29,7 +29,7 @@ a:hover {
 
 
 .sfondo-hero {
-	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
+	background-image: url('https://www.tuscanypeople.com/wp-content/uploads/2020/07/castellare_agriturismo_in_toscana.jpg');
 	height:40vh;
 	background-position:center;
 	background-size: cover;
@@ -39,11 +39,11 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .sfondo-hero {
-    height: 50vh;
+    height: 55vh;
   }
 }
 .tondo {
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.63) 20%, rgba(0, 0, 0, 0.05) 90%);
 	border-radius:4px;
 }
 /* Header */
@@ -326,9 +326,7 @@ main {
     padding-right: 10%;
   }
   
-  div {
-    margin: 2%;
-  }
+ 
   
   /* Media */
   @media (min-width: 800px) {
@@ -377,3 +375,40 @@ main {
   object-fit: cover;
 }
 
+.siena {
+	color:#49111c;
+	border:2px solid #49111c;
+	transition: 0.3s
+}
+
+.siena:hover {
+	color: white;
+	scale: 1.02;
+	background-color: #49111c;
+	border:2px solid #49111c;
+}
+
+.bordeaux {
+	color:#49111c;
+}
+
+.action_btn {
+    background-color: #49111c; 
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #49111c;
+    transition:0.3s;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: white;
+    background-color: rgb(0,0,0,0.0);
+    border: 2px solid white;
+}
