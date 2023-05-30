@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titolo</title>
-    <link rel="stylesheet"
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titolo</title>
+<link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" id="picostrap-styles-css"
+<link rel="stylesheet" id="picostrap-styles-css"
 	href="https://cdn.livecanvas.com/media/css/library/bundle.css"
 	media="all">
-    <link rel="stylesheet" th:href="@{css/struttura-servizi.css}">
-  </head>
+<link rel="stylesheet" th:href="@{css/struttura-servizi.css}">
+</head>
 
-  <body>
-      <header>
+<body>
+	<div class="sfondo-hero">
+
 		<div class="navbar">
 			<div class="logo">
-				<a th:href="@{index}">Agriturismo</a>
+				<a th:href="@{index}">Antico Casale Orciaverde</a>
 			</div>
 			<ul class="links">
-				<li><a th:href="@{index}" class="selezionato">Home</a></li>
+				<li><a th:href="@{index}">Home</a></li>
 				<li><a th:href="@{catalogo}">Prodotti</a></li>
-				<li><a th:href="@{struttura-servizi}">Servizi</a></li>
+				<li><a th:href="@{struttura-servizi}" class="selezionato">Servizi</a></li>
 				<li><a th:href="@{contatti}">Contatti</a></li>
 				<li><a th:href="@{carrello}">Carrello</a></li>
 			</ul>
@@ -41,95 +42,113 @@
 					<li><a th:href="@{contatti}">Contatti</a></li>
 					<li><a th:href="@{carrello}">Carrello</a></li>
 					<li><a th:href="@{login}" th:if="${loggato == false}"
-						class="login">Login</a> <a th:href="@{logout}" th:if="${loggato}"
+						class="login bordeaux">Login</a> <a th:href="@{logout}" th:if="${loggato}"
 						class="login">Logout</a></li>
 				</ul>
 			</div>
 		</div>
-	</header>
-	
-	<div class="container-fluid p-5 text-center bg-image sfondo-hero">
-		<div class="row">
-			<div class="mask">
-				<div class="tondo d-flex justify-content-center align-items-center h-100 p-5">
-					<div class="text-white">
-						<h1 class="mb-3">Agriturismo Casale Orciaverde</h1>
-						<h4 class="mb-3">Prodotti veri e autentici</h4>
-						<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}" role="button">Scopri i nostri prodotti</a>
+
+
+		<div class="container-fluid p-5 text-center bg-image">
+			<div class="row">
+				<div class="mask">
+					<div
+						class="tondo d-flex justify-content-center align-items-center h-100 p-5">
+						<div class="text-white">
+							<h1 class="mb-3">Antico Casale Orciaverde</h1>
+							<h4 class="mb-3">Immergiti nella bellezza della nostra Terra</h4>
+							<a class="btn btn-outline-light btn-lg" th:href="@{contatti}"
+								role="button">Info e Prenotazioni</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<main>
+
+
+		<div class="image-text-container">
+			<div class="image-wrapper">
+				<img th:src="@{image/articolo_1.jpg}" alt="image">
+			</div>
+			<div class="text-container">
+				<p>Benvenuti alla lezione di equitazione di oggi! Oggi
+					esploreremo il meraviglioso mondo dell'equitazione, imparando le
+					basi fondamentali e sviluppando una connessione armoniosa con i
+					nostri amici cavalli.</p>
+				<a th:href="@{login}" class="button-link">Prenota</a>
+			</div>
 		</div>
-    
-    <main>
-  		
-  		
-  		<div class="image-text-container">
-            <div class="image-wrapper">
-  <img th:src="@{image/articolo_1.jpg}" alt="image">
-</div>
-            <div class="text-container">
-              <p>Benvenuti alla lezione di equitazione di oggi! Oggi esploreremo il meraviglioso mondo dell'equitazione, imparando le basi fondamentali e sviluppando una connessione armoniosa con i nostri amici cavalli.</p>
-              <a th:href="@{login}" class="button-link">Prenota</a>
-            </div>
-          </div>
-          
-          <div class="image-text-container">
-                    <div class="image-wrapper">
-  <img th:src="@{image/articolo_1.jpg}" alt="image">
-</div>
-            <div class="text-container">
-            <p>Benvenuti nel luogo dei sogni, un luogo incantevole dove celebrare il vostro matrimonio. Immaginatevi un ambiente idilliaco, circondati da panorami mozzafiato e atmosfere romantiche, dove il vostro amore brillerà in tutta la sua magnificenza.</p>
-            <a th:href="@{login}" class="button-link">Prenota</a>         
-            </div>
-          </div>
-      
-          <div class="image-text-container">
-                    <div class="image-wrapper">
-  <img th:src="@{image/articolo_1.jpg}" alt="image">
-</div>
-            <div class="text-container">
-              <p>Puoi partecipare a escursioni a piedi, in bicicletta o a cavallo, esplorando sentieri panoramici e paesaggi mozzafiato. Potresti anche avere l'opportunità di fare passeggiate nella natura, ammirare flora e fauna locali, praticare la pesca o semplicemente rilassarti in un ambiente sereno.</p>
-              <a th:href="@{login}" class="button-link">Prenota</a>
-            </div>
-          </div>
-  		
-  		
-   </main>
-    
-    
-    <footer class="footer">
-  	 <div class="container">
-  	 	<div class="row">
-  	 		<div class="footer-col">
-  	 			<h4>Link Utili</h4>
-  	 			<ul>
-					<li><a th:href="@{contatti}">Contatti</a></li>
-					<li><a th:href="@{login-admin}">Area Riservata</a></li>
-  	 			</ul>
-  	 		</div>
+
+		<div class="image-text-container">
+			<div class="image-wrapper">
+				<img th:src="@{image/articolo_3.jpg}" alt="image">
+			</div>
+			<div class="text-container">
+				<p>Benvenuti nel luogo dei sogni, un luogo incantevole dove
+					celebrare il vostro matrimonio. Immaginatevi un ambiente idilliaco,
+					circondati da panorami mozzafiato e atmosfere romantiche, dove il
+					vostro amore brillerà in tutta la sua magnificenza.</p>
+				<a th:href="@{login}" class="button-link">Prenota</a>
+			</div>
+		</div>
+
+		<div class="image-text-container">
+			<div class="image-wrapper">
+				<img th:src="@{image/articolo_2.jpg}" alt="image">
+			</div>
+			<div class="text-container">
+				<p>Puoi partecipare a escursioni a piedi, in bicicletta o a
+					cavallo, esplorando sentieri panoramici e paesaggi mozzafiato.
+					Potresti anche avere l'opportunità di fare passeggiate nella
+					natura, ammirare flora e fauna locali, praticare la pesca o
+					semplicemente rilassarti in un ambiente sereno.</p>
+				<a th:href="@{login}" class="button-link">Prenota</a>
+			</div>
+		</div>
 
 
-  	 		<div class="footer-col">
-  	 			<h4>Info</h4>
-  	 			<ul>
-  	 				<li><img th:src="@{image/querciavalle.png}" alt="Logo agriturismo"></li>
-  	 				<li>P.IVA: 1234567890</li>
-  	 				<li>&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
-  	 			</ul>
-  	 		</div>
-  	 		
-  	 		<div class="footer-col">
-  	 			<h4>Newsletter</h4>
-  	 			<ul>
-  	 				<li><p>Inserisci la tua mail per iscriverti alla Newsletter</p></li>
-  	 				<li><input type="text" name="EmailAdress" placeholder="Enter your email"> 
-  	 				<button type="submit">Iscriviti</button></li>
-  	 			</ul>
-  	 		</div>
-  	 	</div>
-  	 </div>
-  </footer>
-  </body>
+	</main>
+
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="footer-col">
+					<h4>Link Utili</h4>
+					<ul>
+						<li><a th:href="@{contatti}">Contatti</a></li>
+						<li><a th:href="@{login-admin}">Area Riservata</a></li>
+					</ul>
+				</div>
+
+
+				<div class="footer-col">
+					<h4>Info</h4>
+					<ul>
+						<li><img th:src="@{image/querciavalle.png}"
+							alt="Logo agriturismo"></li>
+						<li>P.IVA: 1234567890</li>
+						<li>&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h4>Newsletter</h4>
+					<ul>
+						<li><p>Inserisci la tua mail per iscriverti alla
+								Newsletter</p></li>
+						<li><input type="text" name="EmailAdress"
+							placeholder="Enter your email">
+							<button type="submit">Iscriviti</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+	<script src="javaScript/index.js"></script>
+</body>
 </html>
