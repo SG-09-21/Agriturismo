@@ -53,6 +53,7 @@ public class CarrelloController {
 	List<Ordine> ordini = ordineDao.findByUtente(utente);
 	model.addAttribute("utente", utente);
 	model.addAttribute("ordini", ordini);
+	model.addAttribute("nessunOrdine", ordini.isEmpty());
 	model.addAttribute("loggato", utente != null);
 	model.addAttribute("ordineVuoto", ordineVuoto != null);
 	model.addAttribute("del", del != null);
