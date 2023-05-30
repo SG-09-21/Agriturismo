@@ -5,12 +5,16 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-body {
+/*body {
   height: 100vh;
   background-color: #000;
   background: url('/image/campagna.jpg') no-repeat;
   background-size: cover;
   background-position: center;
+}*/
+
+body {
+	background-color: #DCE0D9;
 }
 
 li {
@@ -177,7 +181,14 @@ main {
 }
 
 .container_2 {
-  max-width: 800px;
+  max-width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container_3 {
+  background-color: #F1DABF;
+  max-width: 100%;
   padding: 2rem;
   text-align: center;
 }
@@ -242,3 +253,4 @@ main {
     width: unset;
   }
 }
+
