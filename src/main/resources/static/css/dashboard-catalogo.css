@@ -19,7 +19,7 @@ body {
 }
 
 .linker {
-  color: white;
+  color: white !important;
   text-decoration: none;
   padding: 10px;
   font-size: 21px;
@@ -29,7 +29,7 @@ body {
 }
 
 .linker:hover {
-  color: orange;
+  color: orange !important;
 }
 
 /* Stile per il form e la griglia dei prodotti */
@@ -53,12 +53,33 @@ form select[name="categoria"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   width: 100%;
   padding-right: 0;
   padding-left: 0;
 }
 
+/* Aggiungi la classe ".form-button" ai bottoni del form */
+form button,
+form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+/* Modifica il colore dei bottoni ".linker" */
+.linker {
+  color: white !important;
+  background-color: #8DA23C;
+}
+
+.linker:hover {
+  color: orange !important;
+}
 
 .product-grid {
   display: grid;
