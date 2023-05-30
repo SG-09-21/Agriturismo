@@ -254,8 +254,8 @@ ul{
 
 .footer-col button[type="submit"] {
   padding: 10px 20px;
-  background-color: #F0CF90;
-  color: #fff;
+  background-color: #F1DABF;
+  color: #49111c;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -327,8 +327,12 @@ ul{
 	width:40%;
 } 
 
+/* bottoni */
 .beige {
-	color: #ead7c3;
+	background-color: #92817A;
+	border: 2px solid #92817A;
+	color: white;
+	
 }
 
 .siena {
@@ -344,6 +348,16 @@ ul{
 	border:2px solid #49111c;
 }
 
-.bordeaux {
-	color:#49111c;
+
+/* footer */
+
+.grandi {
+	scale: 2.5;
+	padding: 1rem;
+}
+
+.loghetto {
+	width: 100px;
+	
+	
 }
