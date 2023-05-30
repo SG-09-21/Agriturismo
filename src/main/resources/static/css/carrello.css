@@ -358,3 +358,19 @@ ul{
 .loghetto {
 	width: 100px;
 }
+
+.vuoto {
+  width: 1200px ;
+  height: 800px;
+  border: solid red 2px;
+  margin: auto;
+  margin-top: 24px;
+}
+
+@media (max-width: 576px) {
+    .vuoto{
+		width: auto;
+		height: 40px auto;    
+    }
+}
+
