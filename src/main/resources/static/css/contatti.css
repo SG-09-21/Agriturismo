@@ -418,6 +418,12 @@ header {
 	font-weight:600;
 }
 
+.content .btn:hover {
+	color: #49111c;
+	background: #92817A;
+	border: none;
+}
+
 /* Colors */
 .beige {
 	background-color: #92817A;
