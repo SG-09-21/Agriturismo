@@ -1,62 +1,89 @@
-* {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    padding: 3px;
+body {
+  background-image: url("/image/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
 }
 
 .card {
-    width: 70vw;
-    margin: 0 auto;
+  background-color: rgba(51, 67, 10, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 30px;
 }
 
-.card h1 {
-    text-align: center;
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.btn {
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  background-color: #49111C;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: transform 0.3s; /* Added transition property */
+}
+
+.btn:hover {
+  transform: scale(1.1); /* Added zoom effect */
+}
+
+.linker {
+  color: #fff;
+  text-decoration: none;
+}
+
+.linker:hover {
+  color: #0A3200;
 }
 
 .utente-card,
 .catalogo-card,
 .ordini-card {
-    background-color: #f8f8f8;
-    padding: 20px;
-    text-align: center;
-    border-radius: 4px;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.utente-card h5,
-.catalogo-card h5,
-.ordini-card h5 {
-    margin-bottom: 5px;
+.box {
+  background-color: #8DA23C;
+  padding: 10px;
+  border-radius: 5px;
+  height: 18px;
+  width: 85px;
+  margin: 20px auto;
+  border-radius: 30px;
 }
 
-.utente-card p,
-.catalogo-card p,
-.ordini-card p {
-    margin-bottom: 10px;
-}
-
-.box a {
-    text-decoration: none;
-    color: #333;
-    padding: 5px;
-    background-color: orange;
-    color: #fff;
-    border-radius: 4px;
+.linker-home:hover {
+  color: orange;
 }
 
 .backhome {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
-    text-decoration: none;
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 40px;
 }
 
-.backhome:hover {
-    text-decoration: none;
-}
-
-.backhome {
-    text-decoration: none;
-    color: #000;
+@media only screen and (max-width: 600px) {
+  .box {
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+  .card {
+    border-radius: 10px; /* Fixed typo */
+  }
 }
