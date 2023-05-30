@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-  color: orange;
+  color: orange; 
 }
 
 /* header */
@@ -147,7 +147,7 @@ section#hero {
 
 /* Footer */
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;
