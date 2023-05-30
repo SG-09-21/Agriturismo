@@ -58,10 +58,21 @@
 					<div class="mask">
 						<div class="tondo d-flex justify-content-center align-items-center h-100 p-5">
 							<div class="text-white">
-								<h1 class="mb-3">Antico Casale Orciaverde</h1>
-								<h4 class="mb-3">Prodotti veri e autentici</h4>
-								<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}" role="button">Scopri i
-									nostri prodotti</a>
+								<div th:if="${loggato}">
+									<h1 class="mb-3" th:text="'Benvenuto ' + ${utente.nome}"></h1>
+									<h4>Questa è la tua area riservata</h4>
+									<button type="button" class="btn btn-outline-light justify-content-start" data-toggle="modal"
+									data-target="#cartModal">Mostra Carrello</button>
+									
+								</div>
+								<div th:if="${loggato == false}">
+									<h1 class="mb-3">Benvenuto User</h1>
+									<button type="button" class="btn btn-outline-light justify-content-start" data-toggle="modal"
+										data-target="#cartModal">Mostra Carrello</button>
+	<!-- 								<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}" role="button">Scopri i -->
+	<!-- 									nostri prodotti</a> -->
+								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -72,9 +83,7 @@
 		<div class="vuoto">
 			<div class="container-md">
 				<p th:if="${ordineOk}">Ordine effettuato con successo</p>
-				<button type="button" class="btn btn-outline-light d-flex justify-content-start" data-toggle="modal"
-					data-target="#cartModal">Mostra
-					Carrello</button>
+				
 
 
 				<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -139,8 +148,12 @@
 						</div>
 					</div>
 				</div>
+				<div th:if="${loggato == false}">
+					<h3>Effettua il Login per visualizzare i tuoi ordini</h3>
+				</div>
 				<div th:if="${loggato}" class="table-responsive-sm">
-					<table class="table caption-top">
+					<h3 th:if="${nessunOrdine}">Non hai ancora effettuato alcun ordine</h3>
+					<table th:if="${nessunOrdine == false}" class="table caption-top">
 						<caption>Lista Ordini</caption>
 						<thead>
 							<tr>
