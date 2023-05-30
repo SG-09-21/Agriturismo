@@ -264,7 +264,7 @@ main {
 .sfondo-hero {
 	
 	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
-	height:45vh;
+	height:50vh;
 	background-position:center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -565,4 +565,20 @@ ul{
 
 #separazione {
 	margin-top: 2rem;
+}
+
+
+/* footer */
+
+.grandi {
+	scale: 2.5;
+	padding: 1rem;
+}
+
+.loghetto {
+	width: 100px;
+}
+
+.selezionato {
+	color: #FFA500;
 }
