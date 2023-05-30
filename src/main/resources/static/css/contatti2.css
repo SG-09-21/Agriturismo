@@ -1,4 +1,3 @@
-
 /* Global Styles */
 body {
     height: 100vh;
@@ -7,12 +6,14 @@ body {
     background-position: center;
 }
 
+
 li {
     list-style: none;
 }
 
 ul {
 	    padding-inline-start: 0;
+	    list-style: none;
 }
 
 a {
@@ -29,8 +30,9 @@ a:hover {
 
 
 .sfondo-hero {
+	
 	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
-	height:40vh;
+	height:50vh;
 	background-position:center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -39,11 +41,13 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .sfondo-hero {
-    height: 50vh;
+    height: 60vh;
   }
 }
 .tondo {
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
+	/* background: linear-gradient(180deg, rgba(0, 0, 0, 0.43) 5%, rgba(0, 0, 0, 0.1) 50%); */
+	background: rgb(124,124,124);
+    background: radial-gradient(circle, rgba(0,0,0,0.6463963963963963) 0%, rgba(0,0,0,0.020270270270270285) 100%);
 	border-radius:4px;
 }
 /* Header */
@@ -146,37 +150,10 @@ header {
     justify-content: center;
 }
 
-/* Hero */
-section#hero {
-    height: calc(100vh - 60px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-}
-
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-/* Main */
-main {
-    padding-top: 60px;
-}
-
-main .card img {
-    max-width: 100%;
-    height: auto;
-}
-
 /* Footer */
 .footer{
 	background-color: orange;
     padding: 70px 0;
-    margin-top: 2%;
 }
 
 .footer-col{
@@ -223,21 +200,6 @@ main .card img {
 	color: #ffffff;
 	padding-left: 8px;
 }
-
-.container{
-	max-width: 1170px;
-	margin:auto;
-}
-
-.row{
-	display: flex;
-	flex-wrap: wrap;
-}
-
-ul{
-	list-style: none;
-}
-
 
 /* News Letter*/
 
@@ -320,28 +282,43 @@ ul{
   margin:0 auto;
 }
 
-.map-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* Imposta l'aspect ratio del frame (altezza/larghezza) */
-  height: 0;
-  overflow: hidden;
+.info-wrap {
+	padding: 30px;
+  background: #fff;
+  border-radius: 4px;
 }
 
-.map-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.info i {
+  font-size: 20px;
+  color: #3498db;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #eaf4fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Media query per adattare la mappa su schermi più piccoli */
-@media (max-width: 600px) {
-  .map-wrapper {
-    padding-bottom: 75%; /* Puoi regolare l'aspect ratio per schermi più piccoli */
-  }
+.info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #384046;
 }
 
+.info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #65747f;
+}
 
-
+.info:hover i {
+  background: #3498db;
+  color: #fff;
+}
 

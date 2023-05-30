@@ -1,41 +1,58 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'open Sans',sans-serif;
-}
 
-body{
+/* Global Styles */
+body {
     height: 100vh;
-    background-color: #000;
-    background: url('/image/campagna.jpg') no-repeat;
+    background-color: gainsboro;
     background-size: cover;
     background-position: center;
 }
 
-li{
+li {
     list-style: none;
 }
 
-a{
+ul {
+	    padding-inline-start: 0;
+}
+
+a {
     text-decoration: none;
     color: #fff;
     font-size: 1rem;
 }
 
-a:hover{
-    color: orange;
+a:hover {
+    color: brown;;
 }
 
+/* Hero */
 
-/*header*/
 
-header{
+.sfondo-hero {
+	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
+	height:40vh;
+	background-position:center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+@media only screen and (max-width: 600px) {
+  .sfondo-hero {
+    height: 50vh;
+  }
+}
+.tondo {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
+	border-radius:4px;
+}
+/* Header */
+header {
     position: relative;
-    padding: 0 2rem;
+    
 }
 
-.video-slide{
+.video-slide {
     z-index: 000;
     position: absolute;
     top: 0;
@@ -43,38 +60,38 @@ header{
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
 
-.navbar{
+.navbar {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
     width: 100%;
     height: 60px;
-    max-width: 1200px;
+    padding: 0 3rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.navbar .logo a{
+.navbar .logo a {
     font-style: 1.5rem;
     font-weight: bold;
 }
 
-.navbar .links{
+.navbar .links {
     display: flex;
     gap: 2rem;
 }
 
-.navbar .toggle_btn{
+.navbar .toggle_btn {
     color: #fff;
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
 }
 
-.action_btn{
-    background-color: orange;
+.action_btn {
+    background-color: green; /* Cambiato colore a verde */
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
@@ -83,53 +100,54 @@ header{
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    transition: scale 0.2 ease;
+    transition: scale 0.2s ease;
 }
 
-.action_btn:hover{
-    scale: 1.05;
-    color: #fff;
-}
-.action_btn:active{
-    scale: 0.95;
+.action_btn:hover {
+    transform: scale(1.05);
+    color: brown;
 }
 
+.action_btn:active {
+    transform: scale(0.95);
+}
 
-/* dropDown */
-.dropdown_menu{
+/* Dropdown */
+.dropdown_menu {
     display: none;
     position: absolute;
     right: 2rem;
     top: 60px;
     height: 0;
     width: 300px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
 }
 
-.dropdown_menu.open{
-    height: 240px;
+.dropdown_menu.open {
+    height: 340px;
+    z-index: 1;
 }
 
-.dropdown_menu li{
+.dropdown_menu li {
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.dropdown_menu .action_btn{
+.dropdown_menu .action_btn {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-/* hero */
-
-section#hero{
+/* Hero */
+section#hero {
     height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
@@ -139,74 +157,223 @@ section#hero{
     color: #fff;
 }
 
-#hero h1{
+#hero h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;   
+    margin-bottom: 1rem;
+}
+
+/* Main */
+main {
+    padding-top: 60px;
+}
+
+main .card img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000;
+.footer{
+	background-color: orange;
+    padding: 70px 0;
 }
 
-footer .navbar {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
 }
 
-footer .navbar .links {
-    display: flex;
-    gap: 2rem;
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
 }
 
-footer .navbar .links li {
-    padding: 0;
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: rgb(25, 95, 45);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
 }
 
-/* Set height for main content */
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
 }
 
-.container_2 {
-  width: 600px;
-  margin: 0 auto;
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #fff;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul{
+	list-style: none;
 }
 
 
+/* News Letter*/
+
+.footer-col input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer-col button[type="submit"] {
+  padding: 10px 20px;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-col button[type="submit"]:hover {
+  background-color: rgb(25, 95, 45);
+}
 
 
-/* Resposive */
-@media(max-width:992px){
+/* Responsive */
+@media (max-width: 992px) {
     .navbar .links,
-    .navbar .action_btn{
+    .navbar .action_btn {
         display: none;
     }
 
-    .navbar .toggle_btn{
+    .navbar .toggle_btn {
         display: block;
     }
 
-    .dropdown_menu{
+    .dropdown_menu {
         display: block;
+        display: none;
+    }
+    
+    .dropdown_menu.open {
+        display: block;
+    }
+    
+    .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
     }
 }
 
-@media(max-width:576px){
-    .dropdown_menu{
+@media (max-width: 576px) {
+    .dropdown_menu {
         left: 2rem;
         width: unset;
     }
+    
+    .footer-col{
+    width: 100%;
+	}
+}
+
+.login {
+	color: #FFA500;
+}
+
+.selezionato {
+	color: #FFA500;
+}
+
+#headerPopup{
+  width:75%;
+  margin:0 auto;
+}
+
+#headerPopup iframe{
+  width:100%;
+  margin:0 auto;
 }
 
 
+main {
+    /* max-width: 80%; */
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  div {
+    margin: 2%;
+  }
+  
+  /* Media */
+  @media (min-width: 800px) {
+    .card-body {
+      text-align: left;
+    }
+  
+    .image-text-container {
+      display: flex;
+      align-items: center;
+    }
+  
+    .image-text-container img {
+      width: 200px; /* Larghezza desiderata per l'immagine */
+      height: auto; /* Altezza automaticamente proporzionale */
+      margin-right: 20px; /* Margine a destra dell'immagine */
+    }
+  
+    .image-text-container .text-container {
+      text-align: left; /* Allinea il testo a sinistra */
+    }
+  
+    .image-text-container img {
+      margin-right: 20px;
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .image-text-container img {
+      width: 100%; /* Imposta la larghezza al 100% del contenitore */
+      height: auto; /* Altezza automaticamente proporzionale */
+      
+    }
+  }
+
+.image-wrapper {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
