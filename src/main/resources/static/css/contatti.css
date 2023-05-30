@@ -96,17 +96,17 @@ header {
 }
 
 .action_btn {
-    background-color: 49111c; 
+    background-color: #49111c; 
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
     border: 2px solid #49111c;
-    transition: scale 0.2s ease;
+    transition: 0.3s;
 }
 
 .action_btn:hover {
@@ -227,7 +227,8 @@ header {
 }
 
 .footer-col button[type="submit"]:hover {
-  background-color: #49111c;
+	color: white;
+	background-color: #49111c;
 }
 
 
@@ -333,7 +334,7 @@ header {
 .info .email:hover i,
 .info .address:hover i,
 .info .phone:hover i {
-  background: #7cc576;
+  background: #92817A;
   color: #fff;
 }
 
@@ -365,7 +366,7 @@ header {
 }
 
 .php-email-form button[type=submit] {
-  background: #7cc576;
+  background: #92817A;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -374,7 +375,7 @@ header {
 }
 
 .php-email-form button[type=submit]:hover {
-  background: #61b959;
+  scale: 1.1;
 }
 
 /* Newsletter */
@@ -407,19 +408,14 @@ header {
 
 .content.form-control:focus {
 	box-shadow: none;
-	border: 2px solid #243c4f;
 }
 
 .content .btn {
 	min-height: 50px; 
 	border-radius:0;
-	background: #7cc576;
+	background: #49111c;
 	color: #fff;
 	font-weight:600;
-}
-
-.content .btn:hover {
-	background: #61b959;
 }
 
 /* Colors */

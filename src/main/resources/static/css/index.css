@@ -264,7 +264,8 @@ ul{
 }
 
 .footer-col button[type="submit"]:hover {
-  background-color: #49111c;
+	color: white;
+  	background-color: #49111c;
 }
 
 
