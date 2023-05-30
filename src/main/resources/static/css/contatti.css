@@ -152,7 +152,7 @@ header {
 
 /* Footer */
 .footer{
-	background-color: orange;
+	background-color: #92817a;;
     padding: 70px 0;
 }
 
@@ -175,7 +175,7 @@ header {
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: rgb(25, 95, 45);
+	background-color: #49111c;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -213,8 +213,8 @@ header {
 
 .footer-col button[type="submit"] {
   padding: 10px 20px;
-  background-color: orange;
-  color: #fff;
+  background-color: #F1DABF;
+  color: #49111c;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -223,7 +223,7 @@ header {
 }
 
 .footer-col button[type="submit"]:hover {
-  background-color: rgb(25, 95, 45);
+  background-color: #49111c;
 }
 
 
@@ -265,7 +265,7 @@ header {
 }
 
 .login {
-	color: #FFA500;
+	color: #49111c;
 }
 
 .selezionato {
@@ -371,4 +371,37 @@ header {
 
 .php-email-form button[type=submit]:hover {
   background: #61b959;
+}
+
+/* bottoni */
+.beige {
+	background-color: #92817A;
+	border: 2px solid #92817A;
+	color: white;
+	
+}
+
+.siena {
+	color:#49111c;
+	border:2px solid #49111c;
+	transition: 0.3s
+}
+
+.siena:hover {
+	color: white;
+	scale: 1.02;
+	background-color: #49111c;
+	border:2px solid #49111c;
+}
+
+
+/* footer */
+
+.grandi {
+	scale: 2.5;
+	padding: 1rem;
+}
+
+.loghetto {
+	width: 100px;
 }

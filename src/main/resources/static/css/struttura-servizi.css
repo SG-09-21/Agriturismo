@@ -120,7 +120,7 @@ header {
     top: 60px;
     height: 0;
     width: 300px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(0, 0, 0, 0.2);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
@@ -174,7 +174,7 @@ main .card img {
 
 /* Footer */
 .footer{
-	background-color: orange;
+	background-color: #92817a;;
     padding: 70px 0;
 }
 
@@ -197,7 +197,7 @@ main .card img {
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: rgb(25, 95, 45);
+	background-color: #49111c;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -250,8 +250,8 @@ ul{
 
 .footer-col button[type="submit"] {
   padding: 10px 20px;
-  background-color: orange;
-  color: #fff;
+  background-color: #F1DABF;
+  color: #49111c;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -260,7 +260,7 @@ ul{
 }
 
 .footer-col button[type="submit"]:hover {
-  background-color: rgb(25, 95, 45);
+  background-color: #49111c;
 }
 
 
@@ -411,4 +411,13 @@ main {
     color: white;
     background-color: rgb(0,0,0,0.0);
     border: 2px solid white;
+}
+
+.grandi {
+	scale: 2.5;
+	padding: 1rem;
+}
+
+.loghetto {
+	width: 100px;
 }
