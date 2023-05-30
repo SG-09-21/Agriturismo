@@ -50,66 +50,107 @@
 				</div>
 			</div>
 		<!-- Hero -->
-			<div class="container-fluid p-5 text-center bg-image ">
+			<div class="container-fluid p-5 text-center bg-image">
 				<div class="row">
 					<div class="mask">
 						<div
 							class="tondo d-flex justify-content-center align-items-center h-100 p-5">
 							<div class="text-white">
-								<h1 class="mb-3">Contatti</h1>
+								<h1 class="mb-3">La nostra professionalità al tuo servizio</h1>
 								<a class="btn btn-outline-light btn-lg" href="#footer"
-									role="button">Inviaci una mail</a>
+									role="button">Vieni a trovarci</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
     	</div>
-    	<!--  Icons -->
-    	<div class="row my-5 justify-content-center">
-          <div class="col-lg-10">
-            <div class="info-wrap">
-              <div class="row">
-                <div class="col-lg-4 info">
-                  <i>
-                  	<img th:src="@{image/geo-alt-fill.svg}">
-                  </i>
-                  <h4>Location:</h4>
-                  <p>Località Montenero d'Orcia, 116 <br>Castel del piano, GR 58033</p>
-                </div>
+    	
 
-                <div class="col-lg-4 info mt-4 mt-lg-0">
-                  <i>
-                  	<img th:src="@{image/envelope.svg}">
-                  </i>
-                  <h4>Email:</h4>
-                  <p>info@orciaverde.com</p>
-                </div>
 
-                <div class="col-lg-4 info mt-4 mt-lg-0">
-                  <i class="bi bi-phone">
-                  	<img th:src="@{image/phone.svg}">
-                  </i>
-                  <h4>Call:</h4>
-                  <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- 			Sezione Icons + form -->
+		<div class="container my-5">
+			<div class="row my-5 text-center">
+				<h1>Contattaci</h1>
+			</div>
+<!-- 			Icons -->
+		
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="info d-flex flex-column justify-content-center">
+						<div class="address">
+							<i>
+                 					<img th:src="@{image/geo-alt-fill.svg}">
+                 				</i>
+                				<h4>Location:</h4>
+                 				<p>Località Montenero d'Orcia, 116 <br>Castel del piano, GR 58033</p>
+						</div>
+						<div class="email">
+							<i>
+		                  		<img th:src="@{image/envelope.svg}">
+		                  	</i>
+		                  	<h4>Email:</h4>
+		                  	<p>info@orciaverde.com</p>								
+						</div>
+						<div class="phone">
+							<i class="bi bi-phone">
+		                  		<img th:src="@{image/phone.svg}">
+		                  	</i>
+		                  	<h4>Call:</h4>
+		                  	<p>+39 328 206 0957</p>
+						</div>
+					</div>
+				</div>
+			
+<!-- 				Form -->
+				<div class="col-lg-8 mt-5 mt-lg-0">
+		            <form action="" role="form" class="php-email-form">
+	            		<div class="row my-3 text-center">
+	            			<h3>La tua opinione conta</h3>
+		            	</div>
+	              		<div class="row">
+		                <div class="col-md-6 form-group">
+		                  <input type="text" class="form-control" placeholder="Nome" required>
+		                </div>
+		                <div class="col-md-6 form-group mt-3 mt-md-0">
+		                  <input type="email" class="form-control" placeholder="Email" required>
+		                </div>
+		              	</div>
+		              	<div class="form-group mt-3">
+		                	<select class="form-select" aria-label="Default select example">
+	                			<option selected>Scegli l'argomento</option>
+						  		<option>Informazioni</option>
+							  	<option>Prenotazioni</option>
+							  	<option>Assistenza prodotti</option>
+							  	<option>Lavora con noi</option>
+		                	</select>
+		              	</div>
+		              	<div class="form-group mt-3">
+		                	<textarea class="form-control" rows="5" placeholder="Scrivi il tuo messaggio" required style="height: 116px;"></textarea>
+		              	</div>
+		              	<div class="text-center"><button type="submit">Send Message</button></div>
+		            </form>
+	          	</div>
+          	</div>
+		</div>
 <!--         Map -->
         <div class="container-fluid g-0">
-        <div class="row g-0">
-            <div class="col-md-12">
-                <div class="lc-block overflow-hidden">
-                    <div style="max-height:40vh" class="ratio ratio-1x1" lc-helper="gmap-embed">
-                    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125534.48708524308!2d11.329033063947481!3d42.94298269824018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13297307540107bb%3A0xdbca91e3a884d1d0!2sOrciaverde!5e0!3m2!1sit!2sit!4v1685399357342!5m2!1sit!2sit"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	        <div class="row g-0">
+	            <div class="col-md-12">
+	                <div class="lc-block overflow-hidden">
+	                    <div style="max-height:40vh" class="ratio ratio-1x1">
+	                    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125534.48708524308!2d11.329033063947481!3d42.94298269824018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13297307540107bb%3A0xdbca91e3a884d1d0!2sOrciaverde!5e0!3m2!1sit!2sit!4v1685399357342!5m2!1sit!2sit"></iframe>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+<!-- 	    <div class="container-fluid p-5 text-center bg-image"> -->
+	    	
+<!-- 	    </div> -->
    	</main>
+   	
+   	
    	
     <footer id="footer" class="footer mt-4">
 		<div class="container">
