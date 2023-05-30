@@ -111,42 +111,57 @@
 
 	</main>
 
-
-	<footer class="footer">
+	<footer class="footer mt-4">
 		<div class="container">
 			<div class="row">
-				<div class="footer-col">
-					<h4>Link Utili</h4>
+				<div class="footer-col px-5">
+					<h4>Nav</h4>
 					<ul>
-						<li><a th:href="@{contatti}">Contatti</a></li>
+						<li><a th:href="@{contatti}">Contattaci</a></li>
+						<li><a th:href="@{struttura-servizi}">La Struttura</a></li>
+						<li><a th:href="@{catalogo}">I Prodotti</a></li>
 						<li><a th:href="@{login-admin}">Area Riservata</a></li>
 					</ul>
 				</div>
-
-
-				<div class="footer-col">
+				<div class="footer-col  px-5">
 					<h4>Info</h4>
 					<ul>
-						<li><img th:src="@{image/querciavalle.png}"
-							alt="Logo agriturismo"></li>
-						<li>P.IVA: 1234567890</li>
-						<li>&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
+						<li></li>
+						<li style="color: white">P.IVA: 1234567890</li>
+						<li style="color: white">Mail: info@orgiaverde.it</li>
+						<li style="color: white">Via Palio 69, Castiglion Fiorentino
+							(AR) - 52043</li>
 					</ul>
 				</div>
 
-				<div class="footer-col">
+				<div class="footer-col  px-5">
 					<h4>Newsletter</h4>
 					<ul>
-						<li><p>Inserisci la tua mail per iscriverti alla
-								Newsletter</p></li>
+						<li style="color: white"><p>Iscriviti alla newsletter per accedere a imperdibili offerte</p></li>
 						<li><input type="text" name="EmailAdress"
-							placeholder="Enter your email">
-							<button type="submit">Iscriviti</button></li>
+							placeholder="La tua email">
+							<button class="btn mt-2" type="submit">Iscriviti</button></li>
 					</ul>
+				</div>
+				<div class="footer-col px-5">
+					<h4>follow us</h4>
+					<div class="social-links">
+						<a href="#"><i class="fab fa-facebook-f grandi"></i></a> <a
+							href="#"><i class="fab fa-twitter grandi"></i></a> <a href="#"><i
+							class="fab fa-instagram grandi"></i></a> <a href="#"><i
+							class="fab fa-linkedin-in grandi"></i></a>
+					</div>
+				</div>
+
+				<div class="d-flex justify-content-center align-items-center flex-column mt-6" style="color: white">
+					<img th:src="@{image/orciaverde.png}" alt="Logo agriturismo"
+						class="loghetto py-2"> &copy; 2023 Querciavalle. Tutti i diritti
+					riservati.
 				</div>
 			</div>
 		</div>
 	</footer>
+	
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
 	<script src="javaScript/index.js"></script>

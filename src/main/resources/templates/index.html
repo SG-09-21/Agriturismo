@@ -24,7 +24,7 @@
 		<div class="sfondo-hero">
 			<div class="navbar">
 				<div class="logo">
-					<a th:href="@{index}">Antico Casale Orgiaverde</a>
+					<a th:href="@{index}">Antico Casale Orciaverde</a>
 				</div>
 				<ul class="links">
 					<li><a th:href="@{index}" class="selezionato">Home</a></li>
@@ -113,9 +113,10 @@
 						</div>
 					</div>
 					<div class="lc-block d-grid d-lg-block gap-2">
-						<a class="btn btn-light bordeaux" th:href="@{catalogo}" role="button">Vivi la nostra
-							passione</a> <a class="btn siena" href="#" role="button">Info
-							e prenotazioni</a>
+						<a class="btn btn-light bordeaux beige" th:href="@{catalogo}"
+							role="button">Vivi la nostra passione</a> 
+						<a class="btn siena"
+							href="#" role="button">Info e prenotazioni</a>
 					</div>
 					<!-- /lc-block -->
 				</div>
@@ -135,7 +136,7 @@
 									<p>Profumato taglio San Giovese e Merlot della zona di
 										Montepulciano.</p>
 									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
-									role="button">Scopri 50&50</a>
+										role="button">Scopri 50&50</a>
 								</div>
 							</div>
 							<div class="carousel-item" data-bs-interval="5000">
@@ -146,7 +147,7 @@
 									<p>Ottimo latticino per accompagnare i vostri piatti
 										preferiti, con 100% latte di bufala</p>
 									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
-									role="button">Scopri Burrata di Bufala</a>
+										role="button">Scopri Burrata di Bufala</a>
 								</div>
 							</div>
 							<div class="carousel-item" data-bs-interval="5000">
@@ -154,9 +155,10 @@
 									class="img-fluid mx-auto rounded-3" alt="...">
 								<div class="carousel-caption d-none d-md-block tondo">
 									<h5>1698 Bolgheri DOC Pietranova</h5>
-									<p>Annata 2018, Perfetto da bere subito, migliora con il tempo fino a 15 anni.</p>
+									<p>Annata 2018, Perfetto da bere subito, migliora con il
+										tempo fino a 15 anni.</p>
 									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
-									role="button">Scopri 1698 Bolgheri</a>
+										role="button">Scopri 1698 Bolgheri</a>
 								</div>
 							</div>
 							<div class="carousel-item" data-bs-interval="5000">
@@ -164,9 +166,11 @@
 									class="img-fluid mx-auto rounded-3" alt="...">
 								<div class="carousel-caption d-none d-md-block tondo">
 									<h5>Finocchiona IGP Falorni</h5>
-									<p>I profumi inconfondibili delle colline e dei borghi toscani, l’aroma di finocchio e il gusto vellutato rendono unica la Finocchiona IGP.</p>
+									<p>I profumi inconfondibili delle colline e dei borghi
+										toscani, l’aroma di finocchio e il gusto vellutato rendono
+										unica la Finocchiona IGP.</p>
 									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
-									role="button">Scopri finocchiona IGP</a>
+										role="button">Scopri finocchiona IGP</a>
 								</div>
 							</div>
 							<div class="carousel-item" data-bs-interval="5000">
@@ -174,9 +178,11 @@
 									class="d-block w-90 mx-auto rounded-3" alt="...">
 								<div class="carousel-caption d-none d-md-block tondo">
 									<h5>Pancetta Stagionata di Colonnata</h5>
-									<p>La Pancetta Colonnata Mafalda è ideale da gustare a fette al naturale, a cubetti o come prezioso ingrediente in cucina.</p>
+									<p>La Pancetta Colonnata Mafalda è ideale da gustare a
+										fette al naturale, a cubetti o come prezioso ingrediente in
+										cucina.</p>
 									<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}"
-									role="button">Scopri Pancetta di Colonnata</a>
+										role="button">Scopri Pancetta di Colonnata</a>
 								</div>
 							</div>
 						</div>
@@ -203,36 +209,49 @@
 	<footer class="footer mt-4">
 		<div class="container">
 			<div class="row">
-				<div class="footer-col">
-					<h4>Link Utili</h4>
+				<div class="footer-col px-5">
+					<h4>Nav</h4>
 					<ul>
-						<li><a th:href="@{contatti}">Contatti</a></li>
+						<li><a th:href="@{contatti}">Contattaci</a></li>
+						<li><a th:href="@{struttura-servizi}">La Struttura</a></li>
+						<li><a th:href="@{catalogo}">I Prodotti</a></li>
 						<li><a th:href="@{login-admin}">Area Riservata</a></li>
 					</ul>
 				</div>
-
-
-				<div class="footer-col">
+				<div class="footer-col  px-5">
 					<h4>Info</h4>
 					<ul>
-						<li><img th:src="@{image/querciavalle.png}"
-							alt="Logo agriturismo"></li>
-						<li style="color:white">P.IVA: 1234567890</li>
-						<li style="color:white">Mail: info@orgiaverde.it</li>
-						<li style="color:white">Via Palio 69, Castiglion Fiorentino (AR) - 52043</li>
-						<li style="color:white">&copy; 2023 Querciavalle. Tutti i diritti riservati.</li>
+						<li></li>
+						<li style="color: white">P.IVA: 1234567890</li>
+						<li style="color: white">Mail: info@orgiaverde.it</li>
+						<li style="color: white">Via Palio 69, Castiglion Fiorentino
+							(AR) - 52043</li>
 					</ul>
 				</div>
 
-				<div class="footer-col">
+				<div class="footer-col  px-5">
 					<h4>Newsletter</h4>
 					<ul>
-						<li style="color:white"><p>Inserisci la tua mail per iscriverti alla
-								Newsletter</p></li>
+						<li style="color: white"><p>Iscriviti alla newsletter per accedere a imperdibili offerte</p></li>
 						<li><input type="text" name="EmailAdress"
-							placeholder="Enter your email">
+							placeholder="La tua email">
 							<button class="btn mt-2" type="submit">Iscriviti</button></li>
 					</ul>
+				</div>
+				<div class="footer-col px-5">
+					<h4>follow us</h4>
+					<div class="social-links">
+						<a href="#"><i class="fab fa-facebook-f grandi"></i></a> <a
+							href="#"><i class="fab fa-twitter grandi"></i></a> <a href="#"><i
+							class="fab fa-instagram grandi"></i></a> <a href="#"><i
+							class="fab fa-linkedin-in grandi"></i></a>
+					</div>
+				</div>
+
+				<div class="d-flex justify-content-center align-items-center flex-column mt-6" style="color: white">
+					<img th:src="@{image/orciaverde.png}" alt="Logo agriturismo"
+						class="loghetto py-2"> &copy; 2023 Querciavalle. Tutti i diritti
+					riservati.
 				</div>
 			</div>
 		</div>

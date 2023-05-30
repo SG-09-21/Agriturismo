@@ -8,13 +8,17 @@
     <title>Document</title>
 </head>
 <body>
+<div class="box">
     <h1>Utenti</h1>
-    <table>
+    	<a th:href="@{/dashboard-catalogo}">Catalogo</a>
+    	<a th:href="@{/dashboard-ordini}">Ordini</a>
+   		<a th:href="@{/dashboard-admin}">Admin</a>
+    <table class="table-format">
         <thead>
             <tr>
                 <th>Nome</th>
                 <th>Cognome</th>
-                <th>Username</th>
+                <th>Mail</th>
                 <th>Password</th>
             </tr>
         </thead>
@@ -27,9 +31,6 @@
             </tr>
         </tbody>
     </table>
-    <p><a th:href="@{/dashboard-catalogo}">Catalogo</a></p>
-    <p><a th:href="@{/dashboard-ordini}">Ordini</a></p>
-    <p><a th:href="@{/dashboard-admin}">Admin</a></p>
-    
+    </div>
 </body>
 </html>
