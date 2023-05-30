@@ -24,7 +24,7 @@
 		<p th:if="${del}" th:text="'Prodotto eliminato con successo'"></p>
 
 		<form method="post" action="dashboard-catalogo/registra" enctype="multipart/form-data">
-		<label for="categoria">Nome prodotto:</label>
+		<label for="descrizione">Nome prodotto:</label>
 			<input type="text" th:value="${prodotto.descrizione}" name="descrizione" placeholder="Nome prodotto"
 				required>
 			<!--         <input type="text" th:value="${prodotto.categoria}" name="categoria" placeholder="Categoria prodotto" required> -->
@@ -36,12 +36,12 @@
 				<option>Conserve</option>
 				<option>Vini</option>
 			</select>
-			<label for="categoria">Prezzo prodotto:</label>
+			<label for="prezzo">Prezzo prodotto:</label>
 			<input type="number" step="any" th:value="${prodotto.prezzo}" name="prezzo" placeholder="Prezzo prodotto"
 				required>
-			<label for="categoria">Immagine prodotto:</label>
+			<label for="immagine">Immagine prodotto:</label>
 			<input type="file" name="immagine" placeholder="Immagine">
-			<label for="categoria">Descrizione prodotto:</label>
+			<label for="dettagli">Descrizione prodotto:</label>
 			<input type="text" th:value="${prodotto.dettagli}" name="dettagli" placeholder="Descrizione Prodotto"
 				required></input>
 			<button type="submit" th:text="${edit ? 'Modifica Prodotto' : 'Registra Prodotto'}"></button>
