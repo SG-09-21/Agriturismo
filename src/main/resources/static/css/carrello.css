@@ -30,7 +30,7 @@ a:hover {
 
 .sfondo-hero {
 	
-	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
+	background-image: url('https://www.tuscanypeople.com/wp-content/uploads/2019/07/nyt_chianti.jpg');
 	height:45vh;
 	background-position:center;
 	background-size: cover;
@@ -358,3 +358,19 @@ ul{
 .loghetto {
 	width: 100px;
 }
+
+.vuoto {
+  width: 1200px ;
+  height: 800px;
+  border: solid red 2px;
+  margin: auto;
+  margin-top: 24px;
+}
+
+@media (max-width: 576px) {
+    .vuoto{
+		width: auto;
+		height: 40px auto;    
+    }
+}
+
