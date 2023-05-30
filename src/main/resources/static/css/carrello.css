@@ -1,36 +1,58 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'open Sans', sans-serif;
-}
-
+/* Global Styles */
 body {
     height: 100vh;
-    background-color: #000;
-    background: url('/image/campagna.jpg') no-repeat;
+    background-color: gainsboro;
     background-size: cover;
     background-position: center;
 }
 
+
 li {
-    list-style: none !important;
+    list-style: none;
+}
+
+ul {
+ padding-inline-start: 0;
 }
 
 a {
-    text-decoration: none !important;
-    color: #fff !important;
+    text-decoration: none;
+    color: #fff;
     font-size: 1rem;
 }
 
 a:hover {
-    color: orange !important;
+    color: brown;;
 }
 
-/*header*/
+/* Hero */
+
+
+.sfondo-hero {
+	
+	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
+	height:45vh;
+	background-position:center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+@media only screen and (max-width: 600px) {
+  .sfondo-hero {
+    height: 55vh;
+  }
+}
+.tondo {
+	/* background: linear-gradient(180deg, rgba(0, 0, 0, 0.43) 5%, rgba(0, 0, 0, 0.1) 50%); */
+	background: rgb(124,124,124);
+    background: radial-gradient(circle, rgba(0,0,0,0.6463963963963963) 0%, rgba(0,0,0,0.0) 100%);
+	border-radius:4px;
+}
+/* Header */
 header {
     position: relative;
-    padding: 0 2rem;
+    
 }
 
 .video-slide {
@@ -44,9 +66,10 @@ header {
 }
 
 .navbar {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.53) 10%, rgba(0, 0, 0, 0) 80%);
     width: 100%;
     height: 60px;
-    max-width: 1200px;
+    padding: 0 3rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -71,25 +94,28 @@ header {
 }
 
 .action_btn {
-    background-color: orange;
+    background-color: #49111c; 
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    transition: scale 0.2s ease;
+    border: 2px solid #49111c;
+    transition:0.3s;
 }
 
 .action_btn:hover {
     scale: 1.05;
-    color: #fff;
+    color: white;
+    background-color: rgb(0,0,0,0.0);
+    border: 2px solid white;
 }
 
 .action_btn:active {
-    scale: 0.95;
+    transform: scale(0.95);
 }
 
 /* Dropdown */
@@ -126,7 +152,7 @@ header {
     justify-content: center;
 }
 
-/* hero */
+/* Hero */
 section#hero {
     height: calc(100vh - 60px);
     display: flex;
@@ -142,38 +168,104 @@ section#hero {
     margin-bottom: 1rem;
 }
 
-/* Footer */
-footer {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    background-color: #000 !important;
-}
-
-footer .navbar {
-    width: 100%;
-    height: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-footer .navbar .links {
-    display: flex !important;
-    gap: 2rem !important;
-}
-
-footer .navbar .links li {
-    padding: 0 ;
-}
+/* Main */
 
 main .card img {
     max-width: 100%;
     height: auto;
 }
+
+/* Footer */
+.footer{
+	background-color: #92817a;;
+    padding: 70px 0;
+}
+
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #49111c;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #fff;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul{
+	list-style: none;
+}
+
+
+/* News Letter*/
+
+.footer-col input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer-col button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #F1DABF;
+  color: #49111c;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-col button[type="submit"]:hover {
+  background-color: #49111c;
+}
+
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -188,6 +280,16 @@ main .card img {
 
     .dropdown_menu {
         display: block;
+        display: none;
+    }
+    
+    .dropdown_menu.open {
+        display: block;
+    }
+    
+    .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
     }
 }
 
@@ -196,4 +298,63 @@ main .card img {
         left: 2rem;
         width: unset;
     }
+    
+    .footer-col{
+    width: 100%;
+	}
+}
+
+.login {
+	color: #FFA500;
+}
+
+.selezionato {
+	color: #FFA500;
+}
+
+#headerPopup{
+  width:75%;
+  margin:0 auto;
+}
+
+#headerPopup iframe{
+  width:100%;
+  margin:0 auto;
+}
+
+.carousel-control-prev, .carousel-control-next{
+	width:40%;
+} 
+
+/* bottoni */
+.beige {
+	background-color: #92817A;
+	border: 2px solid #92817A;
+	color: white;
+	
+}
+
+.siena {
+	color:#49111c;
+	border:2px solid #49111c;
+	transition: 0.3s
+}
+
+.siena:hover {
+	color: white;
+	scale: 1.02;
+	background-color: #49111c;
+	border:2px solid #49111c;
+}
+
+
+/* footer */
+
+.grandi {
+	scale: 2.5;
+	padding: 1rem;
+}
+
+.loghetto {
+	width: 100px;
 }
