@@ -372,3 +372,48 @@ header {
 .php-email-form button[type=submit]:hover {
   background: #61b959;
 }
+
+/* Newsletter */
+.sfondo-news{
+	background-image: url('https://st2.depositphotos.com/1591133/5867/i/600/depositphotos_58675305-stock-photo-scenic-tuscany-landscape-with-farm.jpg');
+	height:40vh;
+	background-position:center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.content {
+	max-width: 650px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	z-index: 2; 
+}
+
+.content h2 {
+	color: #fff;
+	margin-bottom: 40px;
+}
+
+.content .form-control {
+	height: 50px;
+	border-color: #ffffff;
+	border-radius:0;
+}
+
+.content.form-control:focus {
+	box-shadow: none;
+	border: 2px solid #243c4f;
+}
+
+.content .btn {
+	min-height: 50px; 
+	border-radius:0;
+	background: #7cc576;
+	color: #fff;
+	font-weight:600;
+}
+
+.content .btn:hover {
+	background: #61b959;
+}
