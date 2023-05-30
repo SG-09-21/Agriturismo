@@ -45,7 +45,7 @@
 				</div>
 			</div>
 			<!-- Hero -->
-			<div class="container-fluid p-5 text-center bg-image ">
+			<div class="container-fluid p-5 text-center bg-image">
 				<div class="row">
 					<div class="mask">
 						<div
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 
-<div class="container text-center">
+<div class="container text-center" id="separazione">
             <div class="row">
               <div class="col-md-5">
                         <h2 th:text="${p.descrizione}"></h2>
@@ -70,17 +70,17 @@
                 		<img th:if="${p.immagine!=null}" th:src="@{${p.immagine}}" class="card-img-top" th:alt="${p.descrizione}">
                 		<p th:text="${p.categoria}"></p>
           				<p th:text="'Prezzo ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')} + ' €'"></p>
+          				          <a th:text="'Aggiungi ' + ${p.descrizione} + ' al carrello'" th:href="@{dettaglio-prodotto/aggiungi(id=${p.id})}" class="btn btn-primary"></a>
               </div>
               <div class="col"></div>
-              <div class="col-md-6">
+              <div class="col-md-6" id="flex">
                         <p th:text="${p.dettagli}" th:alt="${p.descrizione}"></p>
-                        <a th:text="'Aggiungi ' + ${p.descrizione} + ' al carrello'" th:href="@{dettaglio-prodotto/aggiungi(id=${p.id})}" class="btn btn-primary"></a>
+					<a th:text="'Visualizza carrello'" th:href="@{carrello}" class="btn btn-primary"></a>
+			        <a th:text="'Torna al catalogo'" th:href="@{catalogo}" class="btn btn-primary"></a>
               </div>
             </div>
           </div>
           
-          <a th:text="'Visualizza carrello'" th:href="@{carrello}" class="btn btn-primary"></a>
-          <a th:text="'Torna al catalogo'" th:href="@{catalogo}" class="btn btn-primary"></a>
 
 <footer class="footer mt-4">
 		<div class="container">
