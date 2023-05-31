@@ -112,8 +112,10 @@
 									</thead>
 									<tbody>
 										<tr th:each="p: ${carrello}">
-											<td class="w-25"><img th:src="${p.immagine}"
-												class="img-fluid img-thumbnail" alt="Sheep"></td>
+											<td class="w-25" th:if="${p.immagine == null}" ><img th:if="${p.immagine == null}" th:src="@{image/orciaverde.png}"
+												class="img-fluid img-thumbnail" alt="Articolo non disponibile"></td>
+											<td class="w-25" th:if="${p.immagine != null}"><img th:if="${p.immagine != null}" th:src="@{${p.immagine}}"
+												class="img-fluid img-thumbnail" alt="Articolo"></td>
 											<td th:text="${p.descrizione}"></td>
 											<td th:text="${p.categoria}"></td>
 											<td th:text="${p.prezzo}"></td>
@@ -148,7 +150,7 @@
 		<!-- catalogo -->
 		<div class="row">
 		<div class="d-flex justify-content-center align-items-center mt-5 mx-auto">
-			<p th:if="${added}">Prodotto inserito nel carrello</p>
+			<h3 th:if="${added}">Prodotto inserito nel carrello!</h3>
 		</div>
 		</div>
 		<div class="container-card">
@@ -158,7 +160,8 @@
 
 						<img th:if="${art.immagine==null}"
 							th:src="@{image/PRODOTTO-ESAURITO.png}"
-							class="card-img-top img-size" alt="Prodotto Esaurito"> <img
+							class="card-img-top img-size" alt="Prodotto Esaurito"> 
+						<img
 							th:if="${art.immagine!=null}" th:src="@{${art.immagine}}"
 							class="card-img-top img-size" th:alt="${art.descrizione}">
 						<div class="card-body">
@@ -166,7 +169,10 @@
 							<p class="card-text" th:text="'Prezzo: ' + ${#numbers.formatDecimal(art.prezzo,1,'POINT',2,'COMMA')} + '€'"></p>
 							<a th:href="@{dettaglio-prodotto(id=${art.id})}"
 								th:text="'Scopri ' + ${art.descrizione}"
-								class="btn btn-primary btn-custom"></a>
+								class="btn btn-primary btn-custom w-100"></a>
+							<a th:text="'Aggiungi al carrello'"
+											th:href="@{dettaglio-prodotto/aggiungi(id=${art.id})}"
+											class="btn btn-primary p-2 mt-2 w-100 beige"></a>
 						</div>
 
 					</div>

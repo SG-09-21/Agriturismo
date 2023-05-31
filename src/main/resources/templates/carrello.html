@@ -116,8 +116,10 @@
 									</thead>
 									<tbody>
 										<tr th:each="p: ${carrello}">
-											<td class="w-25"><img th:src="${p.immagine}" class="img-fluid img-thumbnail"
-													alt="Sheep"></td>
+											<td class="w-25" th:if="${p.immagine == null}" ><img th:if="${p.immagine == null}" th:src="@{image/orciaverde.png}"
+												class="img-fluid img-thumbnail" alt="Articolo non disponibile"></td>
+											<td class="w-25" th:if="${p.immagine != null}"><img th:if="${p.immagine != null}" th:src="@{${p.immagine}}"
+												class="img-fluid img-thumbnail" alt="Articolo"></td>
 											<td th:text="${p.descrizione}"></td>
 											<td th:text="${p.categoria}"></td>
 											<td th:text="${p.prezzo}"></td>
@@ -162,9 +164,8 @@
 					</div>
 					<div class="col-md-1"></div>
 					<div th:if="${loggato == false}" class="col col-md-8">
-						<div class="row m-5 text-center">
-							<h3>Benvenuto User</h3>
-							<h4>Effettua il Login</h4>
+						<div class="row d-flex justify-content-center align-items-start">
+							<h4>Non Hai ancora effettuato il Login</h4>
 							<p>Dalla bacheca del tuo account puoi visualizzare i tuoi ordini, gestire il tuo medodo di pagamento e visualizzare i tuoi dati di registrazione.</p>
 						</div>
 						
@@ -256,9 +257,9 @@
 					</div>
 					<div class="col mt-2">
 						<span>Password</span>
-						<p th:text="${utente.password}"></p>
-<!-- 						<p id="passwordOutput">**********</p> -->
-<!-- 						<button class="btn btn-dark" id="showPasswordButton">Mostra</button> -->
+						<p id="showPw" th:text="${utente.password}"></p>
+ 						<p id="passwordHidden">**********</p>
+ 						<button class="btn siena" id="showPasswordButton">Mostra</button>
 					</div>
 				</div>
 				</div>

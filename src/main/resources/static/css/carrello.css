@@ -376,3 +376,7 @@ ul{
 .login {
 	color: #49111c;
 }
+
+#showPw {
+	display: none;
+}
