@@ -2,19 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Area Utente</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area Utente</title>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-		type='text/css' />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+	type='text/css' />
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" th:href="@{css/carrello.css}">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" th:href="@{css/carrello.css}">
 
-	<link rel="stylesheet" href="css/carrelloPopup.css">
+<link rel="stylesheet" href="css/carrelloPopup.css">
 </head>
 
 <body>
@@ -30,7 +34,8 @@
 					<li><a th:href="@{catalogo}">Prodotti</a></li>
 					<li><a th:href="@{struttura-servizi}">Servizi</a></li>
 					<li><a th:href="@{contatti}">Contatti</a></li>
-					<li><a th:href="@{carrello}" class="selezionato">Area Utente</a></li>
+					<li><a th:href="@{carrello}" class="selezionato">Area
+							Utente</a></li>
 				</ul>
 				<a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
 				<a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
@@ -45,9 +50,11 @@
 						<li><a th:href="@{catalogo}">Prodotti</a></li>
 						<li><a th:href="@{struttura-servizi}">Servizi</a></li>
 						<li><a th:href="@{contatti}">Contatti</a></li>
-						<li><a th:href="@{carrello}" class="selezionato">Area Utente</a></li>
-						<li><a th:href="@{login}" th:if="${loggato == false}" class="login">Login</a> <a
-								th:href="@{logout}" th:if="${loggato}" class="login">Logout</a></li>
+						<li><a th:href="@{carrello}" class="selezionato">Area
+								Utente</a></li>
+						<li><a th:href="@{login}" th:if="${loggato == false}"
+							class="login">Login</a> <a th:href="@{logout}" th:if="${loggato}"
+							class="login">Logout</a></li>
 					</ul>
 				</div>
 			</div>
@@ -56,23 +63,28 @@
 			<div class="container-fluid p-5 text-center bg-image ">
 				<div class="row">
 					<div class="mask">
-						<div class="tondo d-flex justify-content-center align-items-center h-100 p-5">
+						<div
+							class="tondo d-flex justify-content-center align-items-center h-100 p-5">
 							<div class="text-white">
 								<div th:if="${loggato}">
 									<h1 class="mb-3" th:text="'Benvenuto ' + ${utente.nome}"></h1>
 									<h4 class="mb-3">Questa è la tua area riservata</h4>
-									<button type="button" class="btn btn-outline-light justify-content-start" data-toggle="modal"
-									data-target="#cartModal">Mostra Carrello</button>
-									
+									<button type="button"
+										class="btn btn-outline-light justify-content-start"
+										data-toggle="modal" data-target="#cartModal">Mostra
+										Carrello</button>
+
 								</div>
 								<div th:if="${loggato == false}">
 									<h1 class="mb-3">Benvenuto User</h1>
 									<h4 class="mb-3">Effettua il Login</h4>
-									<button type="button" class="btn btn-outline-light btn-lg justify-content-start" data-toggle="modal"
-										data-target="#cartModal">Mostra Carrello</button>
-									
+									<button type="button"
+										class="btn btn-outline-light btn-lg justify-content-start"
+										data-toggle="modal" data-target="#cartModal">Mostra
+										Carrello</button>
+
 								</div>
-								
+
 							</div>
 						</div>
 					</div>
@@ -80,105 +92,120 @@
 			</div>
 		</div>
 
-<!-- 		PopUp -->
+		<!-- 		PopUp -->
 		<div class="container">
-				<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-					aria-hidden="true">
-					<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-						<div class="modal-content">
-							<div class="modal-header border-bottom-0">
-								<h5 class="modal-title" id="exampleModalLabel"
-									th:if="${loggato && carrelloPieno == false}"
-									th:text="'Non hai nessun articolo nel carrello,  ' + ${utente.nome}"></h5>
-								<h5 class="modal-title" id="exampleModalLabel" th:if="${loggato and carrelloPieno}"
-									th:text="'Il tuo carrello, ' + ${utente.nome}"></h5>
-								<h5 class="modal-title" id="exampleModalLabel"
-									th:if="${loggato == false and carrelloPieno}">Effettua il
-									Login per procedere con l'ordine</h5>
-								<h5 class="modal-title" id="exampleModalLabel"
-									th:if="${loggato == false and carrelloPieno == false}">Il
-									tuo carrello è vuoto</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								<table class="table table-image" th:if="${carrelloPieno}">
-									<thead>
-										<tr>
-											<th scope="col"></th>
-											<th scope="col">Descrizione</th>
-											<th scope="col">Categoria</th>
-											<th scope="col">Prezzo</th>
-											<th scope="col">Quantità</th>
-											<th scope="col"></th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr th:each="p: ${carrello}">
-											<td class="w-25" th:if="${p.immagine == null}" ><img th:if="${p.immagine == null}" th:src="@{image/orciaverde.png}"
-												class="img-fluid img-thumbnail" alt="Articolo non disponibile"></td>
-											<td class="w-25" th:if="${p.immagine != null}"><img th:if="${p.immagine != null}" th:src="@{${p.immagine}}"
-												class="img-fluid img-thumbnail" alt="Articolo"></td>
-											<td th:text="${p.descrizione}"></td>
-											<td th:text="${p.categoria}"></td>
-											<td th:text="${p.prezzo}"></td>
-											<td class="qty"><input type="text" class="form-control" id="input1"
-													value="1">
-											</td>
-											<td><a th:href="@{carrello/rimuovi-prodotto(id=${p.id})}"
-													class="btn btn-danger btn-sm">X </a></td>
-										</tr>
-									</tbody>
-								</table>
+			<div class="modal fade" id="cartModal" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg modal-dialog-centered"
+					role="document">
+					<div class="modal-content">
+						<div class="modal-header border-bottom-0">
+							<h5 class="modal-title" id="exampleModalLabel"
+								th:if="${loggato && carrelloPieno == false}"
+								th:text="'Non hai nessun articolo nel carrello,  ' + ${utente.nome}"></h5>
+							<h5 class="modal-title" id="exampleModalLabel"
+								th:if="${loggato and carrelloPieno}"
+								th:text="'Il tuo carrello, ' + ${utente.nome}"></h5>
+							<h5 class="modal-title" id="exampleModalLabel"
+								th:if="${loggato == false and carrelloPieno}">Effettua il
+								Login per procedere con l'ordine</h5>
+							<h5 class="modal-title" id="exampleModalLabel"
+								th:if="${loggato == false and carrelloPieno == false}">Il
+								tuo carrello è vuoto</h5>
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<table class="table table-image" th:if="${carrelloPieno}">
+								<thead>
+									<tr>
+										<th scope="col"></th>
+										<th scope="col">Descrizione</th>
+										<th scope="col">Categoria</th>
+										<th scope="col">Prezzo</th>
+										<th scope="col">Quantità</th>
+										<th scope="col"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="p: ${carrello}">
+										<td class="w-25" th:if="${p.immagine == null}"><img
+											th:if="${p.immagine == null}"
+											th:src="@{image/orciaverde.png}"
+											class="img-fluid img-thumbnail"
+											alt="Articolo non disponibile"></td>
+										<td class="w-25" th:if="${p.immagine != null}"><img
+											th:if="${p.immagine != null}" th:src="@{${p.immagine}}"
+											class="img-fluid img-thumbnail" alt="Articolo"></td>
+										<td th:text="${p.descrizione}"></td>
+										<td th:text="${p.categoria}"></td>
+										<td th:text="${p.prezzo}"></td>
+										<td class="qty"><input type="text" class="form-control"
+											id="input1" value="1"></td>
+										<td><a th:href="@{carrello/rimuovi-prodotto(id=${p.id})}"
+											class="btn btn-danger btn-sm">X </a></td>
+									</tr>
+								</tbody>
+							</table>
 
-							</div>
-							<div class="modal-footer border-top-0 d-flex justify-content-between">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
-								<a th:if="${loggato == false}" type="button" class="btn btn-success"
-									th:href="@{login}">Effettua il Login</a>
-								<a th:if="${carrelloPieno and loggato}" type="button" class="btn btn-success"
-									th:href="@{carrello/aggiungi-ordine}">Effettua
-									Ordine</a>
-							</div>
+						</div>
+						<div
+							class="modal-footer border-top-0 d-flex justify-content-between">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Chiudi</button>
+							<a th:if="${loggato == false}" type="button"
+								class="btn btn-success" th:href="@{login}">Effettua il Login</a>
+							<a th:if="${carrelloPieno and loggato}" type="button"
+								class="btn btn-success" th:href="@{carrello/aggiungi-ordine}">Effettua
+								Ordine</a>
 						</div>
 					</div>
 				</div>
 			</div>
-		
-<!-- 		Bacheca -->
-		<div class="container-fluid">			
+		</div>
+
+		<!-- 		Bacheca -->
+		<div class="container-fluid">
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-md-3 text-center">
 						<h4>Account</h4>
 						<div class="list-group linkNav">
-						  	<a href="#bacheca" class="list-group-item list-group-item-action">Bacheca</a>
-						  	<a href="#ordini" class="list-group-item list-group-item-action">Ordini</a>
-						  	<a href="#pagamento" class="list-group-item list-group-item-action">Pagamento</a>
-						  	<a href="#account" class="list-group-item list-group-item-action">Dettagli account</a>
-						  	<a th:if="${loggato == false}" th:href="@{login}" id="logout" class="list-group-item list-group-item-action">Login</a>
-						  	<a th:if="${loggato}" th:href="@{logout}" id="logout" class="list-group-item list-group-item-action">Logout</a>
-						  	
+							<a href="#bacheca" class="list-group-item list-group-item-action">Bacheca</a>
+							<a href="#ordini" class="list-group-item list-group-item-action">Ordini</a>
+							<a href="#pagamento"
+								class="list-group-item list-group-item-action">Pagamento</a> <a
+								href="#account" class="list-group-item list-group-item-action">Dettagli
+								account</a> <a th:if="${loggato == false}" th:href="@{login}"
+								id="logout" class="list-group-item list-group-item-action">Login</a>
+							<a th:if="${loggato}" th:href="@{logout}" id="logout"
+								class="list-group-item list-group-item-action">Logout</a>
+
 						</div>
 					</div>
 					<div class="col-md-1"></div>
 					<div th:if="${loggato == false}" class="col col-md-8">
 						<div class="row d-flex justify-content-center align-items-start">
-							<h4>Non Hai ancora effettuato il Login</h4>
-							<p>Dalla bacheca del tuo account puoi visualizzare i tuoi ordini, gestire il tuo medodo di pagamento e visualizzare i tuoi dati di registrazione.</p>
+							<h4>Non hai ancora effettuato il Login</h4>
+							<p>Accedi per poter effettuare e consultare i tuoi ordini.</p>
 						</div>
-						
+
 					</div>
 					<div th:if="${loggato}" class="col col-md-8">
 						<div class="row m-5 text-center">
 							<h4 th:text="'Benvenuto ' + ${utente.nome}"></h4>
-							<p>Dalla bacheca del tuo account puoi visualizzare i tuoi ordini, gestire il tuo medodo di pagamento e visualizzare i tuoi dati di registrazione.</p>
+							<p>Dalla bacheca del tuo account puoi visualizzare i tuoi
+								ordini, gestire il tuo medodo di pagamento e visualizzare i tuoi
+								dati di registrazione.</p>
 						</div>
 						<div id="bacheca" class="row m5">
 							<div class="col-md-4 text-center mt-3">
 								<div class="card-img-center">
-									<img src="https://icons.getbootstrap.com/assets/icons/journal-bookmark.svg" width="30%" >
+									<img
+										src="https://icons.getbootstrap.com/assets/icons/journal-bookmark.svg"
+										width="30%">
 									<div class="card-body mt-1">
 										<a href="#ordini" class="btn siena">Ordini</a>
 									</div>
@@ -186,7 +213,9 @@
 							</div>
 							<div class="col-md-4 text-center mt-3">
 								<div class="card-img-center">
-									<img src="https://icons.getbootstrap.com/assets/icons/credit-card.svg" width="30%">
+									<img
+										src="https://icons.getbootstrap.com/assets/icons/credit-card.svg"
+										width="30%">
 									<div class="card-body mt-1">
 										<a href="#pagamento" class="btn siena">Pagamento</a>
 									</div>
@@ -194,25 +223,29 @@
 							</div>
 							<div class="col-md-4 text-center mt-3">
 								<div class="card-img-center">
-									<img src="https://icons.getbootstrap.com/assets/icons/person-circle.svg" width="30%">
+									<img
+										src="https://icons.getbootstrap.com/assets/icons/person-circle.svg"
+										width="30%">
 									<div class="card-body mt-1">
 										<a href="#account" class="btn siena">Account</a>
 									</div>
 								</div>
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
-				
-<!-- 				Ordini -->
+
+				<!-- 				Ordini -->
 				<div th:if="${loggato}">
 					<div id="ordini" class="row mt-5">
 						<h1>I tuoi ordini</h1>
 						<div class="table-responsive-sm">
-							<h2 th:if="${cancFail}">Impossibile annullare ordini in date passate!</h2>
+							<h2 th:if="${cancFail}">Impossibile annullare ordini in date
+								passate!</h2>
 							<h2 th:if="${cancOrd}">Ordine annullato con successo!</h2>
-							<h2 th:if="${nessunOrdine}">Non hai ancora effettuato alcun ordine</h2>
+							<h2 th:if="${nessunOrdine}">Non hai ancora effettuato alcun
+								ordine</h2>
 							<table th:if="${nessunOrdine == false}" class="table caption-top">
 								<caption>Lista Ordini</caption>
 								<thead>
@@ -225,29 +258,29 @@
 								<tbody>
 									<tr th:each="o : ${ordini}">
 										<td th:text="${#temporals.format(o.data, 'dd-MMM-yyyy')}"></td>
-										<td th:text="${#numbers.formatDecimal(o.importo,0,'POINT',2,'COMMA')} + ' €'"></td>
-										<td>
-											<a
-											th:href="@{/carrello(id=${o.id})}"
+										<td
+											th:text="${#numbers.formatDecimal(o.importo,0,'POINT',2,'COMMA')} + ' €'"></td>
+										<td><a th:href="@{/carrello(id=${o.id})}"
 											class="btn btn-sm siena" id="seleziona" th:text="'Seleziona'"></a>
 										</td>
-										<td class="d-flex justify-content-end">
-										<a th:href="@{carrello/annulla-ordine(id=${o.id})}" class="btn btn-sm siena">Annulla</a>
-										</td>
+										<td class="d-flex justify-content-end"><a
+											th:href="@{carrello/annulla-ordine(id=${o.id})}"
+											class="btn btn-sm siena">Annulla</a></td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 					</div>
 					<div th:if="${selezionato}" id="dettaglioOrdini" class="row mt-5">
-						<h4 th:text="'Ordine del ' + ${#temporals.format(ordine.data, 'dd-MMM-yyyy')}"></h4>
+						<h4
+							th:text="'Ordine del ' + ${#temporals.format(ordine.data, 'dd-MMM-yyyy')}"></h4>
 						<table class="table-responsive m-3">
 							<thead>
 								<tr>
 									<th th:text="'Nome Prodotto'"></th>
 									<th th:text="'Quantità'"></th>
 									<th th:text="'Importo'"></th>
-	
+
 								</tr>
 							</thead>
 							<tbody>
@@ -263,9 +296,9 @@
 						<h5
 							th:text="'Importo complessivo: ' + ${#numbers.formatDecimal(ordine.importo,0,'POINT',2,'COMMA')} + ' Euro.'"></h5>
 					</div>
-					
-				
-	<!-- 				Pagamento e Account -->
+
+
+					<!-- 				Pagamento e Account -->
 					<div id="pagamento" class="row mt-5 ">
 						<h1>I tuoi metodi di pagamento</h1>
 						<p>Non hai registrato alcun metodo di pagamento</p>
@@ -285,27 +318,17 @@
 							<span>Email</span>
 							<p th:text="${utente.username}"></p>
 						</div>
+
 						<div class="col mt-2">
 							<span>Password</span>
-							<p th:text="${utente.password}"></p>
-	<!-- 						<p id="passwordOutput">**********</p> -->
-	<!-- 						<button class="btn btn-dark" id="showPasswordButton">Mostra</button> -->
+							<p id="showPw" th:text="${utente.password}"></p>
+							<p id="passwordHidden">**********</p>
+							<button class="btn siena" id="showPasswordButton">Mostra</button>
 						</div>
 					</div>
-					<div class="col mt-2">
-						<span>Email</span>
-						<p th:text="${utente.username}"></p>
-					</div>
-					<div class="col mt-2">
-						<span>Password</span>
-						<p id="showPw" th:text="${utente.password}"></p>
- 						<p id="passwordHidden">**********</p>
- 						<button class="btn siena" id="showPasswordButton">Mostra</button>
-					</div>
-				</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</main>
 
 
@@ -337,37 +360,41 @@
 					<h4>Newsletter</h4>
 					<ul>
 						<li style="color: white">
-							<p>Iscriviti alla newsletter per
-								accedere a imperdibili offerte</p>
+							<p>Iscriviti alla newsletter per accedere a imperdibili
+								offerte</p>
 						</li>
-						<li><input type="text" name="EmailAdress" placeholder="La tua email">
-							<button class="btn mt-2" type="submit">Iscriviti</button>
-						</li>
+						<li><input type="text" name="EmailAdress"
+							placeholder="La tua email">
+							<button class="btn mt-2" type="submit">Iscriviti</button></li>
 					</ul>
 				</div>
 				<div class="footer-col px-5">
 					<h4>follow us</h4>
 					<div class="social-links">
-						<a href="#"><i class="fab fa-facebook-f grandi"></i></a> <a href="#"><i
-								class="fab fa-twitter grandi"></i></a> <a href="#"><i
-								class="fab fa-instagram grandi"></i></a> <a href="#"><i
-								class="fab fa-linkedin-in grandi"></i></a>
+						<a href="#"><i class="fab fa-facebook-f grandi"></i></a> <a
+							href="#"><i class="fab fa-twitter grandi"></i></a> <a href="#"><i
+							class="fab fa-instagram grandi"></i></a> <a href="#"><i
+							class="fab fa-linkedin-in grandi"></i></a>
 					</div>
 				</div>
 
-				<div class="d-flex justify-content-center align-items-center flex-column mt-6" style="color: white">
-					<img th:src="@{image/orciaverde.png}" alt="Logo agriturismo" class="loghetto py-2"> &copy; 2023
-					Querciavalle. Tutti i
+				<div
+					class="d-flex justify-content-center align-items-center flex-column mt-6"
+					style="color: white">
+					<img th:src="@{image/orciaverde.png}" alt="Logo agriturismo"
+						class="loghetto py-2"> &copy; 2023 Querciavalle. Tutti i
 					diritti riservati.
 				</div>
 			</div>
 		</div>
 	</footer>
-	
-	
+
+
 	<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
-	<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+	<script
+		src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+	<script
+		src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
 	<script src="./js/carrello.js"></script>
 	<script src="javaScript/index.js"></script>
 </body>
