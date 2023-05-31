@@ -2,67 +2,79 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" th:href="@{css/dashboard-catalogo.css}">
-	<title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" th:href="@{css/dashboard-catalogo.css}">
+<title>Catalogo - Area Admin</title>
 </head>
 
 <body>
-<div class="box">
-	<h1>Pannello Catalogo</h1>
-
-		<div class="controllo-admin">
-			<a class="linker" th:href="@{/dashboard-admin}">Admin</a>
-			<a class="linker" th:href="@{/dashboard-ordini}">Ordini</a>
-			<a class="linker" th:href="@{/dashboard-utenti}">Utenti</a>
+	<div class="box">
+		<div
+			class="controllo-admin p-2 d-flex justify-content-between align-items-center">
+			<div>
+				<h1>Pannello Catalogo</h1>
+			</div>
+			<div>
+				<a class="linker" th:href="@{/dashboard-admin}">Admin</a> <a
+					class="linker" th:href="@{/dashboard-ordini}">Ordini</a> <a
+					class="linker" th:href="@{/dashboard-utenti}">Utenti</a>
+			</div>
 		</div>
-
-		<p th:if="${ok}" th:text="'Prodotto inserito con successo'"></p>
-		<p th:if="${del}" th:text="'Prodotto eliminato con successo'"></p>
-
-		<form class="spazio" method="post" action="dashboard-catalogo/registra" enctype="multipart/form-data">
-		<label  for="descrizione">Nome prodotto:</label>
-			<input type="text" th:value="${prodotto.descrizione}" name="descrizione" placeholder="Nome prodotto"
-				required>
+		<div>
+			<p th:if="${ok}" th:text="'Prodotto inserito con successo'"></p>
+			<p th:if="${del}" th:text="'Prodotto eliminato con successo'"></p>
+		</div>
+		<form class="spazio" method="post"
+			action="dashboard-catalogo/registra" enctype="multipart/form-data">
+			<label for="descrizione">Nome prodotto:</label> <input type="text"
+				th:value="${prodotto.descrizione}" name="descrizione"
+				placeholder="Nome prodotto" required>
 			<!--         <input type="text" th:value="${prodotto.categoria}" name="categoria" placeholder="Categoria prodotto" required> -->
-			<label for="categoria">Categoria prodotto:</label>
-			<select name="categoria" required>
-				<option th:text="${prodotto.categoria}" selected>Seleziona una categoria</option>
+			<label for="categoria">Categoria prodotto:</label> <select
+				name="categoria" required>
+				<option th:text="${prodotto.categoria}" selected>Seleziona
+					una categoria</option>
 				<option>Frutta</option>
 				<option>Salumi</option>
 				<option>Conserve</option>
 				<option>Vini</option>
-			</select>
-			<label for="prezzo">Prezzo prodotto:</label>
-			<input type="number" step="any" th:value="${prodotto.prezzo}" name="prezzo" placeholder="Prezzo prodotto"
-				required>
-			<label for="immagine">Immagine prodotto:</label>
-			<input type="file" name="immagine" placeholder="Immagine">
-			<label for="dettagli">Descrizione prodotto:</label>
-			<input type="text" th:value="${prodotto.dettagli}" name="dettagli" placeholder="Descrizione Prodotto"
-				required></input>
-			<button type="submit" th:text="${edit ? 'Modifica Prodotto' : 'Registra Prodotto'}"></button>
+			</select> <label for="prezzo">Prezzo prodotto:</label> <input type="number"
+				step="any" th:value="${prodotto.prezzo}" name="prezzo"
+				placeholder="Prezzo prodotto" required> <label
+				for="immagine">Immagine prodotto:</label> <input type="file"
+				name="immagine" placeholder="Immagine"> <label
+				for="dettagli">Descrizione prodotto:</label> <input type="text"
+				th:value="${prodotto.dettagli}" name="dettagli"
+				placeholder="Descrizione Prodotto" required></input>
+			<button type="submit"
+				th:text="${edit ? 'Modifica Prodotto' : 'Registra Prodotto'}"></button>
 		</form>
 
 		<br>
 
 		<div class="product-grid">
 			<div th:each="p : ${prodotti}" class="product-item">
-				<img th:if="${p.immagine==null}" th:src="@{image/PRODOTTO-ESAURITO.png}" class="card-img-top"
-					alt="Prodotto Esaurito" style="width:160px;max-width:160px;height:160px;max-height:160px;">
-				<img th:if="${p.immagine!=null}" th:src="@{${p.immagine}}" class="card-img-top"
-					th:alt="${p.descrizione}" style="width:160px;max-width:160px;height:160px;max-height:160px;">
+				<img th:if="${p.immagine==null}"
+					th:src="@{image/PRODOTTO-ESAURITO.png}" class="card-img-top"
+					alt="Prodotto Esaurito"
+					style="width: 160px; max-width: 160px; height: 160px; max-height: 160px;">
+				<img th:if="${p.immagine!=null}" th:src="@{${p.immagine}}"
+					class="card-img-top" th:alt="${p.descrizione}"
+					style="width: 160px; max-width: 160px; height: 160px; max-height: 160px;">
 				<h3 th:text="${p.descrizione}"></h3>
 				<p th:text="${p.categoria}"></p>
-				<p th:text="'Prezzo ' + ${#numbers.formatDecimal(p.prezzo,1,'POINT',2,'COMMA')} + ' Euro.'"></p>
+				<p
+					th:text="'Prezzo ' + ${#numbers.formatDecimal(p.prezzo,1,'POINT',2,'COMMA')} + ' Euro.'"></p>
 				<a th:href="@{dashboard-catalogo(id=${p.id})}">
 					<button th:text="'Modifica'"></button>
-				</a>
-				<a th:href="@{dashboard-catalogo/elimina(id=${p.id})}">
+				</a> <a th:href="@{dashboard-catalogo/elimina(id=${p.id})}">
 					<button th:text="'Elimina '"></button>
 				</a>
 			</div>
