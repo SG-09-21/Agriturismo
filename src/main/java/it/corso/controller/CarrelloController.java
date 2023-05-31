@@ -2,7 +2,9 @@ package it.corso.controller;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +30,8 @@ public class CarrelloController {
 	@Autowired
 	private OrdineDao ordineDao;
 	
+	private Ordine ordine;
+	
     @GetMapping
     public String getPage(
     		HttpSession session,
@@ -36,7 +40,8 @@ public class CarrelloController {
     		@RequestParam(name = "ordineOk", required = false) String ordineOk,
 	    @RequestParam(name = "void", required = false) String ordineVuoto,
 	    @RequestParam(name = "cancOrd", required = false) String cancOrd,
-	    @RequestParam(name = "cancFail", required = false) String cancFail) {
+	    @RequestParam(name = "cancFail", required = false) String cancFail,
+	    @RequestParam(name = "id", required = false) Integer idOrdine) {
 	
 	if (session.getAttribute("carrello") != null) {
 	    @SuppressWarnings("unchecked")
@@ -48,6 +53,26 @@ public class CarrelloController {
 	    List<Prodotto> carrello = new ArrayList<>();
 	    model.addAttribute("carrello", carrello);
 	    model.addAttribute("carrelloPieno", !carrello.isEmpty());
+	}
+	
+	if (idOrdine != null) {
+	    ordine = ordineService.getOrdineById(idOrdine);
+	    List<Prodotto> prodotti = ordine.getProdotti();
+	    Map<Prodotto, Integer> mappaProdotti = new HashMap<>();
+
+	    for (Prodotto p : prodotti) {
+
+			if (mappaProdotti.containsKey(p)) {
+			    int quantita = mappaProdotti.get(p);
+			    mappaProdotti.put(p, quantita + 1);
+			} else {
+			    mappaProdotti.put(p, 1);
+			}
+
+	    }
+	    model.addAttribute("ordine", ordine);
+	    model.addAttribute("prodotti", mappaProdotti);
+	    model.addAttribute("selezionato", idOrdine != null);
 	}
 
 	Utente utente = (Utente) session.getAttribute("utente");

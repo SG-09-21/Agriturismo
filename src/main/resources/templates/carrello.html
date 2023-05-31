@@ -206,61 +206,91 @@
 				
 <!-- 				Ordini -->
 				<div th:if="${loggato}">
-				<div id="ordini" class="row mt-5">
-					<h1>I tuoi ordini</h1>
-					<div class="table-responsive-sm">
-					<h2 th:if="${cancFail}">Impossibile annullare ordini in date passate!</h2>
-					<h2 th:if="${cancOrd}">Ordine annullato con successo!</h2>
-					<h2 th:if="${nessunOrdine}">Non hai ancora effettuato alcun ordine</h2>
-					<table th:if="${nessunOrdine == false}" class="table caption-top">
-						<caption>Lista Ordini</caption>
-						<thead>
-							<tr>
-								<th scope="col">Data Ordine</th>
-								<th scope="col">Importo</th>
-								<th scope="col"></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="o : ${ordini}">
-								<td th:text="${#temporals.format(o.data, 'dd-MMM-yyyy')}"></td>
-								<td th:text="${#numbers.formatDecimal(o.importo,0,'POINT',2,'COMMA')} + ' €'"></td>
-								<td class="d-flex justify-content-end"><a
-										th:href="@{carrello/annulla-ordine(id=${o.id})}" class="btn siena">Annulla
-										Ordine</a></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				</div>
+					<div id="ordini" class="row mt-5">
+						<h1>I tuoi ordini</h1>
+						<div class="table-responsive-sm">
+							<h2 th:if="${cancFail}">Impossibile annullare ordini in date passate!</h2>
+							<h2 th:if="${cancOrd}">Ordine annullato con successo!</h2>
+							<h2 th:if="${nessunOrdine}">Non hai ancora effettuato alcun ordine</h2>
+							<table th:if="${nessunOrdine == false}" class="table caption-top">
+								<caption>Lista Ordini</caption>
+								<thead>
+									<tr>
+										<th scope="col">Data Ordine</th>
+										<th scope="col">Importo</th>
+										<th scope="col"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="o : ${ordini}">
+										<td th:text="${#temporals.format(o.data, 'dd-MMM-yyyy')}"></td>
+										<td th:text="${#numbers.formatDecimal(o.importo,0,'POINT',2,'COMMA')} + ' €'"></td>
+										<td>
+											<a
+											th:href="@{/carrello(id=${o.id})}"
+											class="btn btn-sm siena" id="seleziona" th:text="'Seleziona'"></a>
+										</td>
+										<td class="d-flex justify-content-end">
+										<a th:href="@{carrello/annulla-ordine(id=${o.id})}" class="btn btn-sm siena">Annulla</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div th:if="${selezionato}" id="dettaglioOrdini" class="row mt-5">
+						<h4 th:text="'Ordine del ' + ${#temporals.format(ordine.data, 'dd-MMM-yyyy')}"></h4>
+						<table class="table-responsive m-3">
+							<thead>
+								<tr>
+									<th th:text="'Nome Prodotto'"></th>
+									<th th:text="'Quantità'"></th>
+									<th th:text="'Importo'"></th>
+	
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="p : ${prodotti.keySet()}">
+									<td th:text="${p.descrizione}"></td>
+									<td th:text="${prodotti.get(p)}"></td>
+									<td
+										th:text="${#numbers.formatDecimal((p.prezzo * prodotti.get(p)),1,'POINT',2,'COMMA')} + ' Euro.'"></td>
+								</tr>
+							</tbody>
+						</table>
+						<br>
+						<h5
+							th:text="'Importo complessivo: ' + ${#numbers.formatDecimal(ordine.importo,0,'POINT',2,'COMMA')} + ' Euro.'"></h5>
+					</div>
+					
 				
-<!-- 				Pagamento e Account -->
-				<div id="pagamento" class="row mt-5 ">
-					<h1>I tuoi metodi di pagamento</h1>
-					<p>Non hai registrato alcun metodo di pagamento</p>
-					<a class="btn siena">Aggiungi</a>
-				</div>
-				<div id="account" class="row mt-5">
-					<h1>I tuoi dati</h1>
-					<div class="col-md-6 mt-2">
-						<span>Nome</span>
-						<p th:text="${utente.nome}"></p>
+	<!-- 				Pagamento e Account -->
+					<div id="pagamento" class="row mt-5 ">
+						<h1>I tuoi metodi di pagamento</h1>
+						<p>Non hai registrato alcun metodo di pagamento</p>
+						<a class="btn siena">Aggiungi</a>
 					</div>
-					<div class="col-md-6 mt-2">
-						<span>Cognome</span>
-						<p th:text="${utente.cognome}"></p>
+					<div id="account" class="row mt-5">
+						<h1>I tuoi dati</h1>
+						<div class="col-md-6 mt-2">
+							<span>Nome</span>
+							<p th:text="${utente.nome}"></p>
+						</div>
+						<div class="col-md-6 mt-2">
+							<span>Cognome</span>
+							<p th:text="${utente.cognome}"></p>
+						</div>
+						<div class="col mt-2">
+							<span>Email</span>
+							<p th:text="${utente.username}"></p>
+						</div>
+						<div class="col mt-2">
+							<span>Password</span>
+							<p th:text="${utente.password}"></p>
+	<!-- 						<p id="passwordOutput">**********</p> -->
+	<!-- 						<button class="btn btn-dark" id="showPasswordButton">Mostra</button> -->
+						</div>
 					</div>
-					<div class="col mt-2">
-						<span>Email</span>
-						<p th:text="${utente.username}"></p>
-					</div>
-					<div class="col mt-2">
-						<span>Password</span>
-						<p th:text="${utente.password}"></p>
-<!-- 						<p id="passwordOutput">**********</p> -->
-<!-- 						<button class="btn btn-dark" id="showPasswordButton">Mostra</button> -->
-					</div>
-				</div>
 				</div>
 			</div>
 		</div>	
