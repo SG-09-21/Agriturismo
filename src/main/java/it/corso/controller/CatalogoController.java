@@ -25,7 +25,8 @@ public class CatalogoController {
     @GetMapping
     public String getPage(
 	    HttpSession session, 
-	    Model model, 
+	    Model model,
+	    @RequestParam(name = "del", required = false) String del,
 	    @RequestParam(name = "added", required = false) String added) {
 
 	List<Prodotto> prodotti = prodottoService.getProdotti();
@@ -47,6 +48,7 @@ public class CatalogoController {
 	Utente utente = (Utente) session.getAttribute("utente");
 	model.addAttribute("loggato", utente != null);
 	model.addAttribute("utente", utente);
+	model.addAttribute("del", del != null);
 	return "catalogo";
     }
 
@@ -59,7 +61,7 @@ public class CatalogoController {
 	for (Prodotto p : carrello) {
 	    if (p.getId() == id) {
 		carrello.remove(p);
-		return "redirect:/carrello?del";
+		return "redirect:/catalogo?del";
 	    }
 	}
 
