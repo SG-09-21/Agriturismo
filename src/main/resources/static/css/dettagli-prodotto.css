@@ -1,269 +1,37 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-}
 
-/*body {
-  height: 100vh;
-  background-color: #000;
-  background: url('/image/campagna.jpg') no-repeat;
-  background-size: cover;
-  background-position: center;
-}*/
-
+/* Global Styles */
 body {
-	background-color: #DCE0D9;
+    height: 100vh;
+    background-color: gainsboro;
+    background-size: cover;
+    background-position: center;
 }
+
 
 li {
-  list-style: none;
+    list-style: none;
+}
+
+ul {
+ padding-inline-start: 0;
 }
 
 a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
 }
 
 a:hover {
-  color: orange; 
+    color: brown;;
 }
-
-/* header */
-header {
-  position: relative;
-  padding: 0 2rem;
-}
-
-.video-slide {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.navbar {
-  width: 100%;
-  height: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar .logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
-}
-
-.navbar .links {
-  display: flex;
-  gap: 2rem;
-}
-
-.navbar .toggle_btn {
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: none;
-}
-
-.action_btn {
-  background-color: orange;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.action_btn:hover {
-  transform: scale(1.05);
-}
-
-.action_btn:active {
-  transform: scale(0.95);
-}
-
-/* dropDown */
-.dropdown_menu {
-  display: none;
-  position: absolute;
-  right: 2rem;
-  top: 60px;
-  height: 0;
-  width: 300px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-align: center;
-}
-
-.dropdown_menu.open {
-  height: 240px;
-}
-
-.dropdown_menu li {
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dropdown_menu .action_btn {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/* hero */
-section#hero {
-  height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-}
-
-#hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-/* Footer */
-footer {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #000;
-}
-
-footer .navbar {
-  width: 100%;
-  height: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-footer .navbar .links {
-  display: flex;
-  gap: 2rem;
-}
-
-footer .navbar .links li {
-  padding: 0;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container_2 {
-  max-width: 100%;
-  padding: 2rem;
-  text-align: center;
-}
-
-.container_3 {
-  background-color: #F1DABF;
-  max-width: 100%;
-  padding: 2rem;
-  text-align: center;
-}
-
-.container_2 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.container_2 p {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-
-.container_2 img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.container_2 a {
-  display: inline-block;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: orange;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.8rem;
-}
-
-.container_2 a:hover {
-  background-color: #ff8c00;
-}
-
-.container_2 a:last-child {
-  margin-right: 0;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  .navbar .links,
-  .navbar .action_btn {
-    display: none;
-  }
-
-  .navbar .toggle_btn {
-    display: block;
-  }
-
-  .dropdown_menu {
-    display: block;
-  }
-}
-
-@media (max-width: 576px) {
-  .dropdown_menu {
-    left: 2rem;
-    width: unset;
-  }
-}
-
-
-
-
 
 /* Hero */
 
 
 .sfondo-hero {
 	
-	background-image: url('https://www.toscana.info/wp-content/uploads/sites/123/asciano-cipressi-hd.jpg');
+	background-image: url('https://www.i-tuscany.com/wp-content/uploads/2019/12/degustazione-prodotti-tipici-toscani.jpg');
 	height:50vh;
 	background-position:center;
 	background-size: cover;
@@ -282,12 +50,10 @@ main {
     background: radial-gradient(circle, rgba(0,0,0,0.6463963963963963) 0%, rgba(0,0,0,0.0) 100%);
 	border-radius:4px;
 }
-
 /* Header */
 header {
     position: relative;
-    padding: 0 2rem;
-    background-color: orange; /* Cambiato colore a arancione */
+    
 }
 
 .video-slide {
@@ -362,7 +128,7 @@ header {
     height: 0;
     width: 300px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -370,7 +136,7 @@ header {
 }
 
 .dropdown_menu.open {
-    height: 325px;
+    height: 340px;
     z-index: 1;
 }
 
@@ -385,6 +151,29 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+/* Hero */
+section#hero {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Main */
+
+main .card img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Footer */
@@ -475,10 +264,69 @@ ul{
 }
 
 .footer-col button[type="submit"]:hover {
-  background-color: #49111c;
+	color: white;
+  	background-color: #49111c;
 }
 
 
+/* Responsive */
+@media (max-width: 992px) {
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+        display: none;
+    }
+    
+    .dropdown_menu.open {
+        display: block;
+    }
+    
+    .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+    
+    .footer-col{
+    width: 100%;
+	}
+}
+
+.login {
+	color: #FFA500;
+}
+
+.selezionato {
+	color: #FFA500;
+}
+
+#headerPopup{
+  width:75%;
+  margin:0 auto;
+}
+
+#headerPopup iframe{
+  width:100%;
+  margin:0 auto;
+}
+
+.carousel-control-prev, .carousel-control-next{
+	width:40%;
+} 
 
 /* bottoni */
 .beige {
@@ -502,72 +350,6 @@ ul{
 }
 
 
-/* Footer */
-.footer{
-	background-color: #92817a;;
-    padding: 70px 0;
-}
-
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
-}
-
-.footer-col h4{
-	font-size: 18px;
-	color: #ffffff;
-	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
-	position: relative;
-}
-
-.footer-col h4::before{
-	content: '';
-	position: absolute;
-	left:0;
-	bottom: -10px;
-	background-color: #49111c;
-	height: 2px;
-	box-sizing: border-box;
-	width: 50px;
-}
-
-.footer-col ul li:not(:last-child){
-	margin-bottom: 10px;
-}
-
-.footer-col ul li a{
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #ffffff;
-	text-decoration: none;
-	font-weight: 300;
-	color: #fff;
-	display: block;
-	transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover{
-	color: #ffffff;
-	padding-left: 8px;
-}
-
-#flex {
-	margin: auto 0;
-}
-
-@media (max-width: 768px) {
-#flex{
-       margin-top: 5em;
-   } 
-}
-
-#separazione {
-	margin-top: 2rem;
-}
-
-
 /* footer */
 
 .grandi {
@@ -578,7 +360,58 @@ ul{
 .loghetto {
 	width: 100px;
 }
-
 .selezionato {
-	color: #FFA500;
-}
+	  color: #FFA500;
+  }
+
+
+.container_2 {
+	max-width: 100%;
+	padding: 2rem;
+	text-align: center;
+  }
+  
+  .container_3 {
+	background-color: #F1DABF;
+	max-width: 100%;
+	padding: 2rem;
+	text-align: center;
+  }
+  
+  .container_2 h2 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	color: #fff;
+  }
+  
+  .container_2 p {
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+	color: #fff;
+  }
+  
+  .container_2 img {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 1rem;
+  }
+  
+  .container_2 a {
+	display: inline-block;
+	margin-right: 0.5rem;
+	margin-bottom: 0.5rem;
+	padding: 0.5rem 1rem;
+	background-color: orange;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 4px;
+	font-size: 0.8rem;
+  }
+  
+  .container_2 a:hover {
+	background-color: #ff8c00;
+  }
+  
+  .container_2 a:last-child {
+	margin-right: 0;
+  }
