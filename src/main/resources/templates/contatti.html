@@ -20,14 +20,14 @@
 		<div class="sfondo-hero">
 			<div class="navbar">
 				<div class="logo">
-					<a th:href="@{index}">Antico Casale Orgiaverde</a>
+					<a th:href="@{index}">Antico Casale Orciaverde</a>
 				</div>
 				<ul class="links">
 					<li><a th:href="@{index}">Home</a></li>
 					<li><a th:href="@{catalogo}">Prodotti</a></li>
 					<li><a th:href="@{struttura-servizi}">Servizi</a></li>
 					<li><a th:href="@{contatti}" class="selezionato">Contatti</a></li>
-					<li><a th:href="@{carrello}">Carrello</a></li>
+					<li><a th:href="@{carrello}">Area Utente</a></li>
 				</ul>
 				<a th:if="${loggato == false}" th:href="@{login}" class="action_btn">Login</a>
 				<a th:if="${loggato}" th:href="@{logout}" class="action_btn">Logout</a>
@@ -41,8 +41,8 @@
 						<li><a th:href="@{index}">Home</a></li>
 						<li><a th:href="@{catalogo}">Prodotti</a></li>
 						<li><a th:href="@{struttura-servizi}">Servizi</a></li>
-						<li><a th:href="@{contatti}">Contatti</a></li>
-						<li><a th:href="@{carrello}">Carrello</a></li>
+						<li><a th:href="@{contatti}" class="selezionato">Contatti</a></li>
+						<li><a th:href="@{carrello}">Area Utente</a></li>
 						<li><a th:href="@{login}" th:if="${loggato == false}"
 							class="login">Login</a> <a th:href="@{logout}" th:if="${loggato}"
 							class="login">Logout</a></li>
