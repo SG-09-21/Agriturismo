@@ -59,7 +59,7 @@
 				</table>
 				<div th:if="${selezionato}" class="mt-5">
 					<h4
-						th:text="'Ordine del ' + ${ordine.data} + ' del cliente ' + ${ordine.utente.nome} + ' ' 
+						th:text="'Ordine del ' + ${#temporals.format(ordine.data, 'dd-MM-yyyy')} + ' del cliente ' + ${ordine.utente.nome} + ' ' 
 						+ ${ordine.utente.cognome} + '.'"></h4>
 					<br>
 					<table class="table table-responsive">
@@ -77,13 +77,13 @@
 								<td th:text="${p.descrizione}"></td>
 								<td th:text="${prodotti.get(p)}"></td>
 								<td
-									th:text="${#numbers.formatDecimal((p.prezzo * prodotti.get(p)),0,'POINT',2,'COMMA')} + ' Euro.'"></td>
+									th:text="${#numbers.formatDecimal((p.prezzo * prodotti.get(p)),1,'POINT',2,'COMMA')} + ' Euro.'"></td>
 							</tr>
 						</tbody>
 					</table>
 					<br>
 					<h5
-						th:text="'Importo complessivo: ' + ${#numbers.formatDecimal(ordine.importo,0,'POINT',2,'COMMA')} + ' Euro.'"></h5>
+						th:text="'Importo complessivo: ' + ${#numbers.formatDecimal(ordine.importo,1,'POINT',2,'COMMA')} + ' Euro.'"></h5>
 				</div>
 			</div>
 			<!-- 				<div class="col-1"></div> -->
