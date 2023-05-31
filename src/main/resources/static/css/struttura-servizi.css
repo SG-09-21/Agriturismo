@@ -30,7 +30,7 @@ a:hover {
 
 .sfondo-hero {
 	background-image: url('https://www.tuscanypeople.com/wp-content/uploads/2020/07/castellare_agriturismo_in_toscana.jpg');
-	height:40vh;
+	height:50vh;
 	background-position:50%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -39,7 +39,7 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .sfondo-hero {
-    height: 55vh;
+    height: 70vh;
   }
 }
 .tondo {
