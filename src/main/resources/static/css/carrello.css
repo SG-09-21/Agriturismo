@@ -40,7 +40,7 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .sfondo-hero {
-    height: 55vh;
+    height: 60vh;
   }
 }
 .tondo {
@@ -162,11 +162,27 @@ section#hero {
 /* Navigazione */
 .linkNav a {
 	background: none;
+	max-width: 40%;
+	margin: 0 auto;
 }
 
 .linkNav a:hover {
-	background: 92817a;
+	color: white;
+	background: #49111c;
 }
+
+#logout{
+	background: #49111c;
+	color: white;
+	max-width: 40%;
+	margin: 0 auto;
+	transition: 0.5s;
+}
+
+#logout:hover{
+	scale: 1.1;
+}
+
 
 /* Account */
 #account p {
@@ -267,6 +283,7 @@ ul{
 }
 
 .footer-col button[type="submit"]:hover {
+	color: #F1DABF;
   background-color: #49111c;
 }
 
@@ -331,15 +348,16 @@ ul{
 }
 
 .siena {
-	color:#49111c;
+	background-color: #49111c;
+	color: white;
 	border:2px solid #49111c;
 	transition: 0.3s
 }
 
 .siena:hover {
-	color: white;
+	color: #49111c;
 	scale: 1.02;
-	background-color: #49111c;
+	background-color: gainsboro;
 	border:2px solid #49111c;
 }
 

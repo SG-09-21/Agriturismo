@@ -22,8 +22,8 @@
 		<p th:if="${ok}" th:text="'Prodotto inserito con successo'"></p>
 		<p th:if="${del}" th:text="'Prodotto eliminato con successo'"></p>
 
-		<form method="post" action="dashboard-catalogo/registra" enctype="multipart/form-data">
-		<label for="descrizione">Nome prodotto:</label>
+		<form class="spazio" method="post" action="dashboard-catalogo/registra" enctype="multipart/form-data">
+		<label  for="descrizione">Nome prodotto:</label>
 			<input type="text" th:value="${prodotto.descrizione}" name="descrizione" placeholder="Nome prodotto"
 				required>
 			<!--         <input type="text" th:value="${prodotto.categoria}" name="categoria" placeholder="Categoria prodotto" required> -->
@@ -56,7 +56,7 @@
 					th:alt="${p.descrizione}" style="width:160px;max-width:160px;height:160px;max-height:160px;">
 				<h3 th:text="${p.descrizione}"></h3>
 				<p th:text="${p.categoria}"></p>
-				<p th:text="'Prezzo ' + ${p.prezzo} + ' Euro.'"></p>
+				<p th:text="'Prezzo ' + ${#numbers.formatDecimal(p.prezzo,1,'POINT',2,'COMMA')} + ' Euro.'"></p>
 				<a th:href="@{dashboard-catalogo(id=${p.id})}">
 					<button th:text="'Modifica'"></button>
 				</a>

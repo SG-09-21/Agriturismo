@@ -158,7 +158,7 @@
 							class="card-img-top img-size" th:alt="${art.descrizione}">
 						<div class="card-body">
 							<h5 class="card-title" th:text="${art.descrizione}"></h5>
-							<p class="card-text" th:text="'Prezzo: ' + ${art.prezzo} + '€'"></p>
+							<p class="card-text" th:text="'Prezzo: ' + ${#numbers.formatDecimal(art.prezzo,1,'POINT',2,'COMMA')} + '€'"></p>
 							<a th:href="@{dettaglio-prodotto(id=${art.id})}"
 								th:text="'Scopri ' + ${art.descrizione}"
 								class="btn btn-primary btn-custom"></a>
