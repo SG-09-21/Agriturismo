@@ -22,8 +22,8 @@
 		<p th:if="${ok}" th:text="'Prodotto inserito con successo'"></p>
 		<p th:if="${del}" th:text="'Prodotto eliminato con successo'"></p>
 
-		<form method="post" action="dashboard-catalogo/registra" enctype="multipart/form-data">
-		<label for="descrizione">Nome prodotto:</label>
+		<form class="spazio" method="post" action="dashboard-catalogo/registra" enctype="multipart/form-data">
+		<label  for="descrizione">Nome prodotto:</label>
 			<input type="text" th:value="${prodotto.descrizione}" name="descrizione" placeholder="Nome prodotto"
 				required>
 			<!--         <input type="text" th:value="${prodotto.categoria}" name="categoria" placeholder="Categoria prodotto" required> -->
