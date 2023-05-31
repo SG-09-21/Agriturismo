@@ -12,19 +12,21 @@
 <body>
 <div class="box">
     <h1>Lista Ordini</h1>
-    <div class="product-grid">
-        <div class="product-item" th:each="product : ${products}">
-            <img th:src="@{${product.image}}" alt="Prodotto" />
-            <h3 th:text="${product.name}">Nome Prodotto</h3>
-            <p th:text="${product.description}">Descrizione del prodotto</p>
-            <p th:text="'Prezzo: $' + ${product.price}">Prezzo</p>
-        </div>
+<!--     <div class="product-grid"> -->
+<!--         <div class="product-item" th:each="product : ${products}"> -->
+<!--             <img th:src="@{${product.image}}" alt="Prodotto" /> -->
+<!--             <h3 th:text="${product.name}">Nome Prodotto</h3> -->
+<!--             <p th:text="${product.description}">Descrizione del prodotto</p> -->
+<!--             <p th:text="'Prezzo: $' + ${product.price}">Prezzo</p> -->
+<!--         </div> -->
+<!--     </div> -->
+	<div class="controllo-admin">
+	    <a th:href="@{/dashboard-admin}">Admin</a>
+	    <a th:href="@{/dashboard-catalogo}">Catalogo</a>
+	    <a th:href="@{/dashboard-utenti}">Utenti</a>
     </div>
-    <a th:href="@{/dashboard-admin}">Admin</a>
-    <a th:href="@{/dashboard-catalogo}">Catalogo</a>
-    <a th:href="@{/dashboard-utenti}">Utenti</a>
     <div class="row mt-4 ">
-				<div class="col-10 mx-auto">
+				<div class="col-auto mx-auto">
 			<!-- <label for="cars">Filtra per cliente:</label>
 				<form method="post" action="dashboard-ordini/filtra" >
 					<select>
@@ -33,7 +35,7 @@
 					</select>   
 					<input type="submit" value="Filtra">
 				</form> -->
-					<table class="table table-responsive">
+					<table id="tableOne" class="table-responsive">
 						<thead>
 							<tr>
 								<th th:text="'Data Ordine'"></th>
@@ -51,17 +53,17 @@
 								<td th:text="${o.utente.cognome}"></td>
 								<td class="text-end">
 									<a th:href="@{/dashboard-ordini(id=${o.id})}" 
-										class="btn btn-light btn-sm" th:text="'Seleziona'"></a>
+										class="btn btn-light btn-sm" id="seleziona" th:text="'Select'"></a>
 								</td>
 								
 							</tr>
 						</tbody>
 					</table>
-					<div th:if="${selezionato}">
+					<div th:if="${selezionato}" class="mt-5">
 					<h4 th:text="'Ordine del ' + ${ordine.data} + ' del cliente ' + ${ordine.utente.nome} + ' ' 
 						+ ${ordine.utente.cognome} + '.'"></h4>
 					<br>
-					<table >
+					<table class="table table-responsive">
 						<thead>
 							<tr>
 								<th th:text="'Nome Prodotto'"></th>
@@ -83,9 +85,9 @@
 					<h5 th:text="'Importo complessivo: ' + ${#numbers.formatDecimal(ordine.importo,0,'POINT',2,'COMMA')} + ' Euro.'"></h5>					
 					</div>
 				</div>
-				<div class="col-1"></div>
-				<div class="col-4">
-				</div>
+<!-- 				<div class="col-1"></div> -->
+<!-- 				<div class="col-4"> -->
+<!-- 				</div> -->
 			</div>
     </div>
 </body>
