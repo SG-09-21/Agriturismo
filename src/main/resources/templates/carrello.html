@@ -155,6 +155,7 @@
 						  	<a href="#ordini" class="list-group-item list-group-item-action">Ordini</a>
 						  	<a href="#pagamento" class="list-group-item list-group-item-action">Pagamento</a>
 						  	<a href="#account" class="list-group-item list-group-item-action">Dettagli account</a>
+						  	<a th:if="${loggato == false}" th:href="@{login}" id="logout" class="list-group-item list-group-item-action">Login</a>
 						  	<a th:if="${loggato}" th:href="@{logout}" id="logout" class="list-group-item list-group-item-action">Logout</a>
 						  	
 						</div>
@@ -208,7 +209,9 @@
 				<div id="ordini" class="row mt-5">
 					<h1>I tuoi ordini</h1>
 					<div class="table-responsive-sm">
-					<h3 th:if="${nessunOrdine}">Non hai ancora effettuato alcun ordine</h3>
+					<h2 th:if="${cancFail}">Impossibile annullare ordini in date passate!</h2>
+					<h2 th:if="${cancOrd}">Ordine annullato con successo!</h2>
+					<h2 th:if="${nessunOrdine}">Non hai ancora effettuato alcun ordine</h2>
 					<table th:if="${nessunOrdine == false}" class="table caption-top">
 						<caption>Lista Ordini</caption>
 						<thead>
@@ -261,38 +264,6 @@
 				</div>
 			</div>
 		</div>	
-		
-<!-- 		Old -->
-<!-- 		<div class="container my-5"> -->
-<!-- 			<div class="row"> -->
-<!-- <!-- 				<p th:if="${ordineOk}">Ordine effettuato con successo</p> -->
-<!-- 				<div class="col" th:if="${loggato == false}"> -->
-<!-- 					<h3>Effettua il Login per visualizzare i tuoi ordini</h3> -->
-<!-- 				</div> -->
-<!-- 				<div th:if="${loggato}" class="table-responsive-sm"> -->
-<!-- 					<h3 th:if="${nessunOrdine}">Non hai ancora effettuato alcun ordine</h3> -->
-<!-- 					<table th:if="${nessunOrdine == false}" class="table caption-top"> -->
-<!-- 						<caption>Lista Ordini</caption> -->
-<!-- 						<thead> -->
-<!-- 							<tr> -->
-<!-- 								<th scope="col">Data Ordine</th> -->
-<!-- 								<th scope="col">Importo</th> -->
-<!-- 								<th scope="col"></th> -->
-<!-- 							</tr> -->
-<!-- 						</thead> -->
-<!-- 						<tbody> -->
-<!-- 							<tr th:each="o : ${ordini}"> -->
-<!-- 								<td th:text="${o.data}"></td> -->
-<!-- 								<td th:text="${o.importo}"></td> -->
-<!-- 								<td class="d-flex justify-content-end"><a -->
-<!-- 										th:href="@{carrello/annulla-ordine(id=${o.id})}" class="btn btn-danger">Annulla -->
-<!-- 										Ordine</a></td> -->
-<!-- 							</tr> -->
-<!-- 						</tbody> -->
-<!-- 					</table> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
 	</main>
 
 

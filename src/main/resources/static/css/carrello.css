@@ -174,7 +174,7 @@ section#hero {
 #logout{
 	background: #49111c;
 	color: white;
-	max-width: 40%;
+	max-width: 50%;
 	margin: 0 auto;
 	transition: 0.5s;
 }
@@ -373,18 +373,6 @@ ul{
 	width: 100px;
 }
 
-/* .vuoto { */
-/*   width: 1200px ; */
-/*   height: 800px; */
-/*   border: solid red 2px; */
-/*   margin: auto; */
-/*   margin-top: 24px; */
-/* } */
-
-/* @media (max-width: 576px) { */
-/*     .vuoto{ */
-/* 		width: auto; */
-/* 		height: 40px auto;     */
-/*     } */
-/* } */
-
+.login {
+	color: #49111c;
+}

@@ -43,7 +43,7 @@
 						<li><a th:href="@{catalogo}" class="selezionato">Prodotti</a></li>
 						<li><a th:href="@{struttura-servizi}">Servizi</a></li>
 						<li><a th:href="@{contatti}">Contatti</a></li>
-						<li><a th:href="@{carrello}">Carrello</a></li>
+						<li><a th:href="@{carrello}">Area Utente</a></li>
 						<li><a th:href="@{login}" th:if="${loggato == false}"
 							class="login">Login</a> <a th:href="@{logout}" th:if="${loggato}"
 							class="login">Logout</a></li>
@@ -134,7 +134,7 @@
 								<a th:if="${loggato == false}" type="button"
 									class="btn btn-success" th:href="@{login}">Effettua il
 									Login</a> <a th:if="${carrelloPieno and loggato}" type="button"
-									class="btn btn-success btn-lg" th:href="@{carrello/aggiungi-ordine}">Effettua
+									class="btn btn-success btn-lg" th:href="@{catalogo/aggiungi-ordine}">Effettua
 									Ordine</a>
 							</div>
 						</div>
@@ -146,6 +146,11 @@
 
 
 		<!-- catalogo -->
+		<div class="row">
+		<div class="d-flex justify-content-center align-items-center mt-5 mx-auto">
+			<p th:if="${added}">Prodotto inserito nel carrello</p>
+		</div>
+		</div>
 		<div class="container-card">
 			<div class="card-grid">
 				<div class="card prodotto border-0" th:each="art: ${prodotti}">
@@ -167,9 +172,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<p th:if="${added}">Prodotto inserito nel carrello</p>
 		</div>
 	</main>
 

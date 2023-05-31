@@ -34,7 +34,9 @@ public class CarrelloController {
     		Model model, 
     		@RequestParam(name = "del", required = false) String del,
     		@RequestParam(name = "ordineOk", required = false) String ordineOk,
-    		@RequestParam(name = "void", required = false) String ordineVuoto) {
+	    @RequestParam(name = "void", required = false) String ordineVuoto,
+	    @RequestParam(name = "cancOrd", required = false) String cancOrd,
+	    @RequestParam(name = "cancFail", required = false) String cancFail) {
 	
 	if (session.getAttribute("carrello") != null) {
 	    @SuppressWarnings("unchecked")
@@ -51,6 +53,8 @@ public class CarrelloController {
 	Utente utente = (Utente) session.getAttribute("utente");
 	
 	List<Ordine> ordini = ordineDao.findByUtente(utente);
+	model.addAttribute("cancFail", cancFail);
+	model.addAttribute("cancOrd", cancOrd != null);
 	model.addAttribute("utente", utente);
 	model.addAttribute("ordini", ordini);
 	model.addAttribute("nessunOrdine", ordini.isEmpty());
@@ -96,4 +100,17 @@ public class CarrelloController {
 
 	}
 
+	@GetMapping("annulla-ordine")
+	public String annullaOrdine(@RequestParam("id") int id) {
+
+	    Ordine ordine = ordineService.getOrdineById(id);
+
+	    if (!ordine.getData().isBefore(LocalDate.now())) {
+		ordineService.cancellaOrdine(ordine);
+		return "redirect:/carrello?cancOrd";
+	    }
+
+	    return "redirect:/carrello?cancFail";
+
+	}
 }

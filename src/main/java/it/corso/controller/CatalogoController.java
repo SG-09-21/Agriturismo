@@ -1,5 +1,6 @@
 package it.corso.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.corso.model.Ordine;
 import it.corso.model.Prodotto;
 import it.corso.model.Utente;
+import it.corso.service.OrdineService;
 import it.corso.service.ProdottoService;
 import jakarta.servlet.http.HttpSession;
 
@@ -21,6 +24,9 @@ public class CatalogoController {
 
     @Autowired
     private ProdottoService prodottoService;
+
+    @Autowired
+    private OrdineService ordineService;
 
     @GetMapping
     public String getPage(
@@ -64,7 +70,22 @@ public class CatalogoController {
 		return "redirect:/catalogo?del";
 	    }
 	}
-
 	return "redirect:/catalogo";
+    }
+
+    @SuppressWarnings("unchecked")
+    @GetMapping("/aggiungi-ordine")
+    public String effettuaOrdine(Model model, HttpSession session) {
+	LocalDate data = LocalDate.now();
+	List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
+	Utente utente = (Utente) session.getAttribute("utente");
+	if (utente == null)
+	    return "redirect:/login";
+	int idUtente = utente.getId();
+
+	ordineService.registraOrdine(new Ordine(), data, idUtente, carrello);
+	carrello.clear();
+	return "redirect:/carrello?ordineOk";
+
     }
 }
