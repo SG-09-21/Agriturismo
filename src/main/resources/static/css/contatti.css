@@ -273,10 +273,6 @@ header {
 	color: #49111c;
 }
 
-.selezionato {
-	color: #FFA500;
-}
-
 #headerPopup{
   width:75%;
   margin:0 auto;
@@ -455,4 +451,8 @@ header {
 
 .loghetto {
 	width: 100px;
+}
+
+.selezionato {
+	color: #FFA500;
 }
