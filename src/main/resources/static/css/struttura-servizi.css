@@ -91,21 +91,24 @@ header {
 }
 
 .action_btn {
-    background-color: green; /* Cambiato colore a verde */
+    background-color: #49111c; 
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    transition: scale 0.2s ease;
+    border: 2px solid #49111c;
+    transition:0.3s;
 }
 
 .action_btn:hover {
-    transform: scale(1.05);
-    color: brown;
+    scale: 1.05;
+    color: white;
+    background-color: rgb(0,0,0,0.0);
+    border: 2px solid white;
 }
 
 .action_btn:active {
@@ -250,8 +253,8 @@ ul{
 
 .footer-col button[type="submit"] {
   padding: 10px 20px;
-  background-color: orange;
-  color: #fff;
+  background-color: #F1DABF;
+  color: #49111c;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -260,7 +263,8 @@ ul{
 }
 
 .footer-col button[type="submit"]:hover {
-  background-color: rgb(25, 95, 45);
+	color: white;
+  	background-color: #49111c;
 }
 
 
@@ -458,3 +462,36 @@ img{
     height: auto;
 }
   
+.sfondo-camera {
+	background-color:#92817a;
+}
+
+/* bottoni */
+.beige {
+	background-color: #92817A;
+	border: 2px solid #92817A;
+	color: white;
+	
+}
+
+.siena {
+	color:#49111c;
+	border:2px solid #49111c;
+	transition: 0.3s
+}
+
+.siena:hover {
+	color: white;
+	scale: 1.02;
+	background-color: #49111c;
+	border:2px solid #49111c;
+}
+
+.grandi {
+	scale: 2.5;
+	padding: 1rem;
+}
+
+.loghetto {
+	width: 100px;
+}
