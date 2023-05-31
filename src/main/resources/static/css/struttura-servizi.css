@@ -21,10 +21,6 @@ a {
     font-size: 1rem;
 }
 
-#dx{
-	float:right;
-}
-
 a:hover {
     color: brown;;
 }
@@ -178,7 +174,7 @@ main .card img {
 
 /* Footer */
 .footer{
-	background-color: orange;
+	background-color: #92817a;;
     padding: 70px 0;
 }
 
@@ -201,7 +197,7 @@ main .card img {
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: rgb(25, 95, 45);
+	background-color: #49111c;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -447,3 +443,18 @@ img{
   h2{
   color:orange;
   }
+  
+  .card {
+  min-width: 200px;
+  min-height: 500px;
+}
+
+#dx{
+	float:right;
+}
+  
+#small{
+    max-width: 10%;
+    height: auto;
+}
+  
