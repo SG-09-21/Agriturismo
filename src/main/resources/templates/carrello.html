@@ -60,13 +60,14 @@
 							<div class="text-white">
 								<div th:if="${loggato}">
 									<h1 class="mb-3" th:text="'Benvenuto ' + ${utente.nome}"></h1>
-									<h4>Questa è la tua area riservata</h4>
+									<h4 class="mb-3">Questa è la tua area riservata</h4>
 									<button type="button" class="btn btn-outline-light justify-content-start" data-toggle="modal"
 									data-target="#cartModal">Mostra Carrello</button>
 									
 								</div>
 								<div th:if="${loggato == false}">
 									<h1 class="mb-3">Benvenuto User</h1>
+									<h4 class="mb-3">Effettua il Login</h4>
 									<button type="button" class="btn btn-outline-light btn-lg justify-content-start" data-toggle="modal"
 										data-target="#cartModal">Mostra Carrello</button>
 									
@@ -219,7 +220,7 @@
 						</thead>
 						<tbody>
 							<tr th:each="o : ${ordini}">
-								<td th:text="${o.data}"></td>
+								<td th:text="${#temporals.format(o.data, 'dd-MMM-yyyy')}"></td>
 								<td th:text="${#numbers.formatDecimal(o.importo,0,'POINT',2,'COMMA')} + ' €'"></td>
 								<td class="d-flex justify-content-end"><a
 										th:href="@{carrello/annulla-ordine(id=${o.id})}" class="btn siena">Annulla
