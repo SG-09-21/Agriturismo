@@ -1,5 +1,6 @@
 package it.corso.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,16 +25,46 @@ public class CatalogoController {
     @GetMapping
     public String getPage(
 	    HttpSession session, 
-	    Model model, 
+	    Model model,
+	    @RequestParam(name = "del", required = false) String del,
 	    @RequestParam(name = "added", required = false) String added) {
 
 	List<Prodotto> prodotti = prodottoService.getProdotti();
 	model.addAttribute("added", added);
 	model.addAttribute("prodotti", prodotti);
 	
+	if (session.getAttribute("carrello") != null) {
+	    @SuppressWarnings("unchecked")
+	    List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
+	    model.addAttribute("carrello", carrello);
+	    model.addAttribute("carrelloPieno", !carrello.isEmpty());
+	} else {
+
+	    List<Prodotto> carrello = new ArrayList<>();
+	    model.addAttribute("carrello", carrello);
+	    model.addAttribute("carrelloPieno", !carrello.isEmpty());
+	}
+
 	Utente utente = (Utente) session.getAttribute("utente");
 	model.addAttribute("loggato", utente != null);
 	model.addAttribute("utente", utente);
+	model.addAttribute("del", del != null);
 	return "catalogo";
+    }
+
+    @GetMapping("/rimuovi-prodotto")
+    public String rimuoviProdottoCarrello(@RequestParam("id") int id, HttpSession session) {
+
+	@SuppressWarnings("unchecked")
+	List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
+
+	for (Prodotto p : carrello) {
+	    if (p.getId() == id) {
+		carrello.remove(p);
+		return "redirect:/catalogo?del";
+	    }
+	}
+
+	return "redirect:/catalogo";
     }
 }

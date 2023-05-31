@@ -416,15 +416,14 @@ ul{
 	margin-right: 0;
   }
   
-  .mjk{
-  	margin-top:10px;
-  }
+ /* .mjk{
+  	margin-top:70px; 
+  } */
 
 #flex {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 120px;
 }
 
 #flex a {
@@ -442,5 +441,9 @@ ul{
 	border: 1px solid #ead7c3;
 	scale:1.1;
 	background-color: #ead7c3;
+}
+
+.spostaimg {
+	margin-right: 3.1rem;
 }
   

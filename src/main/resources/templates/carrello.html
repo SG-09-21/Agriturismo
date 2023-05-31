@@ -67,10 +67,9 @@
 								</div>
 								<div th:if="${loggato == false}">
 									<h1 class="mb-3">Benvenuto User</h1>
-									<button type="button" class="btn btn-outline-light justify-content-start" data-toggle="modal"
+									<button type="button" class="btn btn-outline-light btn-lg justify-content-start" data-toggle="modal"
 										data-target="#cartModal">Mostra Carrello</button>
-	<!-- 								<a class="btn btn-outline-light btn-lg" th:href="@{catalogo}" role="button">Scopri i -->
-	<!-- 									nostri prodotti</a> -->
+									
 								</div>
 								
 							</div>
@@ -82,64 +81,64 @@
 
 <!-- 		PopUp -->
 		<div class="container">
-		<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header border-bottom-0">
-						<h5 class="modal-title" id="exampleModalLabel"
-							th:if="${loggato && carrelloPieno == false}"
-							th:text="'Non hai nessun articolo nel carrello,  ' + ${utente.nome}"></h5>
-						<h5 class="modal-title" id="exampleModalLabel" th:if="${loggato and carrelloPieno}"
-							th:text="'Il tuo carrello, ' + ${utente.nome}"></h5>
-						<h5 class="modal-title" id="exampleModalLabel"
-							th:if="${loggato == false and carrelloPieno}">Effettua il
-							Login per procedere con l'ordine</h5>
-						<h5 class="modal-title" id="exampleModalLabel"
-							th:if="${loggato == false and carrelloPieno == false}">Il
-							tuo carrello è vuoto</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<table class="table table-image" th:if="${carrelloPieno}">
-							<thead>
-								<tr>
+				<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header border-bottom-0">
+								<h5 class="modal-title" id="exampleModalLabel"
+									th:if="${loggato && carrelloPieno == false}"
+									th:text="'Non hai nessun articolo nel carrello,  ' + ${utente.nome}"></h5>
+								<h5 class="modal-title" id="exampleModalLabel" th:if="${loggato and carrelloPieno}"
+									th:text="'Il tuo carrello, ' + ${utente.nome}"></h5>
+								<h5 class="modal-title" id="exampleModalLabel"
+									th:if="${loggato == false and carrelloPieno}">Effettua il
+									Login per procedere con l'ordine</h5>
+								<h5 class="modal-title" id="exampleModalLabel"
+									th:if="${loggato == false and carrelloPieno == false}">Il
+									tuo carrello è vuoto</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<table class="table table-image" th:if="${carrelloPieno}">
+									<thead>
+										<tr>
+											<th scope="col"></th>
+											<th scope="col">Descrizione</th>
+											<th scope="col">Categoria</th>
+											<th scope="col">Prezzo</th>
+											<th scope="col">Quantità</th>
+											<th scope="col"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="p: ${carrello}">
+											<td class="w-25"><img th:src="${p.immagine}" class="img-fluid img-thumbnail"
+													alt="Sheep"></td>
+											<td th:text="${p.descrizione}"></td>
+											<td th:text="${p.categoria}"></td>
+											<td th:text="${p.prezzo}"></td>
+											<td class="qty"><input type="text" class="form-control" id="input1"
+													value="1">
+											</td>
+											<td><a th:href="@{carrello/rimuovi-prodotto(id=${p.id})}"
+													class="btn btn-danger btn-sm">X </a></td>
+										</tr>
+									</tbody>
+								</table>
 
-
-									<th scope="col"></th>
-									<th scope="col">Descrizione</th>
-									<th scope="col">Categoria</th>
-									<th scope="col">Prezzo</th>
-									<th scope="col">Quantità</th>
-									<th scope="col"></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr th:each="p: ${carrello}">
-									<td class="w-25"><img th:src="${p.immagine}" class="img-fluid img-thumbnail"
-											alt="Sheep"></td>
-									<td th:text="${p.descrizione}"></td>
-									<td th:text="${p.categoria}"></td>
-									<td th:text="${p.prezzo}"></td>
-									<td class="qty"><input type="text" class="form-control" id="input1"
-											value="1">
-									</td>
-									<td><a th:href="@{carrello/rimuovi-prodotto(id=${p.id})}"
-											class="btn btn-danger btn-sm">X </a></td>
-								</tr>
-							</tbody>
-						</table>
-
-					</div>
-					<div class="modal-footer border-top-0 d-flex justify-content-between">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
-						<a th:if="${loggato == false}" type="button" class="btn btn-success"
-							th:href="@{login}">Effettua il Login</a>
-						<a th:if="${carrelloPieno and loggato}" type="button" class="btn btn-success"
-							th:href="@{carrello/aggiungi-ordine}">Effettua
-							Ordine</a>
+							</div>
+							<div class="modal-footer border-top-0 d-flex justify-content-between">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+								<a th:if="${loggato == false}" type="button" class="btn btn-success"
+									th:href="@{login}">Effettua il Login</a>
+								<a th:if="${carrelloPieno and loggato}" type="button" class="btn btn-success"
+									th:href="@{carrello/aggiungi-ordine}">Effettua
+									Ordine</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
