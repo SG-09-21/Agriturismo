@@ -142,19 +142,20 @@
 					</div>
 				</div>
 			</div>
-		</div>
 		
-		
+<!-- 		Bacheca -->
 		<div class="container-fluid">			
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-md-3 text-center">
 						<h4>Account</h4>
 						<div class="list-group linkNav">
-						  	<a href="#bacheca" class="list-group-item list-group-item-action ">Bacheca</a>
+						  	<a href="#bacheca" class="list-group-item list-group-item-action">Bacheca</a>
 						  	<a href="#ordini" class="list-group-item list-group-item-action">Ordini</a>
 						  	<a href="#pagamento" class="list-group-item list-group-item-action">Pagamento</a>
 						  	<a href="#account" class="list-group-item list-group-item-action">Dettagli account</a>
+						  	<a th:if="${loggato}" th:href="@{logout}" id="logout" class="list-group-item list-group-item-action">Logout</a>
+						  	
 						</div>
 					</div>
 					<div class="col-md-1"></div>
@@ -176,7 +177,7 @@
 								<div class="card-img-center">
 									<img src="https://icons.getbootstrap.com/assets/icons/journal-bookmark.svg" width="30%" >
 									<div class="card-body mt-1">
-										<a href="#ordini" class="btn btn-dark">Ordini</a>
+										<a href="#ordini" class="btn siena">Ordini</a>
 									</div>
 								</div>
 							</div>
@@ -184,7 +185,7 @@
 								<div class="card-img-center">
 									<img src="https://icons.getbootstrap.com/assets/icons/credit-card.svg" width="30%">
 									<div class="card-body mt-1">
-										<a href="#pagamento" class="btn btn-dark">Pagamento</a>
+										<a href="#pagamento" class="btn siena">Pagamento</a>
 									</div>
 								</div>
 							</div>
@@ -192,7 +193,7 @@
 								<div class="card-img-center">
 									<img src="https://icons.getbootstrap.com/assets/icons/person-circle.svg" width="30%">
 									<div class="card-body mt-1">
-										<a href="#account" class="btn btn-dark">Account</a>
+										<a href="#account" class="btn siena">Account</a>
 									</div>
 								</div>
 							</div>
@@ -200,6 +201,8 @@
 						
 					</div>
 				</div>
+				
+<!-- 				Ordini -->
 				<div th:if="${loggato}">
 				<div id="ordini" class="row mt-5">
 					<h1>I tuoi ordini</h1>
@@ -219,17 +222,19 @@
 								<td th:text="${o.data}"></td>
 								<td th:text="${#numbers.formatDecimal(o.importo,0,'POINT',2,'COMMA')} + ' €'"></td>
 								<td class="d-flex justify-content-end"><a
-										th:href="@{carrello/annulla-ordine(id=${o.id})}" class="btn btn-dark">Annulla
+										th:href="@{carrello/annulla-ordine(id=${o.id})}" class="btn siena">Annulla
 										Ordine</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				</div>
+				
+<!-- 				Pagamento e Account -->
 				<div id="pagamento" class="row mt-5 ">
 					<h1>I tuoi metodi di pagamento</h1>
 					<p>Non hai registrato alcun metodo di pagamento</p>
-					<a class="btn btn-dark">Aggiungi</a>
+					<a class="btn siena">Aggiungi</a>
 				</div>
 				<div id="account" class="row mt-5">
 					<h1>I tuoi dati</h1>
@@ -255,7 +260,6 @@
 				</div>
 			</div>
 		</div>	
-		</div>
 		
 <!-- 		Old -->
 <!-- 		<div class="container my-5"> -->
