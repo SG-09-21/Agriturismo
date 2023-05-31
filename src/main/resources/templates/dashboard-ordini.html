@@ -24,7 +24,7 @@
     <a th:href="@{/dashboard-catalogo}">Catalogo</a>
     <a th:href="@{/dashboard-utenti}">Utenti</a>
     <div class="row mt-4 ">
-				<div class="col-10 mx-auto">
+				<div class="col-auto mx-auto">
 			<!-- <label for="cars">Filtra per cliente:</label>
 				<form method="post" action="dashboard-ordini/filtra" >
 					<select>
@@ -33,7 +33,7 @@
 					</select>   
 					<input type="submit" value="Filtra">
 				</form> -->
-					<table class="table table-responsive">
+					<table class="table-responsive">
 						<thead>
 							<tr>
 								<th th:text="'Data Ordine'"></th>
@@ -51,7 +51,7 @@
 								<td th:text="${o.utente.cognome}"></td>
 								<td class="text-end">
 									<a th:href="@{/dashboard-ordini(id=${o.id})}" 
-										class="btn btn-light btn-sm" th:text="'Seleziona'"></a>
+										class="btn btn-light btn-sm" id="seleziona" th:text="'Select'"></a>
 								</td>
 								
 							</tr>
@@ -83,9 +83,9 @@
 					<h5 th:text="'Importo complessivo: ' + ${#numbers.formatDecimal(ordine.importo,0,'POINT',2,'COMMA')} + ' Euro.'"></h5>					
 					</div>
 				</div>
-				<div class="col-1"></div>
-				<div class="col-4">
-				</div>
+<!-- 				<div class="col-1"></div> -->
+<!-- 				<div class="col-4"> -->
+<!-- 				</div> -->
 			</div>
     </div>
 </body>

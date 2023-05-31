@@ -41,9 +41,9 @@ body {
   margin-top: 20px;
 }
 
-.table {
-  width: 100%;
-}
+/* .table { */
+/*   width: 100%; */
+/* } */
 
 .table th,
 .table td {
@@ -70,4 +70,15 @@ a {
 }
 a:hover{
 	color:orange;
+}
+
+#seleziona {
+	color: white;
+	background-color: #8DA23C;
+	border-radius: 10px;
+	border-color: #8DA23C;
+}
+
+#seleziona:hover {
+	color: orange;
 }
