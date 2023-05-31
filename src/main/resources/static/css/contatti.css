@@ -273,10 +273,6 @@ header {
 	color: #49111c;
 }
 
-.selezionato {
-	color: #FFA500;
-}
-
 #headerPopup{
   width:75%;
   margin:0 auto;
@@ -357,12 +353,16 @@ header {
   font-size: 14px;
 }
 
-.php-email-form input {
+.php-email-form .input {
   height: 44px;
 }
 
 .php-email-form textarea {
   padding: 10px 12px;
+}
+
+label a{
+	    text-decoration: underline !important;
 }
 
 .php-email-form button[type=submit] {
@@ -455,4 +455,8 @@ header {
 
 .loghetto {
 	width: 100px;
+}
+/* bottone navbar */
+.selezionato {
+	color: #FFA500;
 }
