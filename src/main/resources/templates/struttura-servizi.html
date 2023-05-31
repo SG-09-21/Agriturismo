@@ -42,13 +42,14 @@
 					<li><a th:href="@{contatti}">Contatti</a></li>
 					<li><a th:href="@{carrello}">Carrello</a></li>
 					<li><a th:href="@{login}" th:if="${loggato == false}"
-						class="login bordeaux">Login</a> <a th:href="@{logout}" th:if="${loggato}"
-						class="login">Logout</a></li>
+						class="login bordeaux">Login</a> <a th:href="@{logout}"
+						th:if="${loggato}" class="login">Logout</a></li>
 				</ul>
 			</div>
 		</div>
 
-
+		
+		
 		<div class="container-fluid p-5 text-center bg-image">
 			<div class="row">
 				<div class="mask">
@@ -67,127 +68,244 @@
 	</div>
 	<main>
 	
-	<div class="services-wrapper">
-  <div class="services-section">
-    <h2>Servizi</h2>
-    <p>L'<b>Orciaverde</b>, mette a disposizione dei propri ospiti, servizi in grado di soddisfare le esigenze di qualsiasi clientela.</p>
-    <ul>
-      <li>-Wi-Fi free</li>
-      <li>-Servizio transfert (su richiesta a pagamento)</li>
-      <li>-Lavanderia a pagamento</li>
-      <li>-Baby Sitter (su richiesta e salva disponibilità - a pagamento)</li>
-      <li>-Escursioni in barca, a terra, diving e a cavallo (su richiesta pagamento)</li>
-      <li>-Noleggio auto (richiedibile anche all'atto della prenotazione e salvo disponibilità - su richiesta a pagamento)</li>
-      <li>-Vasca idromassaggio (con supplemento in loco)</li>
-    </ul>
-  </div>
+	<!-- Card alternate -->
+		<div class="container pt-4 pb-4 mb-5">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="lc-block text-secondary">
+						<div editable="rich">
+							<p>magna ultricies</p>
+						</div>
+					</div>
+					<div class="lc-block border-bottom pb-4">
+						<div editable="rich">
 
-  <div class="activities-section">
-    <h2>Attività</h2>
-    <ul>
-      <li>-Parco giochi</li>
-      <li>-Piscina</li>
-      <li>-Solarium</li>
-      <li>-Escursioni in barca, a terra, diving e a cavallo (su richiesta pagamento)</li>
-    </ul>
-  </div>
-</div>
+							<h1>
+								Grid<br> Gallery<br> Presentation
+							</h1>
+
+
+						</div>
+					</div>
+					<!-- /lc-block -->
+					<div class="lc-block pt-4 d-flex flex-fill">
+						<img class="img-fluid"
+							src="https://images.unsplash.com/photo-1595311229337-9b538bd7fdb4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+							alt="Cena nel Vigneto" loading="lazy">
+					</div>
+					<!-- /lc-block -->
+				</div>
+				<!-- /col -->
+				<div class="col-md-4">
+					<div class="lc-block mb-2 ">
+						<img class="img-fluid"
+							src="https://images.unsplash.com/photo-1549386502-c655236b67cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
+							alt="Piscina panoramica" loading="lazy">
+					</div>
+					<!-- /lc-block -->
+					<div class="lc-block">
+						<div editable="rich">
+							<p>Pellentesque habitant morbi tristique senectus et netus et
+								malesuada fames ac turpis egestas. Vestibulum tortor quam,
+								feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
+								libero sit amet quam egestas semper. Aenean ultricies mi vitae
+								est. Mauris placerat eleifend leo. Quisque sit amet est et
+								sapien ullamcorper pharetra.&nbsp;</p>
+						</div>
+					</div>
+					<!-- /lc-block -->
+				</div>
+				<!-- /col -->
+				<div class="col-md-4">
+					<div class="lc-block">
+						<div editable="rich">
+							<p>Pellentesque habitant morbi tristique senectus et netus et
+								malesuada fames ac turpis egestas. Vestibulum tortor quam,
+								feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
+								libero sit amet quam egestas semper. Aenean ultricies mi vitae
+								est. Mauris placerat eleifend leo. Quisque sit amet est et
+								sapien ullamcorper pharetra.</p>
+						</div>
+					</div>
+					<!-- /lc-block -->
+					<div class="lc-block mb-2">
+						<img class="img-fluid"
+							src="https://i0.wp.com/www.theitalyedit.com/wp-content/uploads/2021/11/Vineyard-Dinner1-1.jpg?resize=819%2C1024&ssl=1"
+							alt="Photo by Cristina Gottardi" loading="lazy">
+					</div>
+					<!-- /lc-block -->
+				</div>
+				<!-- /col -->
+			</div>
+		</div>
+	<!-- Immagini alternate -->
+	 <div class="container-fluid p-0 overflow-hidden">
+        <div class="row g-0">
+            <div lc-helper="background" class="col-lg-6 order-lg-2 " style="min-height: 45vh; background-size: cover; background-position: center; background-image: url('https://www.sandonninowinery.it/wp-content/uploads/2019/09/san-donnino-location.jpg');">
+
+            </div>
+            <div class="col-lg-6 order-lg-1 my-auto px-5 py-5">
+                <div class="lc-block">
+                    <div editable="rich">
+                        <h1>Your Title goes here</h1>
+                        <p class="lead">Lorem ipsum dolor sit amet Neque porro quisquam est qui dolorem Lorem int ipsum dolor sit amet when an unknown printer took a galley of type. Vivamus id tempor felis. Cras sagittis mi sit amet malesuada mollis. Mauris porroinit consectetur cursus tortor vel interdum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-0">
+            <div lc-helper="background" class="col-lg-6" style="min-height: 45vh; background-size: cover;background-position: center; background-image: url('https://littletravelsbiglove.com/wp-content/uploads/2019/11/Asciano-tramonto-landscape-2-e1574191563394.jpg');">
+            </div>
+            <div class="col-lg-6 my-auto px-5 py-5">
+                <div class="lc-block">
+                    <div editable="rich">
+                        <h1>Your Title goes here</h1>
+                        <p class="lead">Lorem ipsum dolor sit amet Neque porro quisquam est qui dolorem Lorem int ipsum dolor sit amet when an unknown printer took a galley of type. Vivamus id tempor felis. Cras sagittis mi sit amet malesuada mollis. Mauris porroinit consectetur cursus tortor vel interdum.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 	
-<div>
-<h2>LAST MINUTE LUGLIO</h2>
-<p>L'<b>Orciaverde</b> offre uno sconto speciale dal 5 al 18 luglio .</p>
 
-		<div class="image-text-container">
-			<div class="image-wrapper">
-				<img th:src="@{image/cav2.jpeg}" alt="image">
+		<div class="services-wrapper">
+			<div class="services-section">
+				<h2>Servizi</h2>
+				<p>
+					L'<b>Orciaverde</b>, mette a disposizione dei propri ospiti,
+					servizi in grado di soddisfare le esigenze di qualsiasi clientela.
+				</p>
+				<ul>
+					<li>-Wi-Fi free</li>
+					<li>-Servizio transfert (su richiesta a pagamento)</li>
+					<li>-Lavanderia a pagamento</li>
+					<li>-Baby Sitter (su richiesta e salva disponibilità - a
+						pagamento)</li>
+					<li>-Escursioni in barca, a terra, diving e a cavallo (su
+						richiesta pagamento)</li>
+					<li>-Noleggio auto (richiedibile anche all'atto della
+						prenotazione e salvo disponibilità - su richiesta a pagamento)</li>
+					<li>-Vasca idromassaggio (con supplemento in loco)</li>
+				</ul>
 			</div>
-			<div class="text-container">
-				<p>Benvenuti alla lezione di equitazione di oggi! Oggi
-					esploreremo il meraviglioso mondo dell'equitazione, imparando le
-					basi fondamentali e sviluppando una connessione armoniosa con i
-					nostri amici cavalli.</p>
-				
+
+			<div class="activities-section">
+				<h2>Attività</h2>
+				<ul>
+					<li>-Parco giochi</li>
+					<li>-Piscina</li>
+					<li>-Solarium</li>
+					<li>-Escursioni in barca, a terra, diving e a cavallo (su
+						richiesta pagamento)</li>
+				</ul>
 			</div>
 		</div>
 
-		<div class="image-text-container">
-			<div class="image-wrapper">
-				<img th:src="@{image/escursione.jpg}" alt="image">
+		<div>
+			<h2>LAST MINUTE LUGLIO</h2>
+			<p>
+				L'<b>Orciaverde</b> offre uno sconto speciale dal 5 al 18 luglio .
+			</p>
+
+			<div class="image-text-container">
+				<div class="image-wrapper">
+					<img th:src="@{image/cav2.jpeg}" alt="image">
+				</div>
+				<div class="text-container">
+					<p>Benvenuti alla lezione di equitazione di oggi! Oggi
+						esploreremo il meraviglioso mondo dell'equitazione, imparando le
+						basi fondamentali e sviluppando una connessione armoniosa con i
+						nostri amici cavalli.</p>
+
+				</div>
 			</div>
-			<div class="text-container">
-				<p>Puoi partecipare a escursioni a piedi, in bicicletta o a
-					cavallo, esplorando sentieri panoramici e paesaggi mozzafiato.
-					Potresti anche avere l'opportunità di fare passeggiate nella
-					natura.</p>
+
+			<div class="image-text-container">
+				<div class="image-wrapper">
+					<img th:src="@{image/escursione.jpg}" alt="image">
+				</div>
+				<div class="text-container">
+					<p>Puoi partecipare a escursioni a piedi, in bicicletta o a
+						cavallo, esplorando sentieri panoramici e paesaggi mozzafiato.
+						Potresti anche avere l'opportunità di fare passeggiate nella
+						natura.</p>
 					<a th:href="@{login}" class="btn btn-outline-light btn-lg" id="dx">Prenota</a>
+				</div>
 			</div>
 		</div>
-</div>
 
 
-<div>
-<h2>Offerte simili</h2>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 col-md-6">
-      <div class="card">
-        <img th:src="@{image/camere1.jpeg}" class="card-img-top" alt="Card Image">
-        <div class="card-body">
-          <h5 class="card-title">Suit</h5>
-          <p class="card-text"></p>
-          <ul class="card-txet">
-          <li>- Frigo-bar</li>
-          <li>- Climatizzazione</li>
-          <li>- Bagno con Box doccia</li>
-          <li>- Patio attrezzato</li>
-          </ul>
-          <a th:href="@{login}" class="btn btn-primary"  id="dx">Richiedi preventivo</a>
-        </div>
-      </div>
-    </div>
+		<div>
+			<h2>Offerte simili</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img th:src="@{image/camere1.jpeg}" class="card-img-top"
+								alt="Card Image">
+							<div class="card-body">
+								<h5 class="card-title">Suit</h5>
+								<p class="card-text"></p>
+								<ul class="card-txet">
+									<li>- Frigo-bar</li>
+									<li>- Climatizzazione</li>
+									<li>- Bagno con Box doccia</li>
+									<li>- Patio attrezzato</li>
+								</ul>
+								<a th:href="@{login}" class="btn btn-primary" id="dx">Richiedi
+									preventivo</a>
+							</div>
+						</div>
+					</div>
 
-    <div class="col-lg-4 col-md-6">
-      <div class="card">
-        <img th:src="@{image/camere2.jpeg}" class="card-img-top" alt="Card Image">
-        <div class="card-body">
-          <h5 class="card-title">Suit-matrimoniale</h5>
-          <p class="card-text"></p>
-          <ul class="card-txet">
-          <li>- Frigo-bar</li>
-          <li>- Climatizzazione</li>
-          <li>- Bagno con Box doccia</li>
-          <li>- Patio attrezzato</li>
-          <li>- Babysitting incluso</li>
-          <li>- Ingresso libero in piscina</li>
-          </ul>
-          <a th:href="@{login}" class="btn btn-primary"  id="dx">Richiedi preventivo</a>
-        </div>
-      </div>
-    </div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img th:src="@{image/camere2.jpeg}" class="card-img-top"
+								alt="Card Image">
+							<div class="card-body">
+								<h5 class="card-title">Suit-matrimoniale</h5>
+								<p class="card-text"></p>
+								<ul class="card-txet">
+									<li>- Frigo-bar</li>
+									<li>- Climatizzazione</li>
+									<li>- Bagno con Box doccia</li>
+									<li>- Patio attrezzato</li>
+									<li>- Babysitting incluso</li>
+									<li>- Ingresso libero in piscina</li>
+								</ul>
+								<a th:href="@{login}" class="btn btn-primary" id="dx">Richiedi
+									preventivo</a>
+							</div>
+						</div>
+					</div>
 
-    <div class="col-lg-4 col-md-6">
-      <div class="card">
-        <img th:src="@{image/camere3.jpeg}" class="card-img-top" alt="Card Image">
-        <div class="card-body">
-          <h5 class="card-title">Deluxe</h5>
-          <p class="card-text"></p>
-          <ul class="card-txet">
-          <li>- Frigo-bar</li>
-          <li>- Climatizzazione</li>
-          <li>- Bagno con Box doccia</li>
-          <li>- Patio attrezzato</li>
-          <li>- Babysitting incluso</li>
-          <li>- Ingresso libero in piscina</li>
-          <li>- Open bar</li>
-          <li>- -50% sulla seconda settimana</li>
-          </ul>
-          <a th:href="@{login}" class="btn btn-primary" id="dx">Richiedi preventivo</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img th:src="@{image/camere3.jpeg}" class="card-img-top"
+								alt="Card Image">
+							<div class="card-body">
+								<h5 class="card-title">Deluxe</h5>
+								<p class="card-text"></p>
+								<ul class="card-txet">
+									<li>- Frigo-bar</li>
+									<li>- Climatizzazione</li>
+									<li>- Bagno con Box doccia</li>
+									<li>- Patio attrezzato</li>
+									<li>- Babysitting incluso</li>
+									<li>- Ingresso libero in piscina</li>
+									<li>- Open bar</li>
+									<li>- -50% sulla seconda settimana</li>
+								</ul>
+								<a th:href="@{login}" class="btn btn-primary" id="dx">Richiedi
+									preventivo</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</main>
 
@@ -217,7 +335,8 @@
 				<div class="footer-col  px-5">
 					<h4>Newsletter</h4>
 					<ul>
-						<li style="color: white"><p>Iscriviti alla newsletter per accedere a imperdibili offerte</p></li>
+						<li style="color: white"><p>Iscriviti alla newsletter per
+								accedere a imperdibili offerte</p></li>
 						<li><input type="text" name="EmailAdress"
 							placeholder="La tua email">
 							<button class="btn mt-2" type="submit">Iscriviti</button></li>
@@ -233,15 +352,17 @@
 					</div>
 				</div>
 
-				<div class="d-flex justify-content-center align-items-center flex-column mt-6" style="color: white">
+				<div
+					class="d-flex justify-content-center align-items-center flex-column mt-6"
+					style="color: white">
 					<img th:src="@{image/orciaverde.png}" alt="Logo agriturismo"
-						class="loghetto py-2"> &copy; 2023 Orciaverde. Tutti i diritti
-					riservati.
+						class="loghetto py-2"> &copy; 2023 Orciaverde. Tutti i
+					diritti riservati.
 				</div>
 			</div>
 		</div>
 	</footer>
-	
+
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
 	<script src="javaScript/index.js"></script>

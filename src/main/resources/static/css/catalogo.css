@@ -40,10 +40,10 @@ a:hover {
 
 
 .sfondo-hero {
+	background-image: url('https://www.cuvee.com/files/2020/09/Tuscan-Farmhouse-13-scaled-1.jpg');
 	
-	background-image: url('https://www.i-tuscany.com/wp-content/uploads/2019/12/degustazione-prodotti-tipici-toscani.jpg');
 	height:45vh;
-	background-position:center;
+	background-position: 50% 70%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	
