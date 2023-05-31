@@ -18,6 +18,7 @@
             <p th:if="${loginError}">Errore: credenziali errate</p>
             <p th:if="${credError}">Registrazione fallita, verificare le credenziali<p>
             <p th:if="${reg}" class="success">Registrazione completata. Effettua il Login</p>
+            <p th:if="${regError}">Registrazione non completata.<br> Account già registrato</p>
 
             
             <form method="post" action="/login/accedi" id="login"class="input-group">

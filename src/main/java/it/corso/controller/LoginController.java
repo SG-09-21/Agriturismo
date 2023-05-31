@@ -27,7 +27,8 @@ public class LoginController {
     		Model model,
     		@RequestParam(name = "loginError", required = false) String loginError,
     		@RequestParam(name = "reg", required = false) String reg,
-    		@RequestParam(name = "ce", required = false) String credError) {
+    		@RequestParam(name = "ce", required = false) String credError,
+    		@RequestParam(name = "errReg", required = false) String regError) {
     	
     	if (session.getAttribute("utente") != null) {
     		
@@ -36,6 +37,7 @@ public class LoginController {
 
     	model.addAttribute("utente", new Utente());
     	model.addAttribute("loginError", loginError != null);
+    	model.addAttribute("regError", regError != null);
     	model.addAttribute("reg", reg != null);
     	return "login";
     }
@@ -60,9 +62,20 @@ public class LoginController {
 	    model.addAttribute("credError", result.hasErrors());
 	    return "login";
     	}
-    	utenteService.registraUtente(utente);
-
-    	return "redirect:/login?reg";
+    	boolean assente = true;
+    	for (Utente u : utenteService.getUtenti()) {
+    		if (utente.getUsername().equalsIgnoreCase(u.getUsername())) {
+    			assente = false;
+    			break;
+    		}
+    	}
+    	if (assente) {
+    		utenteService.registraUtente(utente);
+    		return "redirect:/login?reg";
+    	}
+    	
+    	return "redirect:/login?errReg";
+    	
     }
     	
     
