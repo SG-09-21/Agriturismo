@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin</title>
+    
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" th:href="@{css/loginAdmin.css}">
      <!-- Collega il file JavaScript esterno -->
@@ -12,12 +13,13 @@
 
 <body>
     <div class="box">
-        <div class="container">
+        <div class="contenitore">
             <form id="loginForm" method="post">
                 <div class="top">
                     <header>Login</header>
                 </div>
-                <p th:if="${logError}" th:text="'Errore: Credenziali Errate'" style="color:rgb(255, 128, 64);">
+                
+                <p th:if="${logError}" th:text="'Errore: Credenziali Errate'" class ="errore">
                 </p>
                 <div class="input-field">
                     <input type="text" name="username" class="input" placeholder="Username" id="">

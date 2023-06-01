@@ -241,11 +241,11 @@
 					<div id="ordini" class="row mt-5">
 						<h1>I tuoi ordini</h1>
 						<div class="table-responsive-sm">
-							<h2 th:if="${cancFail}">Impossibile annullare ordini in date
-								passate!</h2>
-							<h2 th:if="${cancOrd}">Ordine annullato con successo!</h2>
-							<h2 th:if="${nessunOrdine}">Non hai ancora effettuato alcun
-								ordine</h2>
+							<h5 class="alert alert-danger text-center" role="alert" th:if="${cancFail}">Impossibile annullare ordini in date
+								passate!</h5>
+							<h5 class="alert alert-success text-center" role="alert" th:if="${cancOrd}">Ordine annullato con successo!</h5>
+							<h5 class="alert alert-warning text-center" role="alert" th:if="${nessunOrdine}">Non hai ancora effettuato alcun
+								ordine</h5>
 							<table th:if="${nessunOrdine == false}" class="table caption-top">
 								<caption>Lista Ordini</caption>
 								<thead>
@@ -261,7 +261,7 @@
 										<td
 											th:text="${#numbers.formatDecimal(o.importo,0,'POINT',2,'COMMA')} + ' €'"></td>
 										<td><a th:href="@{/carrello(id=${o.id})}"
-											class="btn btn-sm siena" id="seleziona" th:text="'Seleziona'"></a>
+											class="btn btn-sm siena" id="seleziona" th:text="'Dettagli'"></a>
 										</td>
 										<td class="d-flex justify-content-end"><a
 											th:href="@{carrello/annulla-ordine(id=${o.id})}"

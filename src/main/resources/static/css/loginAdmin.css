@@ -16,7 +16,7 @@ body{
     align-items: center;
     min-height: 90vh;
 }
-.container{
+.contenitore{
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -138,4 +138,14 @@ i{
     align-items: center;
     justify-content: center;
     margin-top: 15px; /* Sposta il testo verso il basso di 20px */
+}
+
+.errore {
+	height: 30px;
+	color: orange;
+	border-radius: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:rgba(33, 48, 4, 0.7);
 }
