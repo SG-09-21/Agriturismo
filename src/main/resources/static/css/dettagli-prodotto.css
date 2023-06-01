@@ -333,7 +333,13 @@ ul{
 	background-color: #92817A;
 	border: 2px solid #92817A;
 	color: white;
+	transition: 0.3s
 	
+}
+
+.beige:hover {
+	background-color: #F1DABF;
+	scale: 1.05;
 }
 
 .siena {

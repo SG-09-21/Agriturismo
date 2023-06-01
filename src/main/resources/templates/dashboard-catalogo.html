@@ -27,9 +27,13 @@
 					class="linker" th:href="@{/dashboard-utenti}">Utenti</a>
 			</div>
 		</div>
-		<div>
-			<p th:if="${ok}" th:text="'Prodotto inserito con successo'"></p>
-			<p th:if="${del}" th:text="'Prodotto eliminato con successo'"></p>
+		<div class="mt-2 h-50">
+			<div th:if="${ok}" class="alert alert-success d-flex justify-content-center align-items-center p-2" role="alert">
+ 				 <p th:text="'Operazione effettuata con successo'" class="m-0"></p>
+			</div>
+			<div th:if="${del}" class="alert alert-success d-flex justify-content-center align-items-center p-2" role="alert">
+  				<p th:text="'Prodotto eliminato con successo'" class="m-0"></p>
+			</div>			
 		</div>
 		<form class="spazio" method="post"
 			action="dashboard-catalogo/registra" enctype="multipart/form-data">
